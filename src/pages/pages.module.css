@@ -10,7 +10,9 @@ body {
 }
 
 :global h1 {
+  font-family: 'Zilla Slab', sans-serif;
   font-size: 5rem;
+  font-weight: 600;
   margin-top: 0;
   margin-bottom: 2rem;
   line-height: 5rem;
@@ -18,11 +20,15 @@ body {
 }
 
 :global h2 {
+  font-family: 'Zilla Slab', sans-serif;
   font-size: 4.5rem;
+  font-weight: 600;
 }
 
 :global h3 {
+  font-family: 'Zilla Slab', sans-serif;
   font-size: 3rem;
+  font-weight: 600;
 }
 
 .page {
