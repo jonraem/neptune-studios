@@ -1,0 +1,61 @@
+html {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+:global h1 {
+  font-size: 5rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  line-height: 5rem;
+}
+
+:global h2 {
+  font-size: 4.5rem;
+}
+
+:global h3 {
+  font-size: 3rem;
+}
+
+.page {
+  width: 100%;
+  position: relative;
+}
+
+.heroText {
+  width: 30rem;
+  position: absolute;
+  top: 10rem;
+  left: 4rem;
+}
+
+.heroTitles {
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+/* MAIN */
+
+.mainHero {
+  height: 100vh;
+  color: #fff;
+  background-color: #5DBBE3;
+}
+
+.withShadow {
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* WORK */
+
+/* ABOUT */
+
+/* CONTACT */
