@@ -15,8 +15,10 @@
   },
   "dependencies": {
     "gatsby": "^2.20.8",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-svg": "^11.0.15"
   },
   "devDependencies": {
     "prettier": "^2.0.2"
