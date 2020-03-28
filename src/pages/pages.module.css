@@ -61,4 +61,10 @@ body {
 
 /* ABOUT */
 
+.aboutHero {
+  height: 100vh;
+  color: #fff;
+  background: #E23C52;
+}
+
 /* CONTACT */
