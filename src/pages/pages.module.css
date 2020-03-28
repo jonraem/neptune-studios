@@ -60,7 +60,7 @@ body {
 /* MAIN */
 
 .mainHero {
-  height: 100vh;
+  min-height: 100vh;
   color: #fff;
   background-color: #5DBBE3;
 }
@@ -68,7 +68,7 @@ body {
 /* WORK */
 
 .workHero {
-  height: 100vh;
+  min-height: 100vh;
   color: #fff;
   background: #21B8BF;
 }
@@ -76,7 +76,7 @@ body {
 /* ABOUT */
 
 .aboutHero {
-  height: 100vh;
+  min-height: 100vh;
   color: #fff;
   background: #E23C52;
 }
@@ -84,7 +84,7 @@ body {
 /* CONTACT */
 
 .contactHero {
-  height: 100vh;
+  min-height: 100vh;
   color: #fff;
   background: #3D68B0;
 }
