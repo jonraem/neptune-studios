@@ -1,3 +1,10 @@
-import React from "react"
+import React from 'react';
+import Header from '../components/header';
 
-export default () => <div>Work</div>
+export default () =>
+  (
+    <div>
+      <Header />
+      Work
+    </div>
+  );
