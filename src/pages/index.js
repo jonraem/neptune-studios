@@ -13,11 +13,11 @@ export default (props) =>
             <h1>Neptune Studios</h1>
           </div>
           <div className={styles.subtitle}>Design. Usability. User experience…</div>
-          <div>
+          <p>
             The driving forces behind Neptune Studios. No setting sails
             for rough seas or taking dives to the deep-end without proper
             preparation.
-          </div>
+          </p>
         </div>
       </div>
     </div>

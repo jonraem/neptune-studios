@@ -13,11 +13,11 @@ export default (props) =>
             <h1>happened lately</h1>
           </div>
           <div className={styles.subtitle}>(Or selected works).</div>
-          <div>
+          <p>
             Eventhough digital product design has taken most of the time
             nowadays, this section also presents some examples from the graphic
             design and branding field, illustration and photography.
-          </div>
+          </p>
         </div>
       </div>
     </div>
