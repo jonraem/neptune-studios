@@ -68,3 +68,9 @@ body {
 }
 
 /* CONTACT */
+
+.contactHero {
+  height: 100vh;
+  color: #fff;
+  background: #3D68B0;
+}
