@@ -1,9 +1,9 @@
-import React from "react";
-import Header from "../components/header";
-import Footer from "../components/footer";
-import styles from "./pages.module.css";
+import React from 'react';
+import Header from '../components/header';
+import Footer from '../components/footer';
+import styles from './pages.module.css';
 
-export default (props) => (
+export default props => (
   <div className={styles.page}>
     <Header currentPath={props.location.pathname} />
     <div className={styles.mainHero}>

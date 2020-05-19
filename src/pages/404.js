@@ -1,3 +1,3 @@
-import React from "react"
+import React from 'react';
 
-export default () => <div>404 Not Found</div>
+export default () => <div>404 Not Found</div>;
