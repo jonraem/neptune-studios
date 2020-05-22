@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { ReactSVG } from 'react-svg';
 import neptuneStudiosLogo from '../assets/svg/neptune-studios-logo.svg';
-import styles from './header.module.css';
+import styles from './components.module.css';
 
 export default props => {
   const getActiveBorder = pathName => {
