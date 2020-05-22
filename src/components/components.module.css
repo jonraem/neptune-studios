@@ -1,0 +1,19 @@
+.centerTitle {
+  position: relative;
+  text-align: center;
+}
+
+.centerTitle h3 {
+  width: max-content;
+  margin: 3rem auto;
+  background: #fff;
+}
+
+.centerTitleDivider {
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  background: #d8d8d8;
+  z-index: -1;
+}
