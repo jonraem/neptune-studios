@@ -7,7 +7,7 @@ export default props => (
     <Header currentPath={props.location.pathname} />
     <div className={styles.contactHero}>
       <div className={styles.heroText}>
-        <div className={styles.heroTitles}>
+        <div className={styles.heroTitle}>
           <div className={styles.subtitle}>Contacting</div>
           <h1>Neptune Studios</h1>
         </div>

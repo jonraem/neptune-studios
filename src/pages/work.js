@@ -7,7 +7,7 @@ export default props => (
     <Header currentPath={props.location.pathname} />
     <div className={styles.workHero}>
       <div className={styles.heroText}>
-        <div className={styles.heroTitles}>
+        <div className={styles.heroTitle}>
           <div className={styles.subtitle}>What has</div>
           <h1>happened lately</h1>
         </div>
