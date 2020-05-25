@@ -46,3 +46,27 @@
   background: #d8d8d8;
   z-index: -1;
 }
+
+.caseCard {
+  background: #fff;
+  flex: 1;
+  text-align: center;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.caseCardTitle {
+  font-family: 'Zilla Slab', sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.caseCardDescription {
+  margin-bottom: 1rem;
+}
+
+.caseCardLink {
+  color: #005783;
+  text-decoration: none;
+}

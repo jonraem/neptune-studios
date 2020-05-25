@@ -2,7 +2,30 @@ import React from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import CenterTitle from '../components/centerTitle';
+import CaseCard from '../components/caseCard';
 import styles from './pages.module.css';
+import diverHero from '../assets/png/diver-hero.png';
+
+const cases = [
+  {
+    title: 'Case Väre',
+    description: 'Your personal Energy Coach',
+    linkTo: '/work',
+    imagePath: '',
+  },
+  {
+    title: 'Case MacGregor',
+    description: 'Smart inventory system',
+    linkTo: '/work',
+    imagePath: '',
+  },
+  {
+    title: 'Case ABB',
+    description: 'Presenting new drive',
+    linkTo: '/work',
+    imagePath: '',
+  },
+];
 
 export default props => (
   <div className={styles.page}>
@@ -21,6 +44,11 @@ export default props => (
           seas or taking dives to the deep-end without proper preparation.
         </p>
       </div>
+      <img
+        className={styles.mainHeroImage}
+        src={diverHero}
+        alt="Illustration of a diver"
+      />
     </div>
     <div className={styles.content}>
       <div>
@@ -45,14 +73,22 @@ export default props => (
           </div>
         </div>
       </div>
-      <div className={styles.mainPeek}>
+      <div className={styles.mainCases}>
         <div className={styles.fullWidthGrey} />
         <h3>Have a peek</h3>
-        <div>Some of the selected works from different creative fields.</div>
-        <div>
-          <div></div> {/* Case cards */}
-          <div></div>
-          <div></div>
+        <p className={styles.largePara}>
+          Some of the selected works from different creative fields.
+        </p>
+        <div className={styles.mainCaseCards}>
+          {cases.map((caseItem, index) => (
+            <CaseCard
+              key={`${caseItem.title}:${index}`}
+              title={caseItem.title}
+              description={caseItem.description}
+              linkTo={caseItem.linkTo}
+              imagePath={caseItem.imagePath}
+            />
+          ))}
         </div>
       </div>
     </div>

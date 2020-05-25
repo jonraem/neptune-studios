@@ -92,6 +92,13 @@ body {
   background-color: #5dbbe3;
 }
 
+.mainHeroImage {
+  position: absolute;
+  top: 5rem;
+  right: 0;
+  height: 95vh;
+}
+
 .mainHelp {
   display: flex;
   height: 10rem;
@@ -115,8 +122,12 @@ body {
   text-transform: uppercase;
 }
 
-.mainPeek {
+.mainCases {
   composes: fullWidthGrey;
+}
+
+.mainCaseCards {
+  display: flex;
 }
 
 /* WORK */
