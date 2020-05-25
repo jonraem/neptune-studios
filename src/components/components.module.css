@@ -54,6 +54,7 @@
 .centerTitle h3 {
   width: max-content;
   margin: 3rem auto;
+  padding: 0 2rem;
   background: #fff;
 }
 
