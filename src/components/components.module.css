@@ -1,3 +1,5 @@
+/* HEADER */
+
 .header {
   position: absolute;
   display: flex;
@@ -23,9 +25,29 @@
   margin-right: 2rem;
 }
 
+/* FOOTER */
+
 .footer {
-  margin: 1rem 0 1rem 5rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 2rem 1rem 5rem;
+  padding: 2rem 0;
+  border-top: 1px solid #d8d8d8;
 }
+
+.footerDivider {
+  width: ;
+}
+
+.footerSocial {
+  display: flex;
+}
+
+.footerSocialLink {
+  margin-left: 1rem;
+}
+
+/* CENTER TITLE */
 
 .centerTitle {
   position: relative;
@@ -46,6 +68,8 @@
   background: #d8d8d8;
   z-index: -1;
 }
+
+/* CASE CARD */
 
 .caseCard {
   background: #fff;
