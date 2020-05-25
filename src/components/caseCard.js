@@ -1,8 +1,7 @@
 import React from 'react';
-import { ReactSVG } from 'react-svg';
 import { Link } from 'gatsby';
 import styles from './components.module.css';
-import arrowRightBlue from '../assets/svg/arrow-right--blue.svg';
+import { ReactComponent as ArrowRight } from '../assets/svg/arrow-right--blue.svg';
 
 export default props => {
   return (
@@ -15,7 +14,7 @@ export default props => {
       {!!props.linkTo && (
         <Link className={styles.caseCardLink} to={props.linkTo}>
           LEARN MORE
-          <ReactSVG src={arrowRightBlue} />
+          <ArrowRight />
         </Link>
       )}
     </div>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { ReactSVG } from 'react-svg';
-import neptuneStudiosIcon from '../assets/svg/neptune-studios.svg';
+import { ReactComponent as NeptuneStudios } from '../assets/svg/neptune-studios.svg';
 import styles from './components.module.css';
 
 export default props => {
@@ -13,7 +12,7 @@ export default props => {
 
   return (
     <div className={styles.header}>
-      <ReactSVG src={neptuneStudiosIcon} className={styles.headerLogo} />
+      <NeptuneStudios className={styles.headerLogo} />
       <div className={styles.headerLinks}>
         <Link to="/" className={styles.headerLink} style={getActiveBorder('/')}>
           Main
