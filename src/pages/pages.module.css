@@ -163,6 +163,11 @@ body {
   height: 92vh;
 }
 
+.aboutHighlights {
+  display: flex;
+  margin: 4rem 0;
+}
+
 .aboutDetails {
   display: flex;
   height: 10rem;

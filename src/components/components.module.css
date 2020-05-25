@@ -100,3 +100,29 @@
   height: 1.5rem;
   margin-left: 0.75rem;
 }
+
+/* HIGHLIGHT */
+
+.highlight {
+  flex: 1;
+  margin: 1rem;
+}
+
+.highlightHeader {
+  display: flex;
+  margin-bottom: 3rem;
+  height: 7rem;
+}
+
+.highlightTitles {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+
+.highlightTitle {
+  font-family: 'Zilla Slab', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
