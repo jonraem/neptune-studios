@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from '../components/header';
+import Footer from '../components/footer';
 import styles from './pages.module.css';
+import pyryHero from '../assets/png/pyry-hero.png';
 
 export default props => (
   <div className={styles.page}>
@@ -16,6 +18,12 @@ export default props => (
           and problem solving.
         </div>
       </div>
+      <img
+        className={styles.aboutHeroImage}
+        src={pyryHero}
+        alt="Illustration of a diver"
+      />
     </div>
+    <Footer />
   </div>
 );
