@@ -30,6 +30,7 @@
 .footer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 2rem 2rem 1rem 5rem;
   padding: 2rem 0;
   border-top: 1px solid #d8d8d8;
@@ -89,4 +90,13 @@
 .caseCardLink {
   color: #005783;
   text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.caseCardLink svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: 0.75rem;
 }

@@ -12,10 +12,10 @@ export default props => {
         className={styles.footerCopyright}
       >{`© Neptune Studios ${currentYear}`}</div>
       <div className={styles.footerSocial}>
-        <a href="https://www.linkedin.com">
+        <a href="https://www.linkedin.com" className={styles.footerSocialLink}>
           <LinkedIn />
         </a>
-        <a href="https://www.behance.net">
+        <a href="https://www.behance.net" className={styles.footerSocialLink}>
           <Behance />
         </a>
       </div>
