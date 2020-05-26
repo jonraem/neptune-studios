@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@svgr/webpack": "^5.4.0",
+    "focus-visible": "^5.1.0",
     "gatsby": "^2.22.9",
     "gatsby-plugin-svgr": "^2.0.2",
     "react": "^16.13.1",
