@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from '../components/header';
+import Footer from '../components/Footer';
 import styles from './pages.module.css';
+import caseHero from '../assets/png/case-hero.png';
 
 export default props => (
   <div className={styles.page}>
@@ -18,6 +20,12 @@ export default props => (
           branding field, illustration and photography.
         </p>
       </div>
+      <img
+        className={styles.workHeroImage}
+        src={caseHero}
+        alt="Phone with Väppi application"
+      />
     </div>
+    <Footer />
   </div>
 );

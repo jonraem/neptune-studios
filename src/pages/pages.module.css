@@ -154,6 +154,13 @@ input:focus:not(.focus-visible) {
   background: #21b8bf;
 }
 
+.workHeroImage {
+  composes: heroImage;
+  top: 12vh;
+  right: 5rem;
+  height: 88vh;
+}
+
 /* ABOUT */
 
 .aboutHero {
