@@ -1,3 +1,12 @@
+.unstyledButton {
+  border: none;
+  padding: 0;
+  background: none;
+  height: auto;
+  width: auto;
+  cursor: pointer;
+}
+
 /* HEADER */
 
 .header {
@@ -169,4 +178,43 @@
 
 .leadFormSubmit:hover {
   background: #747474;
+}
+
+/* MENU */
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background: #fff;
+}
+
+.menuLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50%;
+  margin-top: 4rem;
+}
+
+.menuLink {
+  font-family: 'Zilla Slab', sans-serif;
+  text-decoration: none;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.menuCloseButton {
+  composes: unstyledButton;
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+}
+
+.menuCloseButton svg {
+  width: 2rem;
+  height: 2rem;
 }
