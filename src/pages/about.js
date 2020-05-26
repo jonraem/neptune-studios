@@ -8,6 +8,7 @@ import pyryHero from '../assets/png/pyry-hero.png';
 import { ReactComponent as Title } from '../assets/svg/title.svg';
 import { ReactComponent as Path } from '../assets/svg/path.svg';
 import { ReactComponent as Visions } from '../assets/svg/visions.svg';
+import { ReactComponent as CurriculumVitae } from '../assets/svg/curriculum-vitae.svg';
 
 const highlights = [
   {
@@ -64,20 +65,11 @@ export default props => (
           />
         ))}
       </div>
-      <CenterTitle>Detailed information</CenterTitle>
-      <div className={styles.aboutDetails}>
-        <p className={styles.aboutDetailsPara}>
-          Curriculum vitae can be downloaded{' '}
+      <div className={styles.aboutCV}>
+        <CurriculumVitae className={styles.aboutCVIcon} />
+        <div className={styles.aboutCVTitle}>
+          Download Curriculum Vitae{' '}
           <a href="https://www.youtube.com/watch?v=oHg5SJYRHA0">HERE</a>.
-        </p>
-        <div className={styles.divider} />
-        <div className={styles.aboutDetailsItems}>
-          <div className={styles.aboutDetailsItem}>User interface design</div>
-          <div className={styles.aboutDetailsItem}>User experience design</div>
-          <div className={styles.aboutDetailsItem}>Workshops</div>
-          <div className={styles.aboutDetailsItem}>User testing</div>
-          <div className={styles.aboutDetailsItem}>Prototypes</div>
-          <div className={styles.aboutDetailsItem}>Visual design</div>
         </div>
       </div>
     </div>
