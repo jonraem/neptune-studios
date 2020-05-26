@@ -133,10 +133,10 @@
 .leadForm {
   display: flex;
   flex-direction: column;
+  width: 40%;
 }
 
 .leadFormInput {
-  width: 40%;
   background: #f2f2f2;
   color: #0e0c3c;
   font-family: 'Open Sans', sans-serif;
@@ -164,4 +164,9 @@
   font-size: 1.25rem;
   text-transform: uppercase;
   padding: 0.75rem;
+  cursor: pointer;
+}
+
+.leadFormSubmit:hover {
+  background: #747474;
 }

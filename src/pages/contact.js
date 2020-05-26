@@ -35,7 +35,13 @@ export default props => (
         <br />
         Neptune Studios?
       </CenterTitle>
-      <LeadForm />
+      <div className={styles.contactForm}>
+        <LeadForm />
+        <p className={styles.contactFormDescription}>
+          When having a brilliant idea circling around or maybe there is other
+          inquiry, please send a message and we start from there!
+        </p>
+      </div>
     </div>
     <Footer />
   </div>

@@ -206,3 +206,14 @@ input:focus:not(.focus-visible) {
   right: 4rem;
   height: 82vh;
 }
+
+.contactForm {
+  display: flex;
+}
+
+.contactFormDescription {
+  composes: largePara;
+  width: 40%;
+  margin: 0;
+  margin-left: 5rem;
+}
