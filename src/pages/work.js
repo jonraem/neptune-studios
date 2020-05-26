@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../components/header';
-import Footer from '../components/Footer';
+import Footer from '../components/footer';
 import styles from './pages.module.css';
 import caseHero from '../assets/png/case-hero.png';
 
