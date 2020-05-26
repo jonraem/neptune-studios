@@ -55,8 +55,9 @@ export default props => (
     </div>
     <div className={styles.content}>
       <div className={styles.aboutHighlights}>
-        {highlights.map(highlight => (
+        {highlights.map((highlight, index) => (
           <Highlight
+            key={`${highlight.title}:${index}`}
             icon={highlight.icon}
             title={highlight.title}
             subtitle={highlight.subtitle}
