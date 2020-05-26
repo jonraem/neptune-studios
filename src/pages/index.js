@@ -23,8 +23,8 @@ export default props => {
     return matches;
   };
 
-  const isMobile = useMedia('(max-width: 450px)', window.matchMedia);
-  const isTablet = useMedia('(max-width: 1024px)', window.matchMedia);
+  const isMobile = useMedia('(max-width: 480px)', window.matchMedia);
+  const isTablet = useMedia('(max-width: 992px)', window.matchMedia);
 
   useEffect(() => {
     setIsMobile(isMobile);
