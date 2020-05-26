@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { ReactComponent as NeptuneStudios } from '../assets/svg/neptune-studios.svg';
+import { ReactComponent as NeptuneStudios } from '../assets/svg/neptune-studios--white.svg';
 import styles from './components.module.css';
 
 export default props => {
