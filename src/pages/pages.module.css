@@ -44,6 +44,11 @@ body {
   font-weight: 600;
 }
 
+button:focus:not(.focus-visible),
+input:focus:not(.focus-visible) {
+  outline: none;
+}
+
 .largePara {
   font-size: 1.5rem;
   line-height: 2rem;
