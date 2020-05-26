@@ -30,6 +30,7 @@ export default props => {
         className={styles.leadFormInput}
         name="subject"
         placeholder="Your inquiry"
+        rows="6"
         ref={register}
       />
       <button className={styles.leadFormSubmit} type="submit">
