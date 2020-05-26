@@ -127,3 +127,40 @@
   font-weight: 500;
   margin-bottom: 0.5rem;
 }
+
+/* LEAD FORM */
+
+.leadForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.leadFormInput {
+  width: 40%;
+  background: #f2f2f2;
+  color: #0e0c3c;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  border: 2px solid #f2f2f2;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.errorInput {
+  composes: leadFormInput;
+  border: 2px solid #dc143c;
+  background: #fcdbe5;
+}
+
+.leadFormSubmit {
+  width: 14rem;
+  margin-top: 2rem;
+  border: none;
+  border-radius: 4px;
+  background: #979797;
+  color: #fff;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  padding: 0.75rem;
+}
