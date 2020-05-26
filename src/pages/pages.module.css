@@ -193,3 +193,10 @@ body {
   color: #fff;
   background: #3d68b0;
 }
+
+.contactHeroImage {
+  composes: heroImage;
+  top: 14vh;
+  right: 4rem;
+  height: 82vh;
+}

@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from '../components/header';
-import CenterTitle from '../components/centerTitle';
 import Highlight from '../components/highlight';
 import Footer from '../components/footer';
 import styles from './pages.module.css';
