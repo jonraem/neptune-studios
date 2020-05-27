@@ -1,15 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
-import Menu from '../components/menu';
+import React from 'react';
 import Main from './main';
-import MenuContext from '../context/MenuContext';
 
-export default props => {
-  const { isOpen } = useContext(MenuContext);
-
-  return (
-    <>
-      {isOpen && <Menu />}
-      <Main {...props} />
-    </>
-  );
-};
+export default props => <Main {...props} />;
