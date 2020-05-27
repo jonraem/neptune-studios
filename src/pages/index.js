@@ -4,7 +4,6 @@ import Menu from '../components/menu';
 import Main from './main';
 import MediaContext from '../context/MediaContext';
 import MenuContext from '../context/MenuContext';
-import 'focus-visible';
 
 export default props => {
   const { setIsMobile, setIsTablet } = useContext(MediaContext);

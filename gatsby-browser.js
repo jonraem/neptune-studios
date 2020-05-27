@@ -1,3 +1,4 @@
+import 'focus-visible';
 import React from 'react';
 
 import { MediaProvider } from './src/context/MediaContext';
