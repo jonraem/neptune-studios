@@ -2,13 +2,13 @@ import { Link } from 'gatsby';
 import React, { useContext } from 'react';
 import { ReactComponent as Hamburger } from '../assets/svg/hamburger.svg';
 import { ReactComponent as NeptuneStudios } from '../assets/svg/neptune-studios--white.svg';
-import MediaContext from '../context/MediaContext';
 import MenuContext from '../context/MenuContext';
+import useMedia from '../hooks/useMedia';
 import styles from './components.module.css';
 
 export default props => {
-  const { isMobile } = useContext(MediaContext);
   const { setIsOpen } = useContext(MenuContext);
+  const isMobile = useMedia('(max-width: 480px)');
 
   const getActiveBorder = pathName => {
     if (props.currentPath === pathName) {
