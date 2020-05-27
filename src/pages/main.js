@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from '../components/header';
-import Footer from '../components/footer';
-import CenterTitle from '../components/centerTitle';
-import CaseCard from '../components/caseCard';
-import styles from './pages.module.css';
 import diverHero from '../assets/png/diver-hero.png';
+import CaseCard from '../components/caseCard';
+import CenterTitle from '../components/centerTitle';
+import Footer from '../components/footer';
+import Header from '../components/header';
+import styles from './pages.module.css';
 
 const cases = [
   {
