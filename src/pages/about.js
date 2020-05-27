@@ -1,13 +1,13 @@
 import React from 'react';
+import pyryHero from '../assets/png/pyry-hero.png';
+import { ReactComponent as CurriculumVitae } from '../assets/svg/curriculum-vitae.svg';
+import { ReactComponent as Path } from '../assets/svg/path.svg';
+import { ReactComponent as Title } from '../assets/svg/title.svg';
+import { ReactComponent as Visions } from '../assets/svg/visions.svg';
+import Footer from '../components/footer';
 import Header from '../components/header';
 import Highlight from '../components/highlight';
-import Footer from '../components/footer';
 import styles from './pages.module.css';
-import pyryHero from '../assets/png/pyry-hero.png';
-import { ReactComponent as Title } from '../assets/svg/title.svg';
-import { ReactComponent as Path } from '../assets/svg/path.svg';
-import { ReactComponent as Visions } from '../assets/svg/visions.svg';
-import { ReactComponent as CurriculumVitae } from '../assets/svg/curriculum-vitae.svg';
 
 const highlights = [
   {

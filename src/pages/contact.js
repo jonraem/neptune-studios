@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from '../components/header';
-import CenterTitle from '../components/centerTitle';
-import LeadForm from '../components/leadForm';
-import Footer from '../components/footer';
 import contactHero from '../assets/png/contact-hero.png';
+import CenterTitle from '../components/centerTitle';
+import Footer from '../components/footer';
+import Header from '../components/header';
+import LeadForm from '../components/leadForm';
 import styles from './pages.module.css';
 
 export default props => (

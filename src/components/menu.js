@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
 import { Link } from 'gatsby';
-import MenuContext from '../context/MenuContext';
+import React, { useContext } from 'react';
 import { ReactComponent as Cross } from '../assets/svg/cross.svg';
+import MenuContext from '../context/MenuContext';
 import styles from './components.module.css';
 
 export default props => {

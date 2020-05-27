@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
 import { Link } from 'gatsby';
+import React, { useContext } from 'react';
+import { ReactComponent as Hamburger } from '../assets/svg/hamburger.svg';
+import { ReactComponent as NeptuneStudios } from '../assets/svg/neptune-studios--white.svg';
 import MediaContext from '../context/MediaContext';
 import MenuContext from '../context/MenuContext';
-import { ReactComponent as NeptuneStudios } from '../assets/svg/neptune-studios--white.svg';
-import { ReactComponent as Hamburger } from '../assets/svg/hamburger.svg';
 import styles from './components.module.css';
 
 export default props => {

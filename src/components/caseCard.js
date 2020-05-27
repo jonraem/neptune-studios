@@ -1,7 +1,7 @@
-import React from 'react';
 import { Link } from 'gatsby';
-import styles from './components.module.css';
+import React from 'react';
 import { ReactComponent as ArrowRight } from '../assets/svg/arrow-right--blue.svg';
+import styles from './components.module.css';
 
 export default props => {
   return (

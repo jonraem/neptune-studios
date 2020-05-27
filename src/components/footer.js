@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './components.module.css';
-import { ReactComponent as LinkedIn } from '../assets/svg/linkedin.svg';
 import { ReactComponent as Behance } from '../assets/svg/behance.svg';
+import { ReactComponent as LinkedIn } from '../assets/svg/linkedin.svg';
+import styles from './components.module.css';
 
 const currentYear = new Date().getFullYear();
 

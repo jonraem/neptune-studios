@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from '../components/header';
-import Footer from '../components/footer';
-import styles from './pages.module.css';
 import caseHero from '../assets/png/case-hero.png';
+import Footer from '../components/footer';
+import Header from '../components/header';
+import styles from './pages.module.css';
 
 export default props => (
   <div className={styles.page}>
