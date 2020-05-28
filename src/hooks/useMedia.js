@@ -12,7 +12,6 @@ const useMedia = query => {
     media.addListener(listener);
     return () => media.removeListener(listener);
   }, [matches, query]);
-  console.log(matches);
   return matches;
 };
 
