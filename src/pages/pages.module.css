@@ -224,3 +224,9 @@ input:focus:not(.focus-visible) {
   margin: 0;
   margin-left: 5rem;
 }
+
+@media only screen and (max-width: 992px) {
+  .heroImage {
+    display: none;
+  }
+}
