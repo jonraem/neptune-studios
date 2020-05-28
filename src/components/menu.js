@@ -10,6 +10,14 @@ import styles from './components.module.css';
 export default props => {
   const { setIsOpen } = useContext(MenuContext);
 
+  useEffect(() => {
+    var root = document.getElementsByTagName('html')[0];
+    root.classList.add('no-scroll');
+    return () => {
+      root.classList.remove('no-scroll');
+    };
+  }, []);
+
   const getMenuStyle = () => ({
     background: getActiveColorFromPath(props.currentPath),
   });

@@ -7,6 +7,10 @@ html {
   overflow-x: hidden;
 }
 
+html.no-scroll {
+  overflow: hidden;
+}
+
 body {
   margin: 0;
   overflow-x: hidden;
