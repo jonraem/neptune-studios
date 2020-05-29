@@ -142,6 +142,10 @@
   .mainHelpItem {
     font-size: 0.9rem;
   }
+
+  .mainCaseCards {
+    flex-direction: column;
+  }
 }
 
 /* WORK */
