@@ -165,8 +165,13 @@
 
 .highlightHeader {
   display: flex;
-  margin-bottom: 3rem;
   height: 7rem;
+  margin-bottom: 3rem;
+}
+
+.highlightIcon svg {
+  width: 6rem;
+  height: 6rem;
 }
 
 .highlightTitles {
@@ -180,6 +185,31 @@
   font-size: 1.5rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .highlight {
+    margin-bottom: 2rem;
+  }
+
+  .highlightHeader {
+    height: 6rem;
+    margin-bottom: 1rem;
+  }
+
+  .highlightIcon svg {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .highlightTitle {
+    font-size: 1.25rem;
+  }
+
+  .highlightSubtitle,
+  .highlightPara {
+    font-size: 0.9rem;
+  }
 }
 
 /* LEAD FORM */
