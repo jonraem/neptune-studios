@@ -101,6 +101,20 @@
   z-index: -1;
 }
 
+@media only screen and (max-width: 768px) {
+  .centerTitle {
+    text-align: left;
+  }
+
+  .centerTitle h3 {
+    padding: 0;
+  }
+
+  .centerTitleDivider {
+    display: none;
+  }
+}
+
 /* CASE CARD */
 
 .caseCard {
