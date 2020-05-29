@@ -8,6 +8,12 @@
   position: relative;
 }
 
+.hero {
+  min-height: 38rem;
+  height: 100vh;
+  color: #fff;
+}
+
 .heroText {
   width: 30rem;
   position: absolute;
@@ -49,11 +55,22 @@
   background: #f8f8f8;
 }
 
+@media only screen and (max-width: 768px) {
+  .subtitle {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  .heroText {
+    width: 85%;
+    left: 10%;
+  }
+}
+
 /* MAIN */
 
 .mainHero {
-  min-height: 100vh;
-  color: #fff;
+  composes: hero;
   background-color: #5dbbe3;
 }
 
@@ -98,8 +115,7 @@
 /* WORK */
 
 .workHero {
-  min-height: 100vh;
-  color: #fff;
+  composes: hero;
   background: #21b8bf;
 }
 
@@ -113,8 +129,7 @@
 /* ABOUT */
 
 .aboutHero {
-  min-height: 100vh;
-  color: #fff;
+  composes: hero;
   background: #e23c52;
 }
 
@@ -151,8 +166,7 @@
 /* CONTACT */
 
 .contactHero {
-  min-height: 100vh;
-  color: #fff;
+  composes: hero;
   background: #3d68b0;
 }
 

@@ -48,3 +48,10 @@ button:focus:not(.focus-visible),
 input:focus:not(.focus-visible) {
   outline: none;
 }
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+}
