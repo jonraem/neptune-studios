@@ -59,6 +59,25 @@
   margin-left: 1rem;
 }
 
+.footerSocialLink svg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .footer {
+    margin: 1rem;
+    padding: 1rem 0;
+    font-size: 0.75rem;
+    border-top: none;
+  }
+
+  .footerSocialLink svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
 /* CENTER TITLE */
 
 .centerTitle {
