@@ -12,9 +12,9 @@ export default props => {
 
   useEffect(() => {
     var root = document.getElementsByTagName('html')[0];
-    root.classList.add('no-scroll');
+    root.style.overflow = 'hidden';
     return () => {
-      root.classList.remove('no-scroll');
+      root.style.overflow = null;
     };
   }, []);
 
