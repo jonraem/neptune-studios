@@ -66,6 +66,10 @@
     line-height: 1.5rem;
   }
 
+  .heroImage {
+    display: none;
+  }
+
   .subtitle {
     font-size: 1rem;
     margin: 0.5rem 0;
@@ -230,8 +234,14 @@
   margin-left: 5rem;
 }
 
-@media only screen and (max-width: 992px) {
-  .heroImage {
-    display: none;
+@media only screen and (max-width: 768px) {
+  .contactForm {
+    flex-direction: column-reverse;
+  }
+
+  .contactFormDescription {
+    width: 95%;
+    margin: 0;
+    margin-bottom: 2rem;
   }
 }
