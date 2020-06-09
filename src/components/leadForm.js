@@ -14,12 +14,21 @@ export default props => {
         placeholder="Name (Required)"
         ref={register({ required: true })}
       />
+      {errors.name && (
+        <span className={styles.inputError}>Please, enter your name.</span>
+      )}
       <input
         className={errors.email ? styles.errorInput : styles.leadFormInput}
         name="email"
         placeholder="Email (Required)"
         ref={register({ required: true })}
       />
+      {errors.email && (
+        <span className={styles.inputError}>
+          Please, double check your email address. Unfortunately this input
+          field isn’t THAT smart.
+        </span>
+      )}
       <input
         className={styles.leadFormInput}
         name="subject"

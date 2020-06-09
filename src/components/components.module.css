@@ -227,15 +227,24 @@
   font-size: 1rem;
   border: 2px solid #f2f2f2;
   border-radius: 4px;
-  margin-bottom: 2rem;
+  margin: 1rem 0;
   padding: 1rem;
   transition: border 0.25s, background 0.25s;
+}
+
+.leadFormInput:focus {
+  background: #fff;
 }
 
 .errorInput {
   composes: leadFormInput;
   border: 2px solid #dc143c;
-  background: #fcdbe5;
+  background: #fff;
+}
+
+.inputError {
+  margin-bottom: 1rem;
+  color: #e23c52;
 }
 
 .leadFormSubmit {
@@ -243,7 +252,7 @@
   margin-top: 2rem;
   border: none;
   border-radius: 4px;
-  background: #979797;
+  background: #005783;
   color: #fff;
   font-size: 1.25rem;
   text-transform: uppercase;
@@ -252,7 +261,7 @@
 }
 
 .leadFormSubmit:hover {
-  background: #747474;
+  background: #349acd;
 }
 
 @media only screen and (max-width: 768px) {
