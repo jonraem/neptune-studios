@@ -36,13 +36,16 @@ export default props => (
           <div className={styles.subtitle}>Welcome to the</div>
           <h1>Neptune Studios</h1>
         </div>
-        <div className={styles.subtitle}>
-          Design. Usability. User experience…
+        <div className={styles.heroDescription}>
+          <div className={styles.subtitle}>
+            Design. Usability. User experience…
+          </div>
+          <p>
+            The driving forces behind Neptune Studios. No setting sails for
+            rough seas or taking dives to the deep-end without proper
+            preparation.
+          </p>
         </div>
-        <p>
-          The driving forces behind Neptune Studios. No setting sails for rough
-          seas or taking dives to the deep-end without proper preparation.
-        </p>
       </div>
       <img
         className={styles.mainHeroImage}

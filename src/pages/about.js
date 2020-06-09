@@ -42,9 +42,11 @@ export default props => (
           <div className={styles.subtitle}>About</div>
           <h1>Neptune's finest</h1>
         </div>
-        <div className={styles.subtitle}>
-          Neptune Studios is a one man’s vision and voyage in the seas of design
-          and problem solving.
+        <div className={styles.heroDescription}>
+          <div className={styles.subtitle}>
+            Neptune Studios is a one man’s vision and voyage in the seas of
+            design and problem solving.
+          </div>
         </div>
       </div>
       <img

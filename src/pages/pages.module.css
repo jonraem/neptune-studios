@@ -10,19 +10,22 @@
 }
 
 .heroText {
-  width: 30rem;
+  /* width: 30rem;
   position: absolute;
   top: 10rem;
-  left: 15%;
+  left: 15%; */
+  max-width: 1200px;
+  margin: auto;
+  padding: 30vh 1rem 0;
 }
 
 .heroTitle {
+  width: 45vw;
   text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
 }
 
-.heroImage {
-  position: absolute;
-  pointer-events: none;
+.heroDescription {
+  width: 45vw;
 }
 
 .subtitle {
@@ -30,10 +33,15 @@
   margin: 1rem 0;
 }
 
+.heroImage {
+  position: absolute;
+  pointer-events: none;
+}
+
 .content {
-  margin-left: 15%;
-  margin-right: 2rem;
   max-width: 1200px;
+  margin: auto;
+  padding: 0 1rem;
   position: relative;
 }
 
@@ -45,7 +53,7 @@
 .divider {
   height: 100%;
   width: 1px;
-  background-color: #272626;
+  background-color: #d8d8d8;
   margin: 0 3rem;
 }
 
@@ -56,18 +64,23 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .content {
-    width: 90%;
-    margin-left: 5%;
-  }
-
   .largePara {
     font-size: 0.9rem;
     line-height: 1.5rem;
   }
 
+  .heroTitle,
+  .heroDescription {
+    width: unset;
+  }
+
   .heroImage {
     display: none;
+  }
+
+  .content {
+    width: 90%;
+    margin: 0 auto;
   }
 
   .subtitle {
@@ -108,7 +121,7 @@
 }
 
 .mainHelpItems {
-  width: 35%;
+  width: 30%;
 }
 
 .mainHelpItem {
