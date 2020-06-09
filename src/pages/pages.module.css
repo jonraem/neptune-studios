@@ -16,7 +16,7 @@
   left: 15%; */
   max-width: 1200px;
   margin: auto;
-  padding: 30vh 1rem 0;
+  padding: 30vh 2rem 0;
 }
 
 .heroTitle {
@@ -30,7 +30,7 @@
 
 .subtitle {
   font-size: 1.5rem;
-  margin: 1rem 0;
+  margin: 1rem 0 1.5rem;
 }
 
 .heroImage {
@@ -41,7 +41,7 @@
 .content {
   max-width: 1200px;
   margin: auto;
-  padding: 0 1rem;
+  padding: 0 2rem;
   position: relative;
 }
 
@@ -79,7 +79,6 @@
   }
 
   .content {
-    width: 90%;
     margin: 0 auto;
   }
 

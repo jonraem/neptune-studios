@@ -16,7 +16,7 @@ export default props => (
           <h1>Neptune Studios</h1>
         </div>
         <div className={styles.heroDescription}>
-          <div className={styles.subtitle}>
+          <div className={styles.subtitle} style={{ marginBottom: '2rem' }}>
             Hesitating to contact Neptune Studios? Do not, we’re here to help!
           </div>
           <div className={styles.subtitle}>
