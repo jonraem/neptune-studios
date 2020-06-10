@@ -4,7 +4,7 @@
 }
 
 .hero {
-  min-height: 38rem;
+  min-height: 34rem;
   height: 100vh;
   color: #fff;
 }
@@ -36,6 +36,7 @@
 .heroImage {
   position: absolute;
   pointer-events: none;
+  transition: opacity 0.2s;
 }
 
 .content {
@@ -63,10 +64,24 @@
   background: #f8f8f8;
 }
 
+@media only screen and (max-width: 1024px) {
+  .heroImage {
+    opacity: 0.25;
+  }
+
+  .heroText {
+    padding: 28vh 2rem 0;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .largePara {
     font-size: 0.9rem;
     line-height: 1.5rem;
+  }
+
+  .hero {
+    max-height: 46rem;
   }
 
   .heroTitle,
@@ -138,6 +153,13 @@
   display: flex;
 }
 
+@media only screen and (max-width: 1200px) {
+  .mainHeroImage {
+    top: 32vh;
+    height: 70vh;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .mainHelp {
     flex-direction: column-reverse;
@@ -178,6 +200,14 @@
   height: 88vh;
 }
 
+@media only screen and (max-width: 1200px) {
+  .workHeroImage {
+    top: 34vh;
+    right: 3rem;
+    height: 62vh;
+  }
+}
+
 /* ABOUT */
 
 .aboutHero {
@@ -187,9 +217,9 @@
 
 .aboutHeroImage {
   composes: heroImage;
-  top: 8vh;
+  top: 12vh;
   right: 0;
-  height: 92vh;
+  height: 88vh;
 }
 
 .aboutHighlights {
@@ -213,6 +243,13 @@
 
 .aboutCVTitle {
   composes: largePara;
+}
+
+@media only screen and (max-width: 1200px) {
+  .aboutHeroImage {
+    top: 35vh;
+    height: 65vh;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -244,6 +281,13 @@
   width: 40%;
   margin: 0;
   margin-left: 5rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .contactHeroImage {
+    top: 35vh;
+    height: 62vh;
+  }
 }
 
 @media only screen and (max-width: 768px) {
