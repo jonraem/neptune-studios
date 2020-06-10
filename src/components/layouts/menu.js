@@ -1,12 +1,21 @@
 import React, { useContext } from 'react';
+import ReactModal from 'react-modal';
 import MenuContext from '../../context/MenuContext';
 import Menu from '../menu';
 
+ReactModal.setAppElement('#___gatsby');
+
 export default props => {
-  const { isOpen } = useContext(MenuContext);
+  const { isOpen, setIsOpen } = useContext(MenuContext);
   return (
     <>
-      {isOpen && <Menu currentPath={props.currentPath} />}
+      <ReactModal
+        isOpen={isOpen}
+        onRequestClose={() => setIsOpen(false)}
+        contentLabel="Menu"
+      >
+        <Menu currentPath={props.currentPath} />}
+      </ReactModal>
       {props.children}
     </>
   );
