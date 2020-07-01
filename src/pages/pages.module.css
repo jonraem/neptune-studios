@@ -36,7 +36,6 @@
 .heroImage {
   position: absolute;
   pointer-events: none;
-  transition: opacity 0.2s;
 }
 
 .content {
@@ -65,10 +64,6 @@
 }
 
 @media only screen and (max-width: 1024px) {
-  .heroImage {
-    opacity: 0.25;
-  }
-
   .heroText {
     padding: 28vh 2rem 0;
   }
@@ -124,18 +119,18 @@
 
 .mainHelp {
   display: flex;
-  height: 10rem;
-  margin-bottom: 8rem;
+  height: 12rem;
+  margin-bottom: 6rem;
 }
 
 .mainHelpPara {
   composes: largePara;
-  width: 65%;
+  width: 55%;
   margin: 0;
 }
 
 .mainHelpItems {
-  width: 30%;
+  width: 40%;
 }
 
 .mainHelpItem {
@@ -161,6 +156,12 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .mainCaseCards {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 480px) {
   .mainHelp {
     flex-direction: column-reverse;
     height: unset;
@@ -179,10 +180,6 @@
 
   .mainHelpItem {
     font-size: 0.9rem;
-  }
-
-  .mainCaseCards {
-    flex-direction: column;
   }
 }
 
