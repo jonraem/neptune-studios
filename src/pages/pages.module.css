@@ -4,28 +4,26 @@
 }
 
 .hero {
+  position: relative;
   min-height: 34rem;
   height: 100vh;
   color: #fff;
+  z-index: -1;
 }
 
 .heroText {
-  /* width: 30rem;
-  position: absolute;
-  top: 10rem;
-  left: 15%; */
   max-width: 1200px;
   margin: auto;
   padding: 30vh 2rem 0;
 }
 
 .heroTitle {
-  width: 45vw;
+  width: 36rem;
   text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 .heroDescription {
-  width: 45vw;
+  width: 36rem;
 }
 
 .subtitle {
@@ -63,7 +61,26 @@
   background: #f8f8f8;
 }
 
+@media only screen and (max-width: 1200px) {
+  .heroText {
+    max-width: 1000px;
+  }
+
+  .heroText .subtitle {
+    font-size: 1.25rem;
+  }
+
+  .heroTitle,
+  .heroDescription {
+    width: 42vw;
+  }
+}
+
 @media only screen and (max-width: 1024px) {
+  .hero {
+    max-height: 68rem;
+  }
+
   .heroText {
     padding: 28vh 2rem 0;
   }
@@ -112,9 +129,9 @@
 
 .mainHeroImage {
   composes: heroImage;
-  top: 5rem;
+  top: 8rem;
   right: 0;
-  height: 95vh;
+  height: 80vh;
 }
 
 .mainHelp {
@@ -150,8 +167,8 @@
 
 @media only screen and (max-width: 1200px) {
   .mainHeroImage {
-    top: 32vh;
-    height: 70vh;
+    top: 20vh;
+    height: 56vh;
   }
 }
 
@@ -192,16 +209,16 @@
 
 .workHeroImage {
   composes: heroImage;
-  top: 12vh;
+  top: 20vh;
   right: 5rem;
-  height: 88vh;
+  height: 74vh;
 }
 
 @media only screen and (max-width: 1200px) {
   .workHeroImage {
-    top: 34vh;
+    top: 30vh;
     right: 3rem;
-    height: 62vh;
+    height: 46vh;
   }
 }
 
@@ -214,9 +231,9 @@
 
 .aboutHeroImage {
   composes: heroImage;
-  top: 12vh;
-  right: 0;
-  height: 88vh;
+  bottom: 0;
+  right: 2rem;
+  height: 76vh;
 }
 
 .aboutHighlights {
@@ -244,8 +261,7 @@
 
 @media only screen and (max-width: 1200px) {
   .aboutHeroImage {
-    top: 35vh;
-    height: 65vh;
+    height: 50vh;
   }
 }
 
@@ -264,9 +280,9 @@
 
 .contactHeroImage {
   composes: heroImage;
-  top: 14vh;
-  right: 4rem;
-  height: 82vh;
+  top: 26vh;
+  right: 6rem;
+  height: 68vh;
 }
 
 .contactForm {
@@ -282,8 +298,9 @@
 
 @media only screen and (max-width: 1200px) {
   .contactHeroImage {
-    top: 35vh;
-    height: 62vh;
+    top: 32vh;
+    height: 44vh;
+    right: 4rem;
   }
 }
 

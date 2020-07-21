@@ -48,6 +48,17 @@ body {
   outline: none;
 }
 
+@media only screen and (max-width: 1200px) {
+  h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+
+  .heroText p {
+    font-size: 0.9rem;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   h1 {
     font-size: 3rem;
