@@ -233,7 +233,7 @@
   composes: heroImage;
   bottom: 0;
   right: 2rem;
-  height: 76vh;
+  height: 84vh;
 }
 
 .aboutHighlights {
@@ -261,7 +261,7 @@
 
 @media only screen and (max-width: 1200px) {
   .aboutHeroImage {
-    height: 50vh;
+    height: 60vh;
   }
 }
 

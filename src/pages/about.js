@@ -1,5 +1,5 @@
 import React from 'react';
-import pyryHero from '../assets/png/pyry-hero.png';
+import aboutHero from '../assets/png/about-hero.png';
 import { ReactComponent as CurriculumVitae } from '../assets/svg/curriculum-vitae.svg';
 import { ReactComponent as Path } from '../assets/svg/path.svg';
 import { ReactComponent as Title } from '../assets/svg/title.svg';
@@ -51,7 +51,7 @@ export default props => (
       </div>
       <img
         className={styles.aboutHeroImage}
-        src={pyryHero}
+        src={aboutHero}
         alt="Pyry Nousiainen"
       />
     </div>
