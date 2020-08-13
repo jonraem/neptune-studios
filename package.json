@@ -14,10 +14,13 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",
     "@svgr/webpack": "^5.4.0",
+    "dotenv": "^8.2.0",
     "focus-visible": "^5.1.0",
     "gatsby": "^2.24.37",
     "gatsby-plugin-svgr": "^2.0.2",
+    "gatsby-source-contentful": "^2.3.36",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-hook-form": "^6.3.1",
