@@ -11,6 +11,11 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 module.exports = {
+  siteMetadata: {
+    title: 'Neptune Studios',
+    linkedIn: 'https://www.linkedin.com/in/pnousiainen',
+    behance: 'https://www.behance.net/pnousiainen',
+  },
   plugins: [
     {
       resolve: 'gatsby-source-contentful',
