@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import diverHero from '../assets/png/diver-hero.png';
 import CaseCard from '../components/caseCard';
 import CenterTitle from '../components/centerTitle';
+import Hero from '../components/hero';
 import Footer from '../components/footer';
 import Header from '../components/header';
 import styles from './pages.module.css';
@@ -31,25 +32,17 @@ const cases = [
 export default ({ data, ...props }) => (
   <div className={styles.page}>
     <Header currentPath={props.location.pathname} />
-    <div className={styles.mainHero}>
-      <div className={styles.heroText}>
-        <div className={styles.heroTitle}>
-          <div className={styles.subtitle}>{data.hero.subtitle}</div>
-          <h1>{data.hero.title}</h1>
-        </div>
-        <div
-          className={styles.heroDescription}
-          dangerouslySetInnerHTML={{
-            __html: data.hero.description.childContentfulRichText.html,
-          }}
+    <Hero
+      for="main"
+      heroStyles={styles.mainHero}
+      heroImage={
+        <img
+          className={styles.mainHeroImage}
+          src={diverHero}
+          alt="Illustration of a diver"
         />
-      </div>
-      <img
-        className={styles.mainHeroImage}
-        src={diverHero}
-        alt="Illustration of a diver"
-      />
-    </div>
+      }
+    />
     <div className={styles.content}>
       <div>
         <CenterTitle>

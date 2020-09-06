@@ -5,6 +5,7 @@ import { ReactComponent as CurriculumVitae } from '../assets/svg/curriculum-vita
 import { ReactComponent as Path } from '../assets/svg/path.svg';
 import { ReactComponent as Title } from '../assets/svg/title.svg';
 import { ReactComponent as Visions } from '../assets/svg/visions.svg';
+import Hero from '../components/hero';
 import Footer from '../components/footer';
 import Header from '../components/header';
 import Highlight from '../components/highlight';
@@ -37,25 +38,17 @@ const highlights = [
 export default ({ data, ...props }) => (
   <div className={styles.page}>
     <Header currentPath={props.location.pathname} />
-    <div className={styles.aboutHero}>
-      <div className={styles.heroText}>
-        <div className={styles.heroTitle}>
-          <div className={styles.subtitle}>{data.hero.subtitle}</div>
-          <h1>{data.hero.title}</h1>
-        </div>
-        <div
-          className={styles.heroDescription}
-          dangerouslySetInnerHTML={{
-            __html: data.hero.description.childContentfulRichText.html,
-          }}
+    <Hero
+      for="about"
+      heroStyles={styles.aboutHero}
+      heroImage={
+        <img
+          className={styles.aboutHeroImage}
+          src={aboutHero}
+          alt="Pyry Nousiainen"
         />
-      </div>
-      <img
-        className={styles.aboutHeroImage}
-        src={aboutHero}
-        alt="Pyry Nousiainen"
-      />
-    </div>
+      }
+    />
     <div className={styles.content}>
       <div className={styles.aboutHighlights}>
         {highlights.map((highlight, index) => (
