@@ -1,1 +1,6 @@
-{"componentChunkName":"component---src-pages-main-js","path":"/main/","result":{"pageContext":{}},"staticQueryHashes":["716385884"]}
+{
+  "componentChunkName": "component---src-pages-main-js",
+  "path": "/main/",
+  "result": { "data": { "hero": null }, "pageContext": {} },
+  "staticQueryHashes": ["716385884"]
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import aboutHero from '../assets/png/about-hero.png';
 import { ReactComponent as CurriculumVitae } from '../assets/svg/curriculum-vitae.svg';
 import { ReactComponent as Path } from '../assets/svg/path.svg';
@@ -33,21 +34,21 @@ const highlights = [
   },
 ];
 
-export default props => (
+export default ({ data, ...props }) => (
   <div className={styles.page}>
     <Header currentPath={props.location.pathname} />
     <div className={styles.aboutHero}>
       <div className={styles.heroText}>
         <div className={styles.heroTitle}>
-          <div className={styles.subtitle}>About</div>
-          <h1>Neptune's finest</h1>
+          <div className={styles.subtitle}>{data.hero.subtitle}</div>
+          <h1>{data.hero.title}</h1>
         </div>
-        <div className={styles.heroDescription}>
-          <div className={styles.subtitle}>
-            Neptune Studios is a one man’s vision and voyage in the seas of
-            design and problem solving.
-          </div>
-        </div>
+        <div
+          className={styles.heroDescription}
+          dangerouslySetInnerHTML={{
+            __html: data.hero.description.childContentfulRichText.html,
+          }}
+        />
       </div>
       <img
         className={styles.aboutHeroImage}
@@ -78,3 +79,17 @@ export default props => (
     <Footer />
   </div>
 );
+
+export const query = graphql`
+  query {
+    hero: contentfulHero(contentfulid: { eq: "about:hero" }) {
+      title
+      subtitle
+      description {
+        childContentfulRichText {
+          html
+        }
+      }
+    }
+  }
+`;

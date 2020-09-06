@@ -1,1 +1,19 @@
-{"componentChunkName":"component---src-pages-about-js","path":"/about/","result":{"pageContext":{}},"staticQueryHashes":["716385884"]}
+{
+  "componentChunkName": "component---src-pages-about-js",
+  "path": "/about/",
+  "result": {
+    "data": {
+      "hero": {
+        "title": "Neptune’s finest",
+        "subtitle": "About",
+        "description": {
+          "childContentfulRichText": {
+            "html": "<p>Neptune Studios is a one man’s vision and voyage into the seas of design and problem solving. </p>"
+          }
+        }
+      }
+    },
+    "pageContext": {}
+  },
+  "staticQueryHashes": ["716385884"]
+}

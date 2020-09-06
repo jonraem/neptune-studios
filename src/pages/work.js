@@ -1,26 +1,25 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import caseHero from '../assets/png/case-hero.png';
 import Footer from '../components/footer';
 import Header from '../components/header';
 import styles from './pages.module.css';
 
-export default props => (
+export default ({ data, ...props }) => (
   <div className={styles.page}>
     <Header currentPath={props.location.pathname} />
     <div className={styles.workHero}>
       <div className={styles.heroText}>
         <div className={styles.heroTitle}>
-          <div className={styles.subtitle}>What has</div>
-          <h1>happened lately</h1>
+          <div className={styles.subtitle}>{data.hero.subtitle}</div>
+          <h1>{data.hero.title}</h1>
         </div>
-        <div className={styles.heroDescription}>
-          <div className={styles.subtitle}>(Or selected works).</div>
-          <p>
-            Eventhough digital product design has taken most of the time
-            nowadays, this section also presents some examples from the graphic
-            design and branding field, illustration and photography.
-          </p>
-        </div>
+        <div
+          className={styles.heroDescription}
+          dangerouslySetInnerHTML={{
+            __html: data.hero.description.childContentfulRichText.html,
+          }}
+        />
       </div>
       <img
         className={styles.workHeroImage}
@@ -31,3 +30,17 @@ export default props => (
     <Footer />
   </div>
 );
+
+export const query = graphql`
+  query {
+    hero: contentfulHero(contentfulid: { eq: "work:hero" }) {
+      title
+      subtitle
+      description {
+        childContentfulRichText {
+          html
+        }
+      }
+    }
+  }
+`;

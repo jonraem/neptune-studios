@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import diverHero from '../assets/png/diver-hero.png';
 import CaseCard from '../components/caseCard';
 import CenterTitle from '../components/centerTitle';
@@ -27,24 +28,17 @@ const cases = [
   },
 ];
 
-export default props => (
+export default ({ data, ...props }) => (
   <div className={styles.page}>
     <Header currentPath={props.location.pathname} />
     <div className={styles.mainHero}>
       <div className={styles.heroText}>
         <div className={styles.heroTitle}>
-          <div className={styles.subtitle}>Welcome to the</div>
-          <h1>Neptune Studios</h1>
+          <div className={styles.subtitle}>{data.hero.subtitle}</div>
+          <h1>{data.hero.title}</h1>
         </div>
         <div className={styles.heroDescription}>
-          <div className={styles.subtitle}>
-            Design. Usability. User experience…
-          </div>
-          <p>
-            The driving forces behind Neptune Studios. No setting sails for
-            rough seas or taking dives to the deep-end without proper
-            preparation.
-          </p>
+          {data.hero.description.childContentfulRichText.html}
         </div>
       </div>
       <img
@@ -98,3 +92,17 @@ export default props => (
     <Footer />
   </div>
 );
+
+export const query = graphql`
+  query {
+    hero: contentfulHero(contentfulid: { eq: "main:hero" }) {
+      title
+      subtitle
+      description {
+        childContentfulRichText {
+          html
+        }
+      }
+    }
+  }
+`;
