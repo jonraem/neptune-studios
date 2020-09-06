@@ -73,13 +73,13 @@ export default ({ data, ...props }) => (
           Some of the selected works from different creative fields.
         </p>
         <div className={styles.mainCaseCards}>
-          {cases.map((caseItem, index) => (
+          {data.allContentfulCase.edges.reverse().map((edge, index) => (
             <CaseCard
-              key={`${caseItem.title}:${index}`}
-              title={caseItem.title}
-              description={caseItem.description}
-              linkTo={caseItem.linkTo}
-              imagePath={caseItem.imagePath}
+              key={`${edge.node.title}:${index}`}
+              title={edge.node.title}
+              subtitle={edge.node.subtitle}
+              linkTo={edge.node.linkTo}
+              imagePath={edge.node.imagePath}
             />
           ))}
         </div>
@@ -91,12 +91,13 @@ export default ({ data, ...props }) => (
 
 export const query = graphql`
   query {
-    hero: contentfulHero(contentfulid: { eq: "main:hero" }) {
-      title
-      subtitle
-      description {
-        childContentfulRichText {
-          html
+    allContentfulCase {
+      edges {
+        node {
+          contentfulid
+          title
+          subtitle
+          URL
         }
       }
     }

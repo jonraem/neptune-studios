@@ -10,7 +10,7 @@ export default props => {
         {/* <img path={props.imagePath} /> */}
       </div>
       <div className={styles.caseCardTitle}>{props.title}</div>
-      <div className={styles.caseCardDescription}>{props.description}</div>
+      <div className={styles.caseCardSubtitle}>{props.subtitle}</div>
       {!!props.linkTo && (
         <Link className={styles.caseCardLink} to={props.linkTo}>
           LEARN MORE
