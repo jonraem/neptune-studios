@@ -129,7 +129,7 @@
   font-family: 'Zilla Slab', sans-serif;
   font-weight: 600;
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 }
 
 .caseCardSubtitle {
@@ -148,6 +148,11 @@
   width: 1.5rem;
   height: 1.5rem;
   margin-left: 0.75rem;
+}
+
+.caseCardImage {
+  height: 18rem;
+  overflow: hidden;
 }
 
 @media only screen and (max-width: 768px) {

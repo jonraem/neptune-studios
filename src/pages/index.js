@@ -78,8 +78,8 @@ export default ({ data, ...props }) => (
               key={`${edge.node.title}:${index}`}
               title={edge.node.title}
               subtitle={edge.node.subtitle}
-              linkTo={edge.node.linkTo}
-              imagePath={edge.node.imagePath}
+              linkTo={edge.node.URL}
+              imagePath={edge.node.image && edge.node.image.fluid}
             />
           ))}
         </div>
@@ -98,6 +98,11 @@ export const query = graphql`
           title
           subtitle
           URL
+          image {
+            fluid {
+              ...GatsbyContentfulFluid
+            }
+          }
         }
       }
     }
