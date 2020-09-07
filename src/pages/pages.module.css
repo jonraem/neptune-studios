@@ -237,7 +237,7 @@
   height: 84vh;
 }
 
-.aboutHighlights {
+.aboutFeatures {
   display: flex;
   margin: 4rem 0;
 }
@@ -267,7 +267,7 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .aboutHighlights {
+  .aboutFeatures {
     flex-direction: column;
   }
 }

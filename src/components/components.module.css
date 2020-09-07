@@ -161,31 +161,31 @@
   }
 }
 
-/* HIGHLIGHT */
+/* FEATURE */
 
-.highlight {
+.feature {
   flex: 1;
   margin: 1rem;
 }
 
-.highlightHeader {
+.featureHeader {
   display: flex;
   height: 7rem;
   margin-bottom: 3rem;
 }
 
-.highlightIcon svg {
-  width: 6rem;
-  height: 6rem;
+.featureIcon {
+  width: 5rem;
+  height: 5rem;
 }
 
-.highlightTitles {
+.featureTitles {
   display: flex;
   flex-direction: column;
   margin-left: 1rem;
 }
 
-.highlightTitle {
+.featureTitle {
   font-family: 'Zilla Slab', sans-serif;
   font-size: 1.5rem;
   font-weight: 500;
@@ -193,26 +193,26 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .highlight {
+  .feature {
     margin-bottom: 2rem;
   }
 
-  .highlightHeader {
+  .featureHeader {
     height: 6rem;
     margin-bottom: 1rem;
   }
 
-  .highlightIcon svg {
+  .featureIcon {
     width: 4rem;
     height: 4rem;
   }
 
-  .highlightTitle {
+  .featureTitle {
     font-size: 1.25rem;
   }
 
-  .highlightSubtitle,
-  .highlightPara {
+  .featureSubtitle,
+  .featureDescription {
     font-size: 0.9rem;
   }
 }
