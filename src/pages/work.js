@@ -4,6 +4,7 @@ import caseHero from '../assets/png/case-hero.png';
 import Hero from '../components/hero';
 import Footer from '../components/footer';
 import Header from '../components/header';
+import ImageAndText from '../components/imageAndText';
 import styles from './pages.module.css';
 
 export default ({ data, ...props }) => (
@@ -20,18 +21,34 @@ export default ({ data, ...props }) => (
         />
       }
     />
+    <div className={styles.workCases}>
+      {data.allContentfulCase.edges.reverse().map(edge => {
+        return (
+          <ImageAndText
+            key={edge.node.contentfulid}
+            title={edge.node.title}
+            description={edge.node.description}
+            linkTo={edge.node.URL}
+          />
+        );
+      })}
+    </div>
     <Footer />
   </div>
 );
 
 export const query = graphql`
   query {
-    hero: contentfulHero(contentfulid: { eq: "work:hero" }) {
-      title
-      subtitle
-      description {
-        childContentfulRichText {
-          html
+    allContentfulCase {
+      edges {
+        node {
+          contentfulid
+          title
+          subtitle
+          description {
+            description
+          }
+          URL
         }
       }
     }

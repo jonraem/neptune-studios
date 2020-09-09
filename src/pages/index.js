@@ -1,4 +1,5 @@
 import React from 'react';
+import { filter } from 'lodash';
 import { graphql } from 'gatsby';
 import diverHero from '../assets/png/diver-hero.png';
 import CaseCard from '../components/caseCard';
@@ -7,27 +8,6 @@ import Hero from '../components/hero';
 import Footer from '../components/footer';
 import Header from '../components/header';
 import styles from './pages.module.css';
-
-const cases = [
-  {
-    title: 'Case Väre',
-    description: 'Your personal Energy Coach',
-    linkTo: '/work',
-    imagePath: '',
-  },
-  {
-    title: 'Case MacGregor',
-    description: 'Smart inventory system',
-    linkTo: '/work',
-    imagePath: '',
-  },
-  {
-    title: 'Case ABB',
-    description: 'Presenting new drive',
-    linkTo: '/work',
-    imagePath: '',
-  },
-];
 
 export default ({ data, ...props }) => (
   <div className={styles.page}>
@@ -73,7 +53,10 @@ export default ({ data, ...props }) => (
           Some of the selected works from different creative fields.
         </p>
         <div className={styles.mainCaseCards}>
-          {data.allContentfulCase.edges.reverse().map((edge, index) => (
+          {filter(
+            data.allContentfulCase.edges.reverse(),
+            edge => edge.node.contentfulid !== 'case:various'
+          ).map((edge, index) => (
             <CaseCard
               key={`${edge.node.title}:${index}`}
               title={edge.node.title}
