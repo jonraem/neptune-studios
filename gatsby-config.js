@@ -9,6 +9,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 module.exports = {
+  pathPrefix: '/neptune-studios',
   siteMetadata: {
     title: 'Neptune Studios',
     linkedIn: 'https://www.linkedin.com/in/pnousiainen',
