@@ -2,16 +2,16 @@ import { get } from 'lodash';
 import { useEffect, useState } from 'react';
 
 const useMedia = query => {
-  const [matches, setMatches] = useState(
-    get(window.matchMedia(query), 'matches')
-  );
+  const matchedMedia =
+    typeof window !== 'undefined' ? window.matchMedia(query) : {};
+  const [matches, setMatches] = useState(get(matchedMedia, 'matches'));
   useEffect(() => {
-    const media = window.matchMedia(query);
-    if (media.matches !== matches) setMatches(media.matches);
-    const listener = () => setMatches(media.matches);
-    media.addListener(listener);
-    return () => media.removeListener(listener);
-  }, [matches, query]);
+    if (!matchedMedia) return matches;
+    if (matchedMedia.matches !== matches) setMatches(matchedMedia.matches);
+    const listener = () => setMatches(matchedMedia.matches);
+    matchedMedia.addListener(listener);
+    return () => matchedMedia.removeListener(listener);
+  }, [matchedMedia, matches, query]);
   return matches;
 };
 
