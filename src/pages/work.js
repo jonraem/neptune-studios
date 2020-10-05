@@ -1,12 +1,11 @@
-import React from 'react';
 import { graphql } from 'gatsby';
+import React from 'react';
 import caseHero from '../assets/png/case-hero.png';
-import Hero from '../components/hero';
 import Footer from '../components/footer';
 import Header from '../components/header';
+import Hero from '../components/hero';
 import ImageAndText from '../components/imageAndText';
 import styles from './pages.module.css';
-import { get } from 'react-hook-form';
 
 const reversed = ['case:vare', 'case:macgregor'];
 
