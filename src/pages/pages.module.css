@@ -215,6 +215,10 @@
   height: 74vh;
 }
 
+.workCases {
+  margin: 4rem 0;
+}
+
 @media only screen and (max-width: 1200px) {
   .workHeroImage {
     top: 30vh;

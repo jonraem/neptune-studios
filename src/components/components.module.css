@@ -345,3 +345,40 @@
   top: 2rem;
   right: 1.5rem;
 }
+
+/* IMAGE AND TEXT */
+
+.imageAndText {
+  display: flex;
+  justify-content: space-between;
+  height: 40rem;
+  max-width: 80rem;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.imageAndText .textSide,
+.imageAndText .imageSide {
+  width: 45%;
+}
+
+.imageAndText .textSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.imageAndText .title {
+  font-size: 48px;
+  margin-bottom: 1rem;
+}
+
+.imageAndText .description {
+  width: 30rem;
+}
+
+.imageAndText .imageSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

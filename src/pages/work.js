@@ -6,6 +6,9 @@ import Footer from '../components/footer';
 import Header from '../components/header';
 import ImageAndText from '../components/imageAndText';
 import styles from './pages.module.css';
+import { get } from 'react-hook-form';
+
+const reversed = ['case:vare', 'case:macgregor'];
 
 export default ({ data, ...props }) => (
   <div className={styles.page}>
@@ -29,6 +32,8 @@ export default ({ data, ...props }) => (
             title={edge.node.title}
             description={edge.node.description}
             linkTo={edge.node.URL}
+            imagePath={edge.node.image && edge.node.image.fluid}
+            isReversed={reversed.includes(edge.node.contentfulid)}
           />
         );
       })}
@@ -49,6 +54,11 @@ export const query = graphql`
             description
           }
           URL
+          image {
+            fluid {
+              ...GatsbyContentfulFluid
+            }
+          }
         }
       }
     }
