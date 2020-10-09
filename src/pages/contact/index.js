@@ -1,12 +1,12 @@
-import React from 'react';
 import { graphql } from 'gatsby';
-import contactHero from '../assets/png/contact-hero.png';
-import CenterTitle from '../components/centerTitle';
-import Hero from '../components/hero';
-import Footer from '../components/footer';
-import Header from '../components/header';
-import LeadForm from '../components/leadForm';
-import styles from './pages.module.css';
+import React from 'react';
+import contactHero from '../../assets/png/contact-hero.png';
+import CenterTitle from '../../components/centerTitle';
+import Footer from '../../components/footer';
+import Header from '../../components/header';
+import Hero from '../../components/hero';
+import LeadForm from '../../components/leadForm';
+import styles from '../pages.module.css';
 
 export default ({ data, ...props }) => (
   <div className={styles.page}>

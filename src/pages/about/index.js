@@ -1,15 +1,12 @@
-import React from 'react';
 import { graphql } from 'gatsby';
-import aboutHero from '../assets/png/about-hero.png';
-import { ReactComponent as CurriculumVitae } from '../assets/svg/curriculum-vitae.svg';
-import { ReactComponent as Path } from '../assets/svg/path.svg';
-import { ReactComponent as Title } from '../assets/svg/title.svg';
-import { ReactComponent as Visions } from '../assets/svg/visions.svg';
-import Hero from '../components/hero';
-import Footer from '../components/footer';
-import Header from '../components/header';
-import Feature from '../components/feature';
-import styles from './pages.module.css';
+import React from 'react';
+import aboutHero from '../../assets/png/about-hero.png';
+import { ReactComponent as CurriculumVitae } from '../../assets/svg/curriculum-vitae.svg';
+import Feature from '../../components/feature';
+import Footer from '../../components/footer';
+import Header from '../../components/header';
+import Hero from '../../components/hero';
+import styles from '../pages.module.css';
 
 export default ({ data, ...props }) => (
   <div className={styles.page}>

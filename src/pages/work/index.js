@@ -1,11 +1,11 @@
 import { graphql } from 'gatsby';
 import React from 'react';
-import caseHero from '../assets/png/case-hero.png';
-import Footer from '../components/footer';
-import Header from '../components/header';
-import Hero from '../components/hero';
-import ImageAndText from '../components/imageAndText';
-import styles from './pages.module.css';
+import caseHero from '../../assets/png/case-hero.png';
+import Footer from '../../components/footer';
+import Header from '../../components/header';
+import Hero from '../../components/hero';
+import ImageAndText from '../../components/imageAndText';
+import styles from '../pages.module.css';
 
 const reversed = ['case:vare', 'case:macgregor'];
 
