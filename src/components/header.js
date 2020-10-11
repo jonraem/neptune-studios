@@ -11,9 +11,15 @@ export default props => {
   const isMobile = useMedia('(max-width: 480px)');
 
   const getActiveBorder = pathName => {
-    if (props.currentPath === pathName) {
-      return { borderBottom: '3px solid #fff' };
-    } else return {};
+    if (pathName === '/') {
+      if (props.currentPath === pathName) {
+        return { textDecoration: 'line-through' };
+      } else return {};
+    } else {
+      if (props.currentPath.includes(pathName)) {
+        return { textDecoration: 'line-through' };
+      } else return {};
+    }
   };
 
   return (
