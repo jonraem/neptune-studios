@@ -18,6 +18,28 @@
   .workHeroImage {
     top: 30vh;
     right: 3rem;
-    height: 46vh;
+    height: 52vh;
+  }
+}
+
+/* VÄRE */
+
+.vareHero {
+  composes: hero from '../pages.module.css';
+  background: #e23c52;
+}
+
+.vareHeroImage {
+  composes: heroImage from '../pages.module.css';
+  top: 20vh;
+  right: 8rem;
+  height: 74vh;
+}
+
+@media only screen and (max-width: 1200px) {
+  .vareHeroImage {
+    top: 30vh;
+    right: 5rem;
+    height: 52vh;
   }
 }

@@ -1,5 +1,5 @@
+import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
 import styles from '../pages/pages.module.css';
 
 export default props => (
