@@ -1,0 +1,23 @@
+.workHero {
+  composes: hero from '../pages.module.css';
+  background: #21b8bf;
+}
+
+.workHeroImage {
+  composes: heroImage from '../pages.module.css';
+  top: 20vh;
+  right: 5rem;
+  height: 74vh;
+}
+
+.workCases {
+  margin: 4rem 0;
+}
+
+@media only screen and (max-width: 1200px) {
+  .workHeroImage {
+    top: 30vh;
+    right: 3rem;
+    height: 46vh;
+  }
+}

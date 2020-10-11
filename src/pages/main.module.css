@@ -1,0 +1,77 @@
+.mainHero {
+  composes: hero from './pages.module.css';
+  background-color: #5dbbe3;
+}
+
+.mainHeroImage {
+  composes: heroImage from './pages.module.css';
+  top: 8rem;
+  right: 0;
+  height: 80vh;
+}
+
+.mainHelp {
+  display: flex;
+  height: 12rem;
+  margin-bottom: 6rem;
+}
+
+.mainHelpPara {
+  composes: largePara from './pages.module.css';
+  width: 55%;
+  margin: 0;
+}
+
+.mainHelpItems {
+  width: 40%;
+}
+
+.mainHelpItem {
+  color: #0e0c3c;
+  font-weight: 600;
+  line-height: 1.7rem;
+  text-transform: uppercase;
+}
+
+.mainCases {
+  composes: fullWidthGrey from './pages.module.css';
+}
+
+.mainCaseCards {
+  display: flex;
+}
+
+@media only screen and (max-width: 1200px) {
+  .mainHeroImage {
+    top: 20vh;
+    height: 56vh;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .mainCaseCards {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .mainHelp {
+    flex-direction: column-reverse;
+    height: unset;
+  }
+
+  .mainHelpPara {
+    width: 95%;
+  }
+
+  .mainHelpItems {
+    width: 80%;
+    margin-bottom: 2rem;
+    border-left: 1px solid #d8d8d8;
+    padding-left: 1rem;
+  }
+
+  .mainHelpItem {
+    font-size: 0.9rem;
+  }
+}

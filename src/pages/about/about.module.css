@@ -1,0 +1,46 @@
+.aboutHero {
+  composes: hero from '../pages.module.css';
+  background: #e23c52;
+}
+
+.aboutHeroImage {
+  composes: heroImage from '../pages.module.css';
+  bottom: 0;
+  right: 2rem;
+  height: 84vh;
+}
+
+.aboutFeatures {
+  display: flex;
+  margin: 4rem 0;
+}
+
+.aboutCV {
+  composes: fullWidthGrey from '../pages.module.css';
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 12rem;
+  margin-bottom: 2rem;
+}
+
+.aboutCVIcon {
+  margin-bottom: 1.5rem;
+}
+
+.aboutCVTitle {
+  composes: largePara from '../pages.module.css';
+}
+
+@media only screen and (max-width: 1200px) {
+  .aboutHeroImage {
+    height: 60vh;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .aboutFeatures {
+    flex-direction: column;
+  }
+}

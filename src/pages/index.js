@@ -1,16 +1,17 @@
-import React from 'react';
-import { filter } from 'lodash';
 import { graphql } from 'gatsby';
+import { filter } from 'lodash';
+import React from 'react';
 import diverHero from '../assets/png/diver-hero.png';
 import CaseCard from '../components/caseCard';
 import CenterTitle from '../components/centerTitle';
-import Hero from '../components/hero';
 import Footer from '../components/footer';
 import Header from '../components/header';
-import styles from './pages.module.css';
+import Hero from '../components/hero';
+import styles from './main.module.css';
+import pagesStyles from './pages.module.css';
 
 export default ({ data, ...props }) => (
-  <div className={styles.page}>
+  <div className={pagesStyles.page}>
     <Header currentPath={props.location.pathname} />
     <Hero
       for="main"
@@ -23,7 +24,7 @@ export default ({ data, ...props }) => (
         />
       }
     />
-    <div className={styles.content}>
+    <div className={pagesStyles.content}>
       <div>
         <CenterTitle>
           Neptune Studios <br /> can help you with:
@@ -35,7 +36,7 @@ export default ({ data, ...props }) => (
             mean “dull” or “My nephew could’ve done it!”. On the right side is
             presented part of the skill set I’ve worked with.
           </p>
-          <div className={styles.divider} />
+          <div className={pagesStyles.divider} />
           <div className={styles.mainHelpItems}>
             <div className={styles.mainHelpItem}>User interface design</div>
             <div className={styles.mainHelpItem}>User experience design</div>
@@ -47,9 +48,9 @@ export default ({ data, ...props }) => (
         </div>
       </div>
       <div className={styles.mainCases}>
-        <div className={styles.fullWidthGrey} />
+        <div className={pagesStyles.fullWidthGrey} />
         <h3>Have a peek</h3>
-        <p className={styles.largePara}>
+        <p className={pagesStyles.largePara}>
           Some of the selected works from different creative fields.
         </p>
         <div className={styles.mainCaseCards}>

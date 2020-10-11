@@ -1,0 +1,42 @@
+.contactHero {
+  composes: hero from '../pages.module.css';
+  background: #3d68b0;
+}
+
+.contactHeroImage {
+  composes: heroImage from '../pages.module.css';
+  top: 26vh;
+  right: 6rem;
+  height: 68vh;
+}
+
+.contactForm {
+  display: flex;
+}
+
+.contactFormDescription {
+  composes: largePara from '../pages.module.css';
+  width: 40%;
+  margin: 0;
+  margin-left: 5rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .contactHeroImage {
+    top: 32vh;
+    height: 44vh;
+    right: 4rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .contactForm {
+    flex-direction: column-reverse;
+  }
+
+  .contactFormDescription {
+    width: 95%;
+    margin: 0;
+    margin-bottom: 2rem;
+  }
+}

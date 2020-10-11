@@ -5,12 +5,13 @@ import Footer from '../../components/footer';
 import Header from '../../components/header';
 import Hero from '../../components/hero';
 import ImageAndText from '../../components/imageAndText';
-import styles from '../pages.module.css';
+import pagesStyles from '../pages.module.css';
+import styles from './work.module.css';
 
 const reversed = ['case:vare', 'case:macgregor'];
 
 export default ({ data, ...props }) => (
-  <div className={styles.page}>
+  <div className={pagesStyles.page}>
     <Header currentPath={props.location.pathname} />
     <Hero
       for="work"

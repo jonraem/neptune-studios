@@ -6,10 +6,11 @@ import Footer from '../../components/footer';
 import Header from '../../components/header';
 import Hero from '../../components/hero';
 import LeadForm from '../../components/leadForm';
-import styles from '../pages.module.css';
+import pagesStyles from '../pages.module.css';
+import styles from './contact.module.css';
 
 export default ({ data, ...props }) => (
-  <div className={styles.page}>
+  <div className={pagesStyles.page}>
     <Header currentPath={props.location.pathname} />
     <Hero
       for="contact"
@@ -22,7 +23,7 @@ export default ({ data, ...props }) => (
         />
       }
     />
-    <div className={styles.content}>
+    <div className={pagesStyles.content}>
       <CenterTitle>
         How to reach
         <br />

@@ -6,10 +6,11 @@ import Feature from '../../components/feature';
 import Footer from '../../components/footer';
 import Header from '../../components/header';
 import Hero from '../../components/hero';
-import styles from '../pages.module.css';
+import pagesStyles from '../pages.module.css';
+import styles from './about.module.css';
 
 export default ({ data, ...props }) => (
-  <div className={styles.page}>
+  <div className={pagesStyles.page}>
     <Header currentPath={props.location.pathname} />
     <Hero
       for="about"
@@ -22,7 +23,7 @@ export default ({ data, ...props }) => (
         />
       }
     />
-    <div className={styles.content}>
+    <div className={pagesStyles.content}>
       <div className={styles.aboutFeatures}>
         {data.tripleFeature.feature.map((feature, index) => (
           <Feature
