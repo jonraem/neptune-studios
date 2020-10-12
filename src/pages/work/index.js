@@ -26,19 +26,21 @@ export default ({ data, ...props }) => (
         />
       }
     />
-    <div className={styles.workCases}>
-      {getSortedCases(data.allContentfulCase.edges, sortOrder).map(edge => {
-        return (
-          <ImageAndText
-            key={edge.node.contentfulid}
-            title={edge.node.title}
-            description={edge.node.description}
-            linkTo={edge.node.URL}
-            imagePath={edge.node.image && edge.node.image.fluid}
-            isReversed={reversed.includes(edge.node.contentfulid)}
-          />
-        );
-      })}
+    <div className={pagesStyles.content}>
+      <div className={styles.workCases}>
+        {getSortedCases(data.allContentfulCase.edges, sortOrder).map(edge => {
+          return (
+            <ImageAndText
+              key={edge.node.contentfulid}
+              title={edge.node.title}
+              description={edge.node.description}
+              linkTo={edge.node.URL}
+              imagePath={edge.node.image && edge.node.image.fluid}
+              isReversed={reversed.includes(edge.node.contentfulid)}
+            />
+          );
+        })}
+      </div>
     </div>
     <Footer />
   </div>
