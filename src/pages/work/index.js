@@ -14,7 +14,7 @@ const sortOrder = ['case:vare', 'case:abb', 'case:macgregor', 'case:various'];
 
 export default ({ data, ...props }) => (
   <div className={pagesStyles.page}>
-    <Header currentPath={props.location.pathname} />
+    <Header currentPath={props.path} />
     <Hero
       for="work"
       heroStyles={styles.workHero}

@@ -11,7 +11,7 @@ import styles from './about.module.css';
 
 export default ({ data, ...props }) => (
   <div className={pagesStyles.page}>
-    <Header currentPath={props.location.pathname} />
+    <Header currentPath={props.path} />
     <Hero
       for="about"
       heroStyles={styles.aboutHero}
