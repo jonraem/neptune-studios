@@ -4,6 +4,7 @@ import vareHero from '../../assets/png/vare-hero.png';
 import Footer from '../../components/footer';
 import Header from '../../components/header';
 import Hero from '../../components/hero';
+import Feature from '../../components/feature';
 import pagesStyles from '../pages.module.css';
 import styles from './work.module.css';
 
@@ -21,6 +22,18 @@ export default ({ data, ...props }) => (
         />
       }
     />
+    <div className={pagesStyles.content}>
+      <div className={styles.vareFeatures}>
+        {data.tripleFeature.feature.map((feature, index) => (
+          <Feature
+            key={`${feature.title}:${index}`}
+            svgPath={feature.svgImage.file.url}
+            title={feature.title}
+            subtitle={feature.subtitle}
+            paragraph={feature.description.description}
+          />
+        ))}
+      </div>
     <Footer />
   </div>
 );
@@ -28,7 +41,7 @@ export default ({ data, ...props }) => (
 export const query = graphql`
   query {
     tripleFeature: contentfulTripleFeature(
-      contentfulid: { eq: "work:vappi:triplefeature" }
+      contentfulid: { eq: "work:vare:triplefeature" }
     ) {
       feature {
         title
@@ -43,7 +56,7 @@ export const query = graphql`
         }
       }
     }
-    timeline: contentfulTimeline(contentfulid: { eq: "work:vappi:timeline" }) {
+    timeline: contentfulTimeline(contentfulid: { eq: "work:vare:timeline" }) {
       title
       timelineItems {
         id

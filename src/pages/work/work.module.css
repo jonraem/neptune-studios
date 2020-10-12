@@ -36,10 +36,21 @@
   height: 74vh;
 }
 
+.vareFeatures {
+  display: flex;
+  margin: 4rem 0;
+}
+
 @media only screen and (max-width: 1200px) {
   .vareHeroImage {
     top: 30vh;
     right: 5rem;
     height: 52vh;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .vareFeatures {
+    flex-direction: column;
   }
 }
