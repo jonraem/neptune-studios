@@ -16,7 +16,7 @@
 }
 
 .aboutCV {
-  composes: fullWidthGrey from '../pages.module.css';
+  composes: fullWidthGrey from '../../global.module.css';
   display: flex;
   flex-direction: column;
   justify-content: center;

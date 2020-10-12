@@ -9,6 +9,7 @@ import Header from '../components/header';
 import Hero from '../components/hero';
 import styles from './main.module.css';
 import pagesStyles from './pages.module.css';
+import globalStyles from '../global.module.css';
 import { getSortedCases } from '../utils/helpers';
 
 const sortOrder = ['case:vare', 'case:abb', 'case:macgregor'];
@@ -51,7 +52,7 @@ export default ({ data, ...props }) => (
         </div>
       </div>
       <div className={styles.mainCases}>
-        <div className={pagesStyles.fullWidthGrey} />
+        <div className={globalStyles.fullWidthGrey} />
         <h3>Have a peek</h3>
         <p className={pagesStyles.largePara}>
           Some of the selected works from different creative fields.

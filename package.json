@@ -17,6 +17,7 @@
   "dependencies": {
     "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",
     "@svgr/webpack": "^5.4.0",
+    "classnames": "^2.2.6",
     "dotenv": "^8.2.0",
     "focus-visible": "^5.2.0",
     "gatsby": "^2.24.73",

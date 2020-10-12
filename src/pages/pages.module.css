@@ -58,12 +58,6 @@
   margin: 0 3rem;
 }
 
-.fullWidthGrey {
-  margin: 0 -9999rem;
-  padding: 0.25rem 9999rem;
-  background: #f8f8f8;
-}
-
 @media only screen and (max-width: 1200px) {
   .heroText {
     max-width: 1000px;

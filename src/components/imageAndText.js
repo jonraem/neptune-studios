@@ -1,14 +1,18 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import Img from 'gatsby-image';
+import classnames from 'classnames';
 import styles from './components.module.css';
 import globalStyles from '../global.module.css';
 
 export default props => {
   return (
     <div
-      className={styles.imageAndText}
-      style={props.isReversed ? { flexDirection: 'row-reverse' } : undefined}
+      className={classnames(
+        styles.imageAndText,
+        props.hasGreyBackground ? globalStyles.fullWidthGrey : ''
+      )}
+      style={props.isReversed ? { flexDirection: 'row-reverse' } : {}}
     >
       <div className={styles.textSide}>
         <h2 className={styles.title}>{props.title}</h2>

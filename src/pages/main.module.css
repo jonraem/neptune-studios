@@ -34,7 +34,7 @@
 }
 
 .mainCases {
-  composes: fullWidthGrey from './pages.module.css';
+  composes: fullWidthGrey from '../global.module.css';
 }
 
 .mainCaseCards {

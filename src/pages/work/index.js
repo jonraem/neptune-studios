@@ -37,6 +37,7 @@ export default ({ data, ...props }) => (
               linkTo={edge.node.URL}
               imagePath={edge.node.image && edge.node.image.fluid}
               isReversed={reversed.includes(edge.node.contentfulid)}
+              hasGreyBackground={!reversed.includes(edge.node.contentfulid)}
             />
           );
         })}
