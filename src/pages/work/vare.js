@@ -4,6 +4,7 @@ import vareHero from '../../assets/png/vare-hero.png';
 import Footer from '../../components/footer';
 import Header from '../../components/header';
 import Hero from '../../components/hero';
+import Timeline from '../../components/timeline';
 import Feature from '../../components/feature';
 import pagesStyles from '../pages.module.css';
 import styles from './work.module.css';
@@ -34,6 +35,11 @@ export default ({ data, ...props }) => (
           />
         ))}
       </div>
+      <Timeline
+        title={data.timeline.title}
+        timelineItems={data.timeline.timelineItems}
+      />
+    </div>
     <Footer />
   </div>
 );
