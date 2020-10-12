@@ -1,3 +1,5 @@
+import { sortBy } from 'lodash';
+
 export const getActiveColorFromPath = pathName => {
   switch (pathName) {
     case '/':
@@ -13,3 +15,6 @@ export const getActiveColorFromPath = pathName => {
       return '0e0c3c';
   }
 };
+
+export const getSortedCases = (cases, sortOrder) =>
+  sortBy(cases, item => sortOrder.indexOf(item.node.contentfulid));

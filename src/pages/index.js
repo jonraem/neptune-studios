@@ -9,6 +9,9 @@ import Header from '../components/header';
 import Hero from '../components/hero';
 import styles from './main.module.css';
 import pagesStyles from './pages.module.css';
+import { getSortedCases } from '../utils/helpers';
+
+const sortOrder = ['case:vare', 'case:abb', 'case:macgregor'];
 
 export default ({ data, ...props }) => (
   <div className={pagesStyles.page}>
@@ -55,7 +58,7 @@ export default ({ data, ...props }) => (
         </p>
         <div className={styles.mainCaseCards}>
           {filter(
-            data.allContentfulCase.edges.reverse(),
+            getSortedCases(data.allContentfulCase.edges, sortOrder),
             edge => edge.node.contentfulid !== 'case:various'
           ).map((edge, index) => (
             <CaseCard

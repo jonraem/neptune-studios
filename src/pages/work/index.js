@@ -7,8 +7,10 @@ import Hero from '../../components/hero';
 import ImageAndText from '../../components/imageAndText';
 import pagesStyles from '../pages.module.css';
 import styles from './work.module.css';
+import { getSortedCases } from '../../utils/helpers';
 
 const reversed = ['case:vare', 'case:macgregor'];
+const sortOrder = ['case:vare', 'case:abb', 'case:macgregor', 'case:various'];
 
 export default ({ data, ...props }) => (
   <div className={pagesStyles.page}>
@@ -25,7 +27,7 @@ export default ({ data, ...props }) => (
       }
     />
     <div className={styles.workCases}>
-      {data.allContentfulCase.edges.reverse().map(edge => {
+      {getSortedCases(data.allContentfulCase.edges, sortOrder).map(edge => {
         return (
           <ImageAndText
             key={edge.node.contentfulid}
