@@ -83,6 +83,7 @@
 .centerTitle {
   position: relative;
   text-align: center;
+  z-index: 1;
 }
 
 .centerTitle h3 {
@@ -386,8 +387,13 @@
 /* TIMELINE */
 
 .timeline {
+  composes: fullWidthGrey from '../global.module.css';
   display: flex;
   flex-direction: column;
+}
+
+.timeline .centerTitle h3 {
+  background: #f8f8fe;
 }
 
 .timelineItem {

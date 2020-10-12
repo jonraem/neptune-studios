@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './components.module.css';
 import CenterTitle from '../components/centerTitle';
+import styles from './components.module.css';
 
 export default props => {
   return (
