@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import vareHero from '../../assets/png/vare-hero.png';
 import Feature from '../../components/feature';
 import Footer from '../../components/footer';
+import FullWidthBackground from '../../components/fullWidthBackground';
 import Header from '../../components/header';
 import Hero from '../../components/hero';
 import Timeline from '../../components/timeline';
@@ -45,6 +46,13 @@ export default ({ data, ...props }) => (
         title={data.timeline.title}
         timelineItems={data.timeline.timelineItems}
       />
+        <FullWidthBackground
+          imagePath={
+            data.fullWidthBackground.image &&
+            data.fullWidthBackground.image.fluid
+          }
+          height={'50rem'}
+        />
     </div>
     <Footer />
   </div>

@@ -443,3 +443,9 @@
 .timelineItem:last-of-type .timelineLine {
   display: none;
 }
+
+/* FULL-WIDTH BACKGROUND */
+
+.fullWidthBackground {
+  composes: fullWidthGrey from '../global.module.css';
+}
