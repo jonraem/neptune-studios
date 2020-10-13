@@ -1,9 +1,9 @@
-import { Link } from 'gatsby';
-import React from 'react';
-import Img from 'gatsby-image';
 import classnames from 'classnames';
-import styles from './components.module.css';
+import { Link } from 'gatsby';
+import Img from 'gatsby-image';
+import React from 'react';
 import globalStyles from '../global.module.css';
+import styles from './components.module.css';
 
 export default props => {
   return (
@@ -16,7 +16,7 @@ export default props => {
     >
       <div className={styles.textSide}>
         <h2 className={styles.title}>{props.title}</h2>
-        <p className={styles.description}>{props.description.description}</p>
+        <p className={styles.description}>{props.description}</p>
         {!!props.linkTo && (
           <Link className={globalStyles.button} to={props.linkTo}>
             {`Go to ${props.title}`}

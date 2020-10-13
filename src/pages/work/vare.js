@@ -7,45 +7,80 @@ import Footer from '../../components/footer';
 import FullWidthBackground from '../../components/fullWidthBackground';
 import Header from '../../components/header';
 import Hero from '../../components/hero';
+import ImageAndText from '../../components/imageAndText';
 import Timeline from '../../components/timeline';
 import pagesStyles from '../pages.module.css';
 import styles from './work.module.css';
 
-export default ({ data, ...props }) => (
-  <div className={pagesStyles.page}>
-    <Helmet>
-      <meta charSet="utf-8" />
-      <title>Neptune Studios | Case Väre</title>
-      <link rel="canonical" href="https://neptunestudios.com/work/vare" />
-    </Helmet>
-    <Header currentPath={props.path} />
-    <Hero
-      for="work:vare"
-      heroStyles={styles.vareHero}
-      heroImage={
-        <img
-          className={styles.vareHeroImage}
-          src={vareHero}
-          alt="Phone with Väppi application"
+const reversed = ['work:vare:imageAndText1', 'work:vare:imageAndText3'];
+
+export default ({ data, ...props }) => {
+  const renderImageAndText = edge => {
+    if (
+      edge &&
+      edge.node &&
+      edge.node.contentfulid &&
+      edge.node.title &&
+      edge.node.description &&
+      edge.node.image
+    ) {
+      return (
+        <ImageAndText
+          key={edge.node.contentfulid}
+          title={edge.node.title}
+          description={edge.node.description}
+          imagePath={edge.node.image && edge.node.image.fluid}
+          isReversed={reversed.includes(edge.node.contentfulid)}
         />
-      }
-    />
-    <div className={pagesStyles.content}>
-      <div className={styles.vareFeatures}>
-        {data.tripleFeature.feature.map((feature, index) => (
-          <Feature
-            key={`${feature.title}:${index}`}
-            svgPath={feature.svgImage.file.url}
-            title={feature.title}
-            subtitle={feature.subtitle}
-            paragraph={feature.description.description}
+      );
+    } else return null;
+  };
+
+  return (
+    <div className={pagesStyles.page}>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Neptune Studios | Case Väre</title>
+        <link rel="canonical" href="https://neptunestudios.com/work/vare" />
+      </Helmet>
+      <Header currentPath={props.path} />
+      <Hero
+        for="work:vare"
+        heroStyles={styles.vareHero}
+        heroImage={
+          <img
+            className={styles.vareHeroImage}
+            src={vareHero}
+            alt="Phone with Väppi application"
           />
-        ))}
-      </div>
-      <Timeline
-        title={data.timeline.title}
-        timelineItems={data.timeline.timelineItems}
+        }
       />
+      <div className={pagesStyles.content}>
+        <div className={styles.vareFeatures}>
+          {data.tripleFeature.feature.map((feature, index) => (
+            <Feature
+              key={`${feature.title}:${index}`}
+              svgPath={feature.svgImage.file.url}
+              title={feature.title}
+              subtitle={feature.subtitle}
+              paragraph={feature.description.description}
+            />
+          ))}
+        </div>
+        <Timeline
+          title={data.timeline.title}
+          timelineItems={data.timeline.timelineItems}
+        />
+        {renderImageAndText(
+          data.imageAndText.edges.find(
+            edge => edge.node.contentfulid === 'work:vare:imageAndText1'
+          )
+        )}
+        {renderImageAndText(
+          data.imageAndText.edges.find(
+            edge => edge.node.contentfulid === 'work:vare:imageAndText2'
+          )
+        )}
         <FullWidthBackground
           imagePath={
             data.fullWidthBackground.image &&
@@ -53,10 +88,21 @@ export default ({ data, ...props }) => (
           }
           height={'50rem'}
         />
+        {renderImageAndText(
+          data.imageAndText.edges.find(
+            edge => edge.node.contentfulid === 'work:vare:imageAndText3'
+          )
+        )}
+        {renderImageAndText(
+          data.imageAndText.edges.find(
+            edge => edge.node.contentfulid === 'work:vare:imageAndText4'
+          )
+        )}
+      </div>
+      <Footer />
     </div>
-    <Footer />
-  </div>
-);
+  );
+};
 
 export const query = graphql`
   query {
@@ -82,6 +128,31 @@ export const query = graphql`
         id
         title
         description
+      }
+    }
+    imageAndText: allContentfulImageAndText(
+      filter: { contentfulid: { regex: "/work:vare:imageAndText/" } }
+    ) {
+      edges {
+        node {
+          contentfulid
+          title
+          description
+          image {
+            fluid {
+              ...GatsbyContentfulFluid
+            }
+          }
+        }
+      }
+    }
+    fullWidthBackground: contentfulFullWidthBackground(
+      contentfulid: { eq: "work:vare:fullWidthBackground" }
+    ) {
+      image {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
       }
     }
   }

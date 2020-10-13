@@ -39,7 +39,7 @@ export default ({ data, ...props }) => (
             <ImageAndText
               key={edge.node.contentfulid}
               title={edge.node.title}
-              description={edge.node.description}
+              description={edge.node.description.description}
               linkTo={edge.node.URL}
               imagePath={edge.node.image && edge.node.image.fluid}
               isReversed={reversed.includes(edge.node.contentfulid)}
@@ -60,7 +60,6 @@ export const query = graphql`
         node {
           contentfulid
           title
-          subtitle
           description {
             description
           }
