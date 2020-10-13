@@ -94,3 +94,9 @@ body {
 .button:hover {
   background: #349acd;
 }
+
+.fullWidthGrey {
+  margin: 0 -9999rem !important;
+  padding: 0.25rem 9999rem !important;
+  background: #f8f8fe;
+}

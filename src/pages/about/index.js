@@ -17,7 +17,7 @@ export default ({ data, ...props }) => (
       <title>Neptune Studios | About</title>
       <link rel="canonical" href="https://neptunestudios.com/about" />
     </Helmet>
-    <Header currentPath={props.location.pathname} />
+    <Header currentPath={props.path} />
     <Hero
       for="about"
       heroStyles={styles.aboutHero}

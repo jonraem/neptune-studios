@@ -17,7 +17,7 @@ export default ({ data, ...props }) => (
       <title>Neptune Studios | Contact</title>
       <link rel="canonical" href="https://neptunestudios.com/contact" />
     </Helmet>
-    <Header currentPath={props.location.pathname} />
+    <Header currentPath={props.path} />
     <Hero
       for="contact"
       heroStyles={styles.contactHero}

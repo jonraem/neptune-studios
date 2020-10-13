@@ -83,6 +83,7 @@
 .centerTitle {
   position: relative;
   text-align: center;
+  z-index: 1;
 }
 
 .centerTitle h3 {
@@ -381,4 +382,64 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+/* TIMELINE */
+
+.timeline {
+  composes: fullWidthGrey from '../global.module.css';
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline .centerTitle h3 {
+  background: #f8f8fe;
+}
+
+.timelineItem {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 5rem;
+}
+
+.timelineTitle {
+  width: 26rem;
+  margin-right: 2rem;
+  text-align: right;
+  font-family: 'Zilla Slab', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.timelineDescription {
+  width: 26rem;
+  margin-left: 2rem;
+}
+
+.timelinePoint {
+  border-radius: 30px/30px;
+  border: solid 2px #E23C52;
+  width: 30px;
+  height: 30px;
+}
+
+.timelineLine {
+  position: absolute;
+  width: 2px;
+  height: 130%;
+  top: 2.75rem;
+  background: #3D68B0;
+}
+
+.timelineItem:last-of-type .timelinePoint {
+  border-radius: 50%;
+  border: solid 2px #E23C52;
+  background: #E23C52;
+  width: 30px;
+  height: 30px;
+}
+
+.timelineItem:last-of-type .timelineLine {
+  display: none;
 }

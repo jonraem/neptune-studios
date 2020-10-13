@@ -6,10 +6,12 @@ import Footer from '../../components/footer';
 import Header from '../../components/header';
 import Hero from '../../components/hero';
 import ImageAndText from '../../components/imageAndText';
+import { getSortedCases } from '../../utils/helpers';
 import pagesStyles from '../pages.module.css';
 import styles from './work.module.css';
 
 const reversed = ['case:vare', 'case:macgregor'];
+const sortOrder = ['case:vare', 'case:abb', 'case:macgregor', 'case:various'];
 
 export default ({ data, ...props }) => (
   <div className={pagesStyles.page}>
@@ -18,7 +20,7 @@ export default ({ data, ...props }) => (
       <title>Neptune Studios | Work</title>
       <link rel="canonical" href="https://neptunestudios.com/work" />
     </Helmet>
-    <Header currentPath={props.location.pathname} />
+    <Header currentPath={props.path} />
     <Hero
       for="work"
       heroStyles={styles.workHero}
@@ -30,19 +32,22 @@ export default ({ data, ...props }) => (
         />
       }
     />
-    <div className={styles.workCases}>
-      {data.allContentfulCase.edges.reverse().map(edge => {
-        return (
-          <ImageAndText
-            key={edge.node.contentfulid}
-            title={edge.node.title}
-            description={edge.node.description}
-            linkTo={edge.node.URL}
-            imagePath={edge.node.image && edge.node.image.fluid}
-            isReversed={reversed.includes(edge.node.contentfulid)}
-          />
-        );
-      })}
+    <div className={pagesStyles.content}>
+      <div className={styles.workCases}>
+        {getSortedCases(data.allContentfulCase.edges, sortOrder).map(edge => {
+          return (
+            <ImageAndText
+              key={edge.node.contentfulid}
+              title={edge.node.title}
+              description={edge.node.description}
+              linkTo={edge.node.URL}
+              imagePath={edge.node.image && edge.node.image.fluid}
+              isReversed={reversed.includes(edge.node.contentfulid)}
+              hasGreyBackground={!reversed.includes(edge.node.contentfulid)}
+            />
+          );
+        })}
+      </div>
     </div>
     <Footer />
   </div>

@@ -5,8 +5,8 @@
 
 .contactHeroImage {
   composes: heroImage from '../pages.module.css';
-  top: 26vh;
-  right: 6rem;
+  bottom: -1rem;
+  right: 0;
   height: 68vh;
 }
 
@@ -23,9 +23,9 @@
 
 @media only screen and (max-width: 1200px) {
   .contactHeroImage {
-    top: 32vh;
+    bottom: -1rem;
+    right: 0;
     height: 44vh;
-    right: 4rem;
   }
 }
 

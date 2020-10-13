@@ -8,8 +8,12 @@ import CenterTitle from '../components/centerTitle';
 import Footer from '../components/footer';
 import Header from '../components/header';
 import Hero from '../components/hero';
+import globalStyles from '../global.module.css';
+import { getSortedCases } from '../utils/helpers';
 import styles from './main.module.css';
 import pagesStyles from './pages.module.css';
+
+const sortOrder = ['case:vare', 'case:abb', 'case:macgregor'];
 
 export default ({ data, ...props }) => (
   <div className={pagesStyles.page}>
@@ -18,7 +22,7 @@ export default ({ data, ...props }) => (
       <title>Neptune Studios</title>
       <link rel="canonical" href="https://neptunestudios.com/" />
     </Helmet>
-    <Header currentPath={props.location.pathname} />
+    <Header currentPath={props.path} />
     <Hero
       for="main"
       heroStyles={styles.mainHero}
@@ -54,14 +58,14 @@ export default ({ data, ...props }) => (
         </div>
       </div>
       <div className={styles.mainCases}>
-        <div className={pagesStyles.fullWidthGrey} />
+        <div className={globalStyles.fullWidthGrey} />
         <h3>Have a peek</h3>
         <p className={pagesStyles.largePara}>
           Some of the selected works from different creative fields.
         </p>
         <div className={styles.mainCaseCards}>
           {filter(
-            data.allContentfulCase.edges.reverse(),
+            getSortedCases(data.allContentfulCase.edges, sortOrder),
             edge => edge.node.contentfulid !== 'case:various'
           ).map((edge, index) => (
             <CaseCard
