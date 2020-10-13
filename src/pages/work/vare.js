@@ -1,5 +1,6 @@
 import { graphql } from 'gatsby';
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import vareHero from '../../assets/png/vare-hero.png';
 import Footer from '../../components/footer';
 import Header from '../../components/header';
@@ -9,6 +10,11 @@ import styles from './work.module.css';
 
 export default ({ data, ...props }) => (
   <div className={pagesStyles.page}>
+    <Helmet>
+      <meta charSet="utf-8" />
+      <title>Neptune Studios | Case Väre</title>
+      <link rel="canonical" href="https://neptunestudios.com/work/vare" />
+    </Helmet>
     <Header currentPath={props.location.pathname} />
     <Hero
       for="work:vare"

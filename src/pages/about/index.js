@@ -1,5 +1,6 @@
 import { graphql } from 'gatsby';
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import aboutHero from '../../assets/png/about-hero.png';
 import { ReactComponent as CurriculumVitae } from '../../assets/svg/curriculum-vitae.svg';
 import Feature from '../../components/feature';
@@ -11,6 +12,11 @@ import styles from './about.module.css';
 
 export default ({ data, ...props }) => (
   <div className={pagesStyles.page}>
+    <Helmet>
+      <meta charSet="utf-8" />
+      <title>Neptune Studios | About</title>
+      <link rel="canonical" href="https://neptunestudios.com/about" />
+    </Helmet>
     <Header currentPath={props.location.pathname} />
     <Hero
       for="about"

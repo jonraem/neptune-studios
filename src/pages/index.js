@@ -1,6 +1,7 @@
 import { graphql } from 'gatsby';
 import { filter } from 'lodash';
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import diverHero from '../assets/png/diver-hero.png';
 import CaseCard from '../components/caseCard';
 import CenterTitle from '../components/centerTitle';
@@ -12,6 +13,11 @@ import pagesStyles from './pages.module.css';
 
 export default ({ data, ...props }) => (
   <div className={pagesStyles.page}>
+    <Helmet>
+      <meta charSet="utf-8" />
+      <title>Neptune Studios</title>
+      <link rel="canonical" href="https://neptunestudios.com/" />
+    </Helmet>
     <Header currentPath={props.location.pathname} />
     <Hero
       for="main"

@@ -1,5 +1,6 @@
 import { graphql } from 'gatsby';
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import caseHero from '../../assets/png/case-hero.png';
 import Footer from '../../components/footer';
 import Header from '../../components/header';
@@ -12,6 +13,11 @@ const reversed = ['case:vare', 'case:macgregor'];
 
 export default ({ data, ...props }) => (
   <div className={pagesStyles.page}>
+    <Helmet>
+      <meta charSet="utf-8" />
+      <title>Neptune Studios | Work</title>
+      <link rel="canonical" href="https://neptunestudios.com/work" />
+    </Helmet>
     <Header currentPath={props.location.pathname} />
     <Hero
       for="work"

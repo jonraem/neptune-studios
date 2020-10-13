@@ -1,5 +1,6 @@
 import { graphql } from 'gatsby';
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import contactHero from '../../assets/png/contact-hero.png';
 import CenterTitle from '../../components/centerTitle';
 import Footer from '../../components/footer';
@@ -11,6 +12,11 @@ import styles from './contact.module.css';
 
 export default ({ data, ...props }) => (
   <div className={pagesStyles.page}>
+    <Helmet>
+      <meta charSet="utf-8" />
+      <title>Neptune Studios | Contact</title>
+      <link rel="canonical" href="https://neptunestudios.com/contact" />
+    </Helmet>
     <Header currentPath={props.location.pathname} />
     <Hero
       for="contact"
