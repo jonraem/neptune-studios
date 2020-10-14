@@ -449,3 +449,76 @@
 .fullWidthBackground {
   composes: fullWidthGrey from '../global.module.css';
 }
+
+/* RESULTS */
+
+.results {
+  margin: 4rem 0;
+}
+
+.resultsQuote {
+  text-align: center;
+  width: 70%;
+  margin: 0 auto 10rem;
+}
+
+.resultsTitle {
+  margin-bottom: 5rem;
+}
+
+.resultsDescription {
+  font-family: 'Zilla Slab', sans-serif;
+  font-style: italic;
+}
+
+.resultsSections {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.resultsSection1 {
+  width: 35%;
+}
+
+.resultsSection2,
+.resultsSection3 {
+  width: 25%;
+}
+
+.resultsContent {
+  padding: 0 1rem;
+  border-left: 1px solid #d8d8d8;
+}
+
+.resultsSection2 h3,
+.resultsSection3 h3 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+
+.vareResults .resultsRatingTitle {
+  margin-right: 1rem;
+}
+
+.vareResults .resultsRatingTitle,
+.vareResults .resultsRatingSubtitle {
+  display: inline-block;
+}
+
+@media only screen and (max-width: 768px) {
+  .resultsTitle {
+    margin-bottom: 2rem;
+  }
+
+  .resultsSections {
+    flex-direction: column;
+  }
+
+  .resultsSection1,
+  .resultsSection2,
+  .resultsSection3 {
+    width: 80%;
+    margin: 0 auto 3rem;
+  }
+}

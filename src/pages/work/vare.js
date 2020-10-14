@@ -9,6 +9,7 @@ import Header from '../../components/header';
 import Hero from '../../components/hero';
 import ImageAndText from '../../components/imageAndText';
 import Timeline from '../../components/timeline';
+import { VareResults as Results } from '../../components/results';
 import pagesStyles from '../pages.module.css';
 import styles from './work.module.css';
 
@@ -98,6 +99,7 @@ export default ({ data, ...props }) => {
             edge => edge.node.contentfulid === 'work:vare:imageAndText4'
           )
         )}
+        <Results results={data.results} />
       </div>
       <Footer />
     </div>
@@ -154,6 +156,21 @@ export const query = graphql`
           ...GatsbyContentfulFluid
         }
       }
+    }
+    results: contentfulResults(contentfulid: { eq: "work:vare:results" }) {
+      quote
+      title
+      description {
+        childContentfulRichText {
+          html
+        }
+      }
+      title2
+      description2
+      title3
+      description3
+      title4
+      description4
     }
   }
 `;
