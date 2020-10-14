@@ -1,5 +1,6 @@
 import { graphql } from 'gatsby';
 import React from 'react';
+import { get } from 'lodash';
 import { Helmet } from 'react-helmet';
 import aboutHero from '../../assets/png/about-hero.png';
 import { ReactComponent as CurriculumVitae } from '../../assets/svg/curriculum-vitae.svg';
@@ -45,7 +46,7 @@ export default ({ data, ...props }) => (
         <CurriculumVitae className={styles.aboutCVIcon} />
         <div className={styles.aboutCVTitle}>
           Download Curriculum Vitae{' '}
-          <a href="https://www.youtube.com/watch?v=oHg5SJYRHA0">HERE</a>.
+          <a href={get(data, 'cv.pdf.file.url', '#')}>HERE</a>.
         </div>
       </div>
     </div>
@@ -68,6 +69,16 @@ export const query = graphql`
           file {
             url
           }
+        }
+      }
+    }
+    cv: contentfulCv {
+      contentfulid
+      pdf {
+        file {
+          url
+          fileName
+          contentType
         }
       }
     }
