@@ -87,3 +87,36 @@
     flex-direction: column;
   }
 }
+
+/* MACGREGOR */
+
+.macgregorHero {
+  composes: hero from '../pages.module.css';
+  background: #3D68B0;
+}
+
+.macgregorHeroImage {
+  composes: heroImage from '../pages.module.css';
+  top: 20vh;
+  right: 8rem;
+  height: 74vh;
+}
+
+.macgregorFeatures {
+  display: flex;
+  margin: 6rem 0;
+}
+
+@media only screen and (max-width: 1200px) {
+  .macgregorHeroImage {
+    top: 30vh;
+    right: 5rem;
+    height: 52vh;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .macgregorFeatures {
+    flex-direction: column;
+  }
+}

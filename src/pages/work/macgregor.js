@@ -1,17 +1,22 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import abbHero from '../../assets/png/abb-hero.png';
+import macgregorHero from '../../assets/png/macgregor-hero.png';
 import Feature from '../../components/feature';
 import Footer from '../../components/footer';
+import FullWidthBackground from '../../components/fullWidthBackground';
 import Header from '../../components/header';
 import Hero from '../../components/hero';
 import ImageAndText from '../../components/imageAndText';
 import Results from '../../components/results';
+import Timeline from '../../components/timeline';
 import pagesStyles from '../pages.module.css';
 import styles from './work.module.css';
 
-const reversed = ['work:abb:imageAndText1', 'work:abb:imageAndText3'];
+const reversed = [
+  'work:macgregor:imageAndText1',
+  'work:macgregor:imageAndText5',
+];
 
 export default ({ data, ...props }) => {
   const renderImageAndText = edge => {
@@ -39,23 +44,26 @@ export default ({ data, ...props }) => {
     <div className={pagesStyles.page}>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Neptune Studios | Case ABB</title>
-        <link rel="canonical" href="https://neptunestudios.com/work/abb" />
+        <title>Neptune Studios | Case MacGregor</title>
+        <link
+          rel="canonical"
+          href="https://neptunestudios.com/work/macgregor"
+        />
       </Helmet>
       <Header currentPath={props.path} />
       <Hero
-        for="work:abb"
-        heroStyles={styles.abbHero}
+        for="work:macgregor"
+        heroStyles={styles.macgregorHero}
         heroImage={
           <img
-            className={styles.abbHeroImage}
-            src={abbHero}
-            alt="Tablets with ABB application"
+            className={styles.macgregorHeroImage}
+            src={macgregorHero}
+            alt="Phone with MacGregor application"
           />
         }
       />
       <div className={pagesStyles.content}>
-        <div className={styles.abbFeatures}>
+        <div className={styles.macgregorFeatures}>
           {data.tripleFeature.feature.map((feature, index) => (
             <Feature
               key={`${feature.title}:${index}`}
@@ -66,24 +74,45 @@ export default ({ data, ...props }) => {
             />
           ))}
         </div>
+        <Timeline
+          title={data.timeline.title}
+          timelineItems={data.timeline.timelineItems}
+        />
         {renderImageAndText(
           data.imageAndText.edges.find(
-            edge => edge.node.contentfulid === 'work:abb:imageAndText1'
+            edge => edge.node.contentfulid === 'work:macgregor:imageAndText1'
           )
         )}
         {renderImageAndText(
           data.imageAndText.edges.find(
-            edge => edge.node.contentfulid === 'work:abb:imageAndText2'
+            edge => edge.node.contentfulid === 'work:macgregor:imageAndText2'
           )
         )}
         {renderImageAndText(
           data.imageAndText.edges.find(
-            edge => edge.node.contentfulid === 'work:abb:imageAndText3'
+            edge => edge.node.contentfulid === 'work:macgregor:imageAndText3'
           )
         )}
         {renderImageAndText(
           data.imageAndText.edges.find(
-            edge => edge.node.contentfulid === 'work:abb:imageAndText4'
+            edge => edge.node.contentfulid === 'work:macgregor:imageAndText4'
+          )
+        )}
+        <FullWidthBackground
+          imagePath={
+            data.fullWidthBackground.image &&
+            data.fullWidthBackground.image.fluid
+          }
+          height={'50rem'}
+        />
+        {renderImageAndText(
+          data.imageAndText.edges.find(
+            edge => edge.node.contentfulid === 'work:macgregor:imageAndText5'
+          )
+        )}
+        {renderImageAndText(
+          data.imageAndText.edges.find(
+            edge => edge.node.contentfulid === 'work:macgregor:imageAndText6'
           )
         )}
         <Results results={data.results} />
@@ -96,7 +125,7 @@ export default ({ data, ...props }) => {
 export const query = graphql`
   query {
     tripleFeature: contentfulTripleFeature(
-      contentfulid: { eq: "work:abb:triplefeature" }
+      contentfulid: { eq: "work:macgregor:triplefeature" }
     ) {
       feature {
         title
@@ -111,8 +140,18 @@ export const query = graphql`
         }
       }
     }
+    timeline: contentfulTimeline(
+      contentfulid: { eq: "work:macgregor:timeline" }
+    ) {
+      title
+      timelineItems {
+        id
+        title
+        description
+      }
+    }
     imageAndText: allContentfulImageAndText(
-      filter: { contentfulid: { regex: "/work:abb:imageAndText/" } }
+      filter: { contentfulid: { regex: "/work:macgregor:imageAndText/" } }
     ) {
       edges {
         node {
@@ -131,7 +170,16 @@ export const query = graphql`
         }
       }
     }
-    results: contentfulResults(contentfulid: { eq: "work:abb:results" }) {
+    fullWidthBackground: contentfulFullWidthBackground(
+      contentfulid: { eq: "work:macgregor:fullWidthBackground" }
+    ) {
+      image {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
+    }
+    results: contentfulResults(contentfulid: { eq: "work:macgregor:results" }) {
       quote
       title
       description {
