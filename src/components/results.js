@@ -1,5 +1,5 @@
-import React from 'react';
 import classnames from 'classnames';
+import React from 'react';
 import CenterTitle from './centerTitle';
 import styles from './components.module.css';
 
@@ -71,18 +71,31 @@ export const VareResults = props => {
 export default props => {
   return (
     <div className={styles.results}>
+      <QuotationMarks />
       <h3 className={styles.resultsQuote}>{props.results.quote}</h3>
       <CenterTitle className={styles.resultsTitle}>
         {props.results.title}
       </CenterTitle>
-      <div
-        className={styles.resultsDescription}
-        dangerouslySetInnerHTML={{
-          __html: props.results.description.childContentfulRichText.html,
-        }}
-      />
-      <h3 className={styles.resultsTitle2}>{props.results.title2}</h3>
-      <div className={styles.resultsDescription2}></div>
+      <div className={styles.resultsSections}>
+        <div className={styles.resultsSection1}>
+          <div className={styles.resultsContent}>
+            <div
+              className={styles.resultsDescription}
+              dangerouslySetInnerHTML={{
+                __html: props.results.description.childContentfulRichText.html,
+              }}
+            />
+          </div>
+        </div>
+        <div className={styles.resultsSection2}>
+          <div className={styles.resultsContent}>
+            <h3 className={styles.resultsTitle2}>{props.results.title2}</h3>
+            <div className={styles.resultsDescription2}>
+              {props.results.description2}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

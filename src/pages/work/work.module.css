@@ -54,3 +54,36 @@
     flex-direction: column;
   }
 }
+
+/* ABB */
+
+.abbHero {
+  composes: hero from '../pages.module.css';
+  background: #21B8BF;
+}
+
+.abbHeroImage {
+  composes: heroImage from '../pages.module.css';
+  top: 26vh;
+  right: -8rem;
+  height: 54vh;
+}
+
+.abbFeatures {
+  display: flex;
+  margin: 6rem 0;
+}
+
+@media only screen and (max-width: 1200px) {
+  .abbHeroImage {
+    top: 40vh;
+    right: -14rem;
+    height: 34vh;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .abbFeatures {
+    flex-direction: column;
+  }
+}

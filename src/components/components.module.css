@@ -474,16 +474,15 @@
 .resultsSections {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }
 
-.resultsSection1 {
+.resultsSection1,
+.resultsSection2 {
   width: 35%;
 }
 
-.resultsSection2,
-.resultsSection3 {
-  width: 25%;
+.resultsSection1 {
+  margin-right: 3rem;
 }
 
 .resultsContent {
@@ -495,6 +494,19 @@
 .resultsSection3 h3 {
   margin-top: 0;
   margin-bottom: .5rem;
+}
+
+.vareResults .resultsSections {
+  justify-content: space-between;
+}
+
+.vareResults .resultsSection1 {
+  margin-right: 0;
+}
+
+.vareResults .resultsSection2,
+.vareResults .resultsSection3 {
+  width: 25%;
 }
 
 .vareResults .resultsRatingTitle {
