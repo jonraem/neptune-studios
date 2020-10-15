@@ -457,12 +457,6 @@
   margin: 4rem 0;
 }
 
-.resultsQuote {
-  text-align: center;
-  width: 70%;
-  margin: 0 auto 10rem;
-}
-
 .resultsTitle {
   margin-bottom: 5rem;
 }
@@ -536,7 +530,13 @@
   }
 }
 
-/* QUOTATION MARKS */
+/* QUOTE */
+
+.quote {
+  text-align: center;
+  width: 70%;
+  margin: 5rem auto;
+}
 
 .quotationMarks {
   display: flex;

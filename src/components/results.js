@@ -3,24 +3,9 @@ import React from 'react';
 import CenterTitle from './centerTitle';
 import styles from './components.module.css';
 
-const QuotationMarks = () => (
-  <div className={styles.quotationMarks}>
-    <div className={styles.quotationMark}>
-      <div className={styles.apostrophe} />
-      <div className={styles.apostrophe} />
-    </div>
-    <div className={styles.quotationMark}>
-      <div className={styles.apostrophe} />
-      <div className={styles.apostrophe} />
-    </div>
-  </div>
-);
-
 export const VareResults = props => {
   return (
     <div className={classnames(styles.results, styles.vareResults)}>
-      <QuotationMarks />
-      <h3 className={styles.resultsQuote}>{props.results.quote}</h3>
       <CenterTitle className={styles.resultsTitle}>
         {props.results.title}
       </CenterTitle>
@@ -71,8 +56,6 @@ export const VareResults = props => {
 export default props => {
   return (
     <div className={styles.results}>
-      <QuotationMarks />
-      <h3 className={styles.resultsQuote}>{props.results.quote}</h3>
       <CenterTitle className={styles.resultsTitle}>
         {props.results.title}
       </CenterTitle>

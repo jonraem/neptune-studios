@@ -180,7 +180,6 @@ export const query = graphql`
       }
     }
     results: contentfulResults(contentfulid: { eq: "work:macgregor:results" }) {
-      quote
       title
       description {
         childContentfulRichText {

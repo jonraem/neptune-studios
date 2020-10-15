@@ -162,7 +162,6 @@ export const query = graphql`
       }
     }
     results: contentfulResults(contentfulid: { eq: "work:vare:results" }) {
-      quote
       title
       description {
         childContentfulRichText {

@@ -132,7 +132,6 @@ export const query = graphql`
       }
     }
     results: contentfulResults(contentfulid: { eq: "work:abb:results" }) {
-      quote
       title
       description {
         childContentfulRichText {
