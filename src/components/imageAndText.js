@@ -16,7 +16,12 @@ export default props => {
     >
       <div className={styles.textSide}>
         <h2 className={styles.title}>{props.title}</h2>
-        <p className={styles.description}>{props.description}</p>
+        <div
+          className={styles.description}
+          dangerouslySetInnerHTML={{
+            __html: props.description,
+          }}
+        />
         {!!props.linkTo && (
           <Link className={globalStyles.button} to={props.linkTo}>
             {`Go to ${props.title}`}

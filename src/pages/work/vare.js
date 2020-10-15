@@ -8,8 +8,8 @@ import FullWidthBackground from '../../components/fullWidthBackground';
 import Header from '../../components/header';
 import Hero from '../../components/hero';
 import ImageAndText from '../../components/imageAndText';
-import Timeline from '../../components/timeline';
 import { VareResults as Results } from '../../components/results';
+import Timeline from '../../components/timeline';
 import pagesStyles from '../pages.module.css';
 import styles from './work.module.css';
 
@@ -29,7 +29,7 @@ export default ({ data, ...props }) => {
         <ImageAndText
           key={edge.node.contentfulid}
           title={edge.node.title}
-          description={edge.node.description}
+          description={edge.node.description.childContentfulRichText.html}
           imagePath={edge.node.image && edge.node.image.fluid}
           isReversed={reversed.includes(edge.node.contentfulid)}
         />
@@ -139,7 +139,11 @@ export const query = graphql`
         node {
           contentfulid
           title
-          description
+          description {
+            childContentfulRichText {
+              html
+            }
+          }
           image {
             fluid {
               ...GatsbyContentfulFluid

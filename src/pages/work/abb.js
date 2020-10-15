@@ -27,7 +27,7 @@ export default ({ data, ...props }) => {
         <ImageAndText
           key={edge.node.contentfulid}
           title={edge.node.title}
-          description={edge.node.description}
+          description={edge.node.description.childContentfulRichText.html}
           imagePath={edge.node.image && edge.node.image.fluid}
           isReversed={reversed.includes(edge.node.contentfulid)}
         />
@@ -118,7 +118,11 @@ export const query = graphql`
         node {
           contentfulid
           title
-          description
+          description {
+            childContentfulRichText {
+              html
+            }
+          }
           image {
             fluid {
               ...GatsbyContentfulFluid
