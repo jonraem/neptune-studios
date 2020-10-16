@@ -49,7 +49,7 @@ export default ({ data, ...props }) => {
     <div className={pagesStyles.page}>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Neptune Studios | Case Väre</title>
+        <title>Neptune Studios | Various Projects</title>
         <link rel="canonical" href="https://neptunestudios.com/work/various" />
       </Helmet>
       <Header currentPath={props.path} />
