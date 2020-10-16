@@ -14,7 +14,7 @@ import Timeline from '../../components/timeline';
 import pagesStyles from '../pages.module.css';
 import styles from './work.module.css';
 
-const reversed = ['work:vare:imageAndText1', 'work:vare:imageAndText3'];
+const reversed = ['work:vare:imageAndText2', 'work:vare:imageAndText4'];
 
 export default ({ data, ...props }) => {
   const renderImageAndText = edge => {
@@ -32,6 +32,11 @@ export default ({ data, ...props }) => {
           title={edge.node.title}
           description={edge.node.description.childContentfulRichText.html}
           imagePath={edge.node.image && edge.node.image.fluid}
+          maxHeight={
+            edge.node.contentfulid === 'work:vare:imageAndText2'
+              ? 350
+              : undefined
+          }
           isReversed={reversed.includes(edge.node.contentfulid)}
         />
       );

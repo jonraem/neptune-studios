@@ -16,9 +16,12 @@ import pagesStyles from '../pages.module.css';
 import styles from './work.module.css';
 
 const reversed = [
-  'work:macgregor:imageAndText1',
-  'work:macgregor:imageAndText5',
+  'work:macgregor:imageAndText2',
+  'work:macgregor:imageAndText3',
+  'work:macgregor:imageAndText4',
+  'work:macgregor:imageAndText6',
 ];
+const greyed = ['work:macgregor:imageAndText3'];
 
 export default ({ data, ...props }) => {
   const renderImageAndText = edge => {
@@ -36,7 +39,9 @@ export default ({ data, ...props }) => {
           title={edge.node.title}
           description={edge.node.description.childContentfulRichText.html}
           imagePath={edge.node.image && edge.node.image.fluid}
+          maxHeight={500}
           isReversed={reversed.includes(edge.node.contentfulid)}
+          hasGreyBackground={greyed.includes(edge.node.contentfulid)}
         />
       );
     } else return null;

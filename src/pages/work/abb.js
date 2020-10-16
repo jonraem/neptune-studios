@@ -12,7 +12,8 @@ import Results from '../../components/results';
 import pagesStyles from '../pages.module.css';
 import styles from './work.module.css';
 
-const reversed = ['work:abb:imageAndText1', 'work:abb:imageAndText3'];
+const reversed = ['work:abb:imageAndText2', 'work:abb:imageAndText4'];
+const greyed = ['work:abb:imageAndText1'];
 
 export default ({ data, ...props }) => {
   const renderImageAndText = edge => {
@@ -31,6 +32,7 @@ export default ({ data, ...props }) => {
           description={edge.node.description.childContentfulRichText.html}
           imagePath={edge.node.image && edge.node.image.fluid}
           isReversed={reversed.includes(edge.node.contentfulid)}
+          hasGreyBackground={greyed.includes(edge.node.contentfulid)}
         />
       );
     } else return null;
