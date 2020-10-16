@@ -8,6 +8,7 @@ import FullWidthBackground from '../../components/fullWidthBackground';
 import Header from '../../components/header';
 import Hero from '../../components/hero';
 import ImageAndText from '../../components/imageAndText';
+import Quote from '../../components/quote';
 import { VareResults as Results } from '../../components/results';
 import Timeline from '../../components/timeline';
 import pagesStyles from '../pages.module.css';
@@ -37,6 +38,7 @@ export default ({ data, ...props }) => {
     } else return null;
   };
 
+  console.log(data);
   return (
     <div className={pagesStyles.page}>
       <Helmet>
@@ -99,6 +101,7 @@ export default ({ data, ...props }) => {
             edge => edge.node.contentfulid === 'work:vare:imageAndText4'
           )
         )}
+        <Quote quote={data.quotation} />
         <Results results={data.results} />
       </div>
       <Footer />
@@ -160,6 +163,11 @@ export const query = graphql`
           ...GatsbyContentfulFluid
         }
       }
+    }
+    quotation: contentfulQuotation(
+      contentfulid: { eq: "work:vare:quotation" }
+    ) {
+      quote
     }
     results: contentfulResults(contentfulid: { eq: "work:vare:results" }) {
       title

@@ -15,10 +15,13 @@ const QuotationMarks = () => (
 );
 
 export default props => {
-  return (
-    <div className={styles.quote}>
-      <QuotationMarks />
-      <h3 className={styles.quoteText}>{props.quote}</h3>
-    </div>
-  );
+  console.log(props);
+  if (!!props.quote) {
+    return (
+      <div className={styles.quote}>
+        <QuotationMarks />
+        <h3 className={styles.quoteText}>{props.quote.quote}</h3>
+      </div>
+    );
+  } else return null;
 };

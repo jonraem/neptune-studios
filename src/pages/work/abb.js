@@ -7,6 +7,7 @@ import Footer from '../../components/footer';
 import Header from '../../components/header';
 import Hero from '../../components/hero';
 import ImageAndText from '../../components/imageAndText';
+import Quote from '../../components/quote';
 import Results from '../../components/results';
 import pagesStyles from '../pages.module.css';
 import styles from './work.module.css';
@@ -34,6 +35,7 @@ export default ({ data, ...props }) => {
       );
     } else return null;
   };
+  console.log(data);
 
   return (
     <div className={pagesStyles.page}>
@@ -86,6 +88,7 @@ export default ({ data, ...props }) => {
             edge => edge.node.contentfulid === 'work:abb:imageAndText4'
           )
         )}
+        <Quote quote={data.quotation} />
         <Results results={data.results} />
       </div>
       <Footer />
@@ -130,6 +133,9 @@ export const query = graphql`
           }
         }
       }
+    }
+    quotation: contentfulQuotation(contentfulid: { eq: "work:abb:quotation" }) {
+      quote
     }
     results: contentfulResults(contentfulid: { eq: "work:abb:results" }) {
       title

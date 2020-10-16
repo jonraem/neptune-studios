@@ -533,14 +533,15 @@
 /* QUOTE */
 
 .quote {
-  text-align: center;
+  position: relative;
   width: 70%;
   margin: 5rem auto;
+  text-align: center;
 }
 
 .quotationMarks {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   position: absolute;
   width: 100%;
   z-index: -1;
@@ -552,10 +553,12 @@
 
 .quotationMark:nth-child(1) {
   margin-top: -1.5rem;
+  margin-left: -2rem;
 }
 
 .quotationMark:nth-child(2) {
   margin-top: 1rem;
+  margin-right: -3rem;
 }
 
 .apostrophe {
