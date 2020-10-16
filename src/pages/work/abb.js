@@ -35,7 +35,6 @@ export default ({ data, ...props }) => {
       );
     } else return null;
   };
-  console.log(data);
 
   return (
     <div className={pagesStyles.page}>
