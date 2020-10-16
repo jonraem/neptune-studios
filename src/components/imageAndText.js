@@ -32,8 +32,11 @@ export default props => {
         {!!props.imagePath && (
           <Img
             fluid={props.imagePath}
-            style={{ maxHeight: 800 }}
-            imgStyle={{ maxHeight: 800, objectFit: 'contain' }}
+            style={{ maxHeight: props.maxHeight || 800 }}
+            imgStyle={{
+              maxHeight: props.maxHeight || 800,
+              objectFit: 'contain',
+            }}
           />
         )}
       </div>

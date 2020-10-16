@@ -120,3 +120,24 @@
     flex-direction: column;
   }
 }
+
+/* VARIOUS */
+
+.variousHero {
+  composes: hero from '../pages.module.css';
+  background: #5DBBE3;
+}
+
+.variousHeroImage {
+  composes: heroImage from '../pages.module.css';
+  bottom: 0;
+  right: 0;
+  height: 80vh;
+}
+
+@media only screen and (max-width: 1200px) {
+  .variousHeroImage {
+    height: 52vh;
+  }
+}
+
