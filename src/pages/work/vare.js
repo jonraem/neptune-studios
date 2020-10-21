@@ -10,6 +10,7 @@ import Hero from '../../components/hero';
 import ImageAndText from '../../components/imageAndText';
 import Quote from '../../components/quote';
 import { VareResults as Results } from '../../components/results';
+import ScrollShowcase from '../../components/scrollShowcase';
 import Timeline from '../../components/timeline';
 import pagesStyles from '../pages.module.css';
 import styles from './work.module.css';
@@ -105,6 +106,13 @@ export default ({ data, ...props }) => {
             edge => edge.node.contentfulid === 'work:vare:imageAndText4'
           )
         )}
+        <ScrollShowcase
+          title={data.scrollShowcase.title}
+          featureDescriptions={data.scrollShowcase.featureDescriptions}
+          imagePath={
+            data.scrollShowcase.image && data.scrollShowcase.image.fluid
+          }
+        />
         <Quote quote={data.quotation} />
         <Results results={data.results} />
       </div>
@@ -162,6 +170,20 @@ export const query = graphql`
     fullWidthBackground: contentfulFullWidthBackground(
       contentfulid: { eq: "work:vare:fullWidthBackground" }
     ) {
+      image {
+        fluid {
+          ...GatsbyContentfulFluid
+        }
+      }
+    }
+    scrollShowcase: contentfulScrollShowcase(
+      contentfulid: { eq: "work:vare:scrollShowcase1" }
+    ) {
+      title
+      featureDescriptions {
+        id
+        description
+      }
       image {
         fluid {
           ...GatsbyContentfulFluid
