@@ -25,6 +25,7 @@
     "gatsby-plugin-react-helmet": "^3.3.14",
     "gatsby-plugin-svgr": "^2.0.2",
     "gatsby-source-contentful": "^2.3.53",
+    "gsap": "^3.5.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0",
