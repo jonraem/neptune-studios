@@ -596,9 +596,12 @@
   right: 0;
   margin: 0 auto;
   width: 85vw;
+  height: 100%;
+  max-width: 80rem;
 }
 
 .descriptionBox {
+  min-height: 1.5rem;
   width: 13rem;
   padding: 1rem;
   margin: 3rem 0;

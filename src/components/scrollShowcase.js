@@ -15,42 +15,41 @@ export default props => {
       // Initialize ScrollTrigger
       gsap.registerPlugin(ScrollTrigger);
       gsap.core.globals('ScrollTrigger', ScrollTrigger);
-      const tl = gsap.timeline();
-      featureDescriptions.forEach((featureDescription, index) => {
+
+      const calculateOffset = () => window.innerWidth / 2;
+      boxRefs.current.forEach((boxRef, index) => {
         if (index % 2) {
           // Animate from right
-          tl.from(boxRefs.current[index].current, {
-            xPercent: 150,
-            duration: 1,
+          gsap.from(boxRef.current, {
+            x: calculateOffset(),
             scrollTrigger: {
-              trigger: boxRefs.current[index].current,
-              end: 'top center-=50',
-              scrub: 0.5,
+              id: `box-${index + 1}`,
+              trigger: boxRef.current,
+              start: 'top center',
             },
           });
         } else {
           // Animate from left
-          tl.from(boxRefs.current[index].current, {
-            xPercent: -150,
-            duration: 1,
+          gsap.from(boxRef.current, {
+            x: -calculateOffset(),
             scrollTrigger: {
-              trigger: boxRefs.current[index].current,
-              end: 'top center-=50',
-              scrub: 0.5,
+              id: `box-${index + 1}`,
+              trigger: boxRef.current,
+              start: 'top center',
             },
           });
         }
       });
     }
-  }, [featureDescriptions]);
+  }, []);
 
   return (
     <div className={styles.scrollShowCase} ref={showCaseRef}>
-      <h3>{props.title}</h3>
+      <h3>{title}</h3>
       <div className={styles.showcaseImage}>
         {!!props.imagePath && (
           <Img
-            fluid={props.imagePath}
+            fluid={imagePath}
             style={{ maxHeight: '126rem' }}
             imgStyle={{
               width: '28rem',
