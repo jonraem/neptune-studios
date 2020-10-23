@@ -604,6 +604,7 @@
   /* height: 100vh; */
   margin: 0 -9999rem !important;
   padding: 1rem 9999rem !important;
+  overflow: hidden;
   background: #dc143c;
 }
 
@@ -627,7 +628,7 @@
   flex-direction: column;
   /*  */
   position: absolute;
-  top: 18rem;
+  top: 10rem;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -644,6 +645,10 @@
   background: #fff;
   border-radius: 8px;
   box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.16);
+}
+
+.descriptionBox:first-of-type {
+  margin-top: 12rem;
 }
 
 .descriptionBoxLeft {

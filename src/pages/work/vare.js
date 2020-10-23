@@ -132,9 +132,8 @@ export default ({ data, ...props }) => {
         <ScrollShowcase
           title={currentShowcase.node.title}
           featureDescriptions={currentShowcase.node.featureDescriptions}
-          imagePath={
-            currentShowcase.node.image && currentShowcase.node.image.fluid
-          }
+          imagePath={currentShowcase.node.image?.fluid}
+          imageHeight={currentShowcase.node.image?.file?.details.image.height}
           handlePreviousShowcase={handlePreviousShowcase}
           handleNextShowcase={handleNextShowcase}
         />
@@ -215,6 +214,13 @@ export const query = graphql`
           image {
             fluid {
               ...GatsbyContentfulFluid
+            }
+            file {
+              details {
+                image {
+                  height
+                }
+              }
             }
           }
         }

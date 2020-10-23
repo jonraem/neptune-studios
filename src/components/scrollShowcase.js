@@ -8,7 +8,7 @@ import styles from './components.module.css';
 
 export default props => {
   const { title, featureDescriptions, imagePath } = props;
-  const showCaseRef = useRef(null);
+  const showcaseRef = useRef();
   const boxRefs = useRef(featureDescriptions.map(() => React.createRef()));
 
   useEffect(() => {
@@ -43,9 +43,19 @@ export default props => {
       });
     }
   }, []);
+  console.log(props.imageHeight);
 
   return (
-    <div className={styles.scrollShowCase} ref={showCaseRef}>
+    <div
+      className={styles.scrollShowCase}
+      style={
+        !!props.imageHeight && {
+          height: props.imageHeight / 2,
+          maxHeight: '180rem',
+        }
+      }
+      ref={showcaseRef}
+    >
       <h3>{title}</h3>
       <div className={styles.showcaseButtons}>
         <ProgressionButton
@@ -62,7 +72,6 @@ export default props => {
         {!!props.imagePath && (
           <Img
             fluid={imagePath}
-            style={{ maxHeight: '126rem' }}
             imgStyle={{
               width: '28rem',
               height: 'unset',
