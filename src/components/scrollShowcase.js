@@ -1,8 +1,9 @@
+import React, { useEffect, useRef } from 'react';
 import classnames from 'classnames';
 import Img from 'gatsby-image';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import React, { useEffect, useRef } from 'react';
+import ProgressionButton from './progressionButton';
 import styles from './components.module.css';
 
 export default props => {
@@ -46,6 +47,17 @@ export default props => {
   return (
     <div className={styles.scrollShowCase} ref={showCaseRef}>
       <h3>{title}</h3>
+      <div className={styles.showcaseButtons}>
+        <ProgressionButton
+          type="previous"
+          onClick={props.handlePreviousShowcase}
+        >
+          Previous screen
+        </ProgressionButton>
+        <ProgressionButton type="next" onClick={props.handleNextShowcase}>
+          Next screen
+        </ProgressionButton>
+      </div>
       <div className={styles.showcaseImage}>
         {!!props.imagePath && (
           <Img

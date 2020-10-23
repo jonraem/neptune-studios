@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import vareHero from '../../assets/png/vare-hero.png';
 import Feature from '../../components/feature';
@@ -18,6 +18,13 @@ import styles from './work.module.css';
 const reversed = ['work:vare:imageAndText2', 'work:vare:imageAndText4'];
 
 export default ({ data, ...props }) => {
+  const [showcaseIndex, setShowcaseIndex] = useState(0);
+
+  const currentShowcase = data.scrollShowcase.edges.find(
+    edge =>
+      edge.node.contentfulid === `work:vare:scrollShowcase${showcaseIndex + 1}`
+  );
+
   const renderImageAndText = edge => {
     if (
       edge &&
@@ -42,6 +49,22 @@ export default ({ data, ...props }) => {
         />
       );
     } else return null;
+  };
+
+  const handlePreviousShowcase = () => {
+    if (showcaseIndex === 0) {
+      setShowcaseIndex(data.scrollShowcase.edges.length - 1);
+    } else {
+      setShowcaseIndex(showcaseIndex - 1);
+    }
+  };
+
+  const handleNextShowcase = () => {
+    if (showcaseIndex === data.scrollShowcase.edges.length - 1) {
+      setShowcaseIndex(0);
+    } else {
+      setShowcaseIndex(showcaseIndex + 1);
+    }
   };
 
   return (
@@ -107,11 +130,13 @@ export default ({ data, ...props }) => {
           )
         )}
         <ScrollShowcase
-          title={data.scrollShowcase.title}
-          featureDescriptions={data.scrollShowcase.featureDescriptions}
+          title={currentShowcase.node.title}
+          featureDescriptions={currentShowcase.node.featureDescriptions}
           imagePath={
-            data.scrollShowcase.image && data.scrollShowcase.image.fluid
+            currentShowcase.node.image && currentShowcase.node.image.fluid
           }
+          handlePreviousShowcase={handlePreviousShowcase}
+          handleNextShowcase={handleNextShowcase}
         />
         <Quote quote={data.quotation} />
         <Results results={data.results} />
@@ -176,17 +201,22 @@ export const query = graphql`
         }
       }
     }
-    scrollShowcase: contentfulScrollShowcase(
-      contentfulid: { eq: "work:vare:scrollShowcase1" }
+    scrollShowcase: allContentfulScrollShowcase(
+      filter: { contentfulid: { regex: "/work:vare:scrollShowcase/" } }
     ) {
-      title
-      featureDescriptions {
-        id
-        description
-      }
-      image {
-        fluid {
-          ...GatsbyContentfulFluid
+      edges {
+        node {
+          contentfulid
+          title
+          featureDescriptions {
+            id
+            description
+          }
+          image {
+            fluid {
+              ...GatsbyContentfulFluid
+            }
+          }
         }
       }
     }

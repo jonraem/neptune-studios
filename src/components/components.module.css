@@ -612,6 +612,15 @@
   color: #fff;
 }
 
+.showcaseButtons {
+  width: calc(100vw - 6rem);
+  max-width: 76rem;
+  position: absolute;
+  top: 5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
 .descriptionBoxes {
   padding: 3rem 2rem;
   display: flex;
