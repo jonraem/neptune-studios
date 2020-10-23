@@ -7,6 +7,33 @@
   cursor: pointer;
 }
 
+/* PROGRESSION BUTTON */
+
+.progressionButton {
+  position: relative;
+  padding: .2rem .75rem;
+  color: #fff;
+  background: unset;
+  border-radius: 26px;
+  border: 2px solid #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.progressionButtonContent {
+  position: absolute;
+  top: 0;
+  width: 12rem;
+}
+
+.progressionButtonPrevious .progressionButtonContent {
+  left: 4.5rem;
+}
+
+.progressionButtonNext .progressionButtonContent {
+  left: -12.5rem;
+}
+
 /* HEADER */
 
 .header {
