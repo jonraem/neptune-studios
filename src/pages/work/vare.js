@@ -1,7 +1,12 @@
+import classnames from 'classnames';
 import { graphql } from 'gatsby';
-import React, { useState } from 'react';
+import Img from 'gatsby-image';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import React, { useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import vareHero from '../../assets/png/vare-hero.png';
+import componentsStyles from '../../components/components.module.css';
 import Feature from '../../components/feature';
 import Footer from '../../components/footer';
 import FullWidthBackground from '../../components/fullWidthBackground';
@@ -10,7 +15,7 @@ import Hero from '../../components/hero';
 import ImageAndText from '../../components/imageAndText';
 import Quote from '../../components/quote';
 import { VareResults as Results } from '../../components/results';
-import ScrollShowcase from '../../components/scrollShowcase';
+import Showcase from '../../components/showcase';
 import Timeline from '../../components/timeline';
 import pagesStyles from '../pages.module.css';
 import styles from './work.module.css';
@@ -19,9 +24,13 @@ const reversed = ['work:vare:imageAndText2', 'work:vare:imageAndText4'];
 
 export default ({ data, ...props }) => {
   const [showcaseIndex, setShowcaseIndex] = useState(0);
-
   const currentShowcase = data.showcase.edges.find(
     edge => edge.node.contentfulid === `work:vare:showcase${showcaseIndex + 1}`
+  );
+  const boxRefs = useRef(
+    (currentShowcase.node.featureDescriptions || []).map(() =>
+      React.createRef()
+    )
   );
 
   const renderImageAndText = edge => {
@@ -48,6 +57,58 @@ export default ({ data, ...props }) => {
         />
       );
     } else return null;
+  };
+
+  const renderFeatureDescriptions = () => {
+    return (currentShowcase.node.featureDescriptions || []).map(
+      (featureDescription, index) => {
+        return (
+          <div
+            key={featureDescription.id}
+            className={classnames(
+              componentsStyles.descriptionBox,
+              index % 2
+                ? componentsStyles.descriptionBoxRight
+                : componentsStyles.descriptionBoxLeft
+            )}
+            ref={boxRefs.current[index]}
+          >
+            {featureDescription.description}
+          </div>
+        );
+      }
+    );
+  };
+
+  const handleAnimate = () => {
+    // Initialize ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.core.globals('ScrollTrigger', ScrollTrigger);
+
+    const calculateOffset = () => window.innerWidth / 2;
+    boxRefs.current.forEach((boxRef, index) => {
+      if (index % 2) {
+        // Animate from right
+        gsap.from(boxRef.current, {
+          x: calculateOffset(),
+          scrollTrigger: {
+            id: `box-${index + 1}`,
+            trigger: boxRef.current,
+            start: 'top center',
+          },
+        });
+      } else {
+        // Animate from left
+        gsap.from(boxRef.current, {
+          x: -calculateOffset(),
+          scrollTrigger: {
+            id: `box-${index + 1}`,
+            trigger: boxRef.current,
+            start: 'top center',
+          },
+        });
+      }
+    });
   };
 
   const handlePreviousShowcase = () => {
@@ -128,15 +189,29 @@ export default ({ data, ...props }) => {
             edge => edge.node.contentfulid === 'work:vare:imageAndText4'
           )
         )}
-        <ScrollShowcase
+        <Showcase
           title={currentShowcase.node.title}
-          featureDescriptions={currentShowcase.node.featureDescriptions || []}
+          featureDescriptions={renderFeatureDescriptions()}
           bgColor="#dc143c"
-          imagePath={currentShowcase.node.image?.fluid}
-          imageHeight={currentShowcase.node.image?.file?.details.image.height}
+          height={currentShowcase.node.image?.file?.details.image.height / 2}
+          handleAnimate={handleAnimate}
           handlePreviousShowcase={handlePreviousShowcase}
           handleNextShowcase={handleNextShowcase}
-        />
+        >
+          {!!currentShowcase.node.image && (
+            <Img
+              fluid={currentShowcase.node.image?.fluid}
+              imgStyle={{
+                width: '28rem',
+                height: 'unset',
+                left: 0,
+                right: 0,
+                margin: '0 auto',
+                objectFit: 'contain',
+              }}
+            />
+          )}
+        </Showcase>
         <Quote quote={data.quotation} />
         <Results results={data.results} />
       </div>
