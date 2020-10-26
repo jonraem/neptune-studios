@@ -206,6 +206,7 @@ export default ({ data, ...props }) => {
           {!!currentShowcaseImage && (
             <Img
               fluid={currentShowcaseImage.fluid}
+              style={{ width: '100%' }}
               imgStyle={{
                 width: '28rem',
                 height: 'unset',
