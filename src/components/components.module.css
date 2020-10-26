@@ -608,6 +608,8 @@
 }
 
 .showCase h3 {
+  width: 58%;
+  margin: 3rem auto 0;
   text-align: center;
   color: #fff;
 }
@@ -625,7 +627,6 @@
   padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
-  /*  */
   position: absolute;
   top: 10rem;
   left: 0;

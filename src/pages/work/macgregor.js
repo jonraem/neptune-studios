@@ -37,9 +37,6 @@ export default ({ data, ...props }) => {
     get(currentShowcase, 'node.images[1]'),
   ].filter(x => !!x);
 
-  console.log('currentShowcase :>> ', currentShowcase);
-  console.log('currentShowcaseImages :>> ', currentShowcaseImages);
-
   const renderImageAndText = edge => {
     if (
       edge &&
