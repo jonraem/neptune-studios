@@ -132,6 +132,7 @@ export default ({ data, ...props }) => {
         <ScrollShowcase
           title={currentShowcase.node.title}
           featureDescriptions={currentShowcase.node.featureDescriptions}
+          bgColor="#dc143c"
           imagePath={currentShowcase.node.image?.fluid}
           imageHeight={currentShowcase.node.image?.file?.details.image.height}
           handlePreviousShowcase={handlePreviousShowcase}

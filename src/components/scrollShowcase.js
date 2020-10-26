@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from 'react';
 import classnames from 'classnames';
 import Img from 'gatsby-image';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import ProgressionButton from './progressionButton';
+import React, { useEffect, useRef } from 'react';
 import styles from './components.module.css';
+import ProgressionButton from './progressionButton';
 
 export default props => {
   const { title, featureDescriptions, imagePath } = props;
@@ -43,17 +43,15 @@ export default props => {
       });
     }
   }, []);
-  console.log(props.imageHeight);
 
   return (
     <div
       className={styles.scrollShowCase}
-      style={
-        !!props.imageHeight && {
-          height: props.imageHeight / 2,
-          maxHeight: '180rem',
-        }
-      }
+      style={{
+        background: props.bgColor ? props.bgColor : '#fff',
+        height: !!props.imageHeight && props.imageHeight / 2,
+        maxHeight: '180rem',
+      }}
       ref={showcaseRef}
     >
       <h3>{title}</h3>
