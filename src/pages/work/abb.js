@@ -1,5 +1,6 @@
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import { get } from 'lodash';
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import abbHero from '../../assets/png/abb-hero.png';
@@ -23,6 +24,7 @@ export default ({ data, ...props }) => {
   const currentShowcase = data.showcase.edges.find(
     edge => edge.node.contentfulid === `work:abb:showcase${showcaseIndex + 1}`
   );
+  const currentShowcaseImage = get(currentShowcase, 'node.images[0]');
 
   const renderImageAndText = edge => {
     if (
@@ -117,13 +119,16 @@ export default ({ data, ...props }) => {
           title={currentShowcase.node.title}
           featureDescriptions={currentShowcase.node.featureDescriptions}
           bgColor="#21B8BF"
-          height={currentShowcase.node.image?.file?.details.image.height + 240}
+          height={
+            !!currentShowcaseImage &&
+            currentShowcaseImage.file.details.image.height + 240
+          }
           handlePreviousShowcase={handlePreviousShowcase}
           handleNextShowcase={handleNextShowcase}
         >
-          {!!currentShowcase.node.image && (
+          {!!currentShowcaseImage && (
             <Img
-              fluid={currentShowcase.node.image?.fluid}
+              fluid={currentShowcaseImage.fluid}
               imgStyle={{
                 width: '75%',
                 height: 'unset',
