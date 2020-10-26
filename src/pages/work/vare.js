@@ -20,9 +20,8 @@ const reversed = ['work:vare:imageAndText2', 'work:vare:imageAndText4'];
 export default ({ data, ...props }) => {
   const [showcaseIndex, setShowcaseIndex] = useState(0);
 
-  const currentShowcase = data.scrollShowcase.edges.find(
-    edge =>
-      edge.node.contentfulid === `work:vare:scrollShowcase${showcaseIndex + 1}`
+  const currentShowcase = data.showcase.edges.find(
+    edge => edge.node.contentfulid === `work:vare:showcase${showcaseIndex + 1}`
   );
 
   const renderImageAndText = edge => {
@@ -53,14 +52,14 @@ export default ({ data, ...props }) => {
 
   const handlePreviousShowcase = () => {
     if (showcaseIndex === 0) {
-      setShowcaseIndex(data.scrollShowcase.edges.length - 1);
+      setShowcaseIndex(data.showcase.edges.length - 1);
     } else {
       setShowcaseIndex(showcaseIndex - 1);
     }
   };
 
   const handleNextShowcase = () => {
-    if (showcaseIndex === data.scrollShowcase.edges.length - 1) {
+    if (showcaseIndex === data.showcase.edges.length - 1) {
       setShowcaseIndex(0);
     } else {
       setShowcaseIndex(showcaseIndex + 1);
@@ -131,7 +130,7 @@ export default ({ data, ...props }) => {
         )}
         <ScrollShowcase
           title={currentShowcase.node.title}
-          featureDescriptions={currentShowcase.node.featureDescriptions}
+          featureDescriptions={currentShowcase.node.featureDescriptions || []}
           bgColor="#dc143c"
           imagePath={currentShowcase.node.image?.fluid}
           imageHeight={currentShowcase.node.image?.file?.details.image.height}
@@ -201,8 +200,8 @@ export const query = graphql`
         }
       }
     }
-    scrollShowcase: allContentfulScrollShowcase(
-      filter: { contentfulid: { regex: "/work:vare:scrollShowcase/" } }
+    showcase: allContentfulShowcase(
+      filter: { contentfulid: { regex: "/work:vare:showcase/" } }
     ) {
       edges {
         node {
