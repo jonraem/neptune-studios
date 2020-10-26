@@ -188,7 +188,7 @@ export const query = graphql`
         node {
           contentfulid
           title
-          image {
+          images {
             fluid {
               ...GatsbyContentfulFluid
             }

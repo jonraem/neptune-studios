@@ -3,12 +3,18 @@ import styles from './components.module.css';
 import ProgressionButton from './progressionButton';
 
 export default props => {
+  const shouldRenderFeatureDescriptions =
+    !!props.featureDescriptions && !!props.featureDescriptions.length;
   const { handleAnimate } = props;
   useEffect(() => {
-    if (handleAnimate && typeof window !== `undefined`) {
+    if (
+      !!handleAnimate &&
+      shouldRenderFeatureDescriptions &&
+      typeof window !== `undefined`
+    ) {
       handleAnimate();
     }
-  }, [handleAnimate]);
+  }, [handleAnimate, shouldRenderFeatureDescriptions]);
 
   if (props.children) {
     return (
@@ -33,7 +39,7 @@ export default props => {
           </ProgressionButton>
         </div>
         <div className={styles.showcaseContent}>{props.children}</div>
-        {!!props.featureDescriptions && (
+        {shouldRenderFeatureDescriptions && (
           <div className={styles.descriptionBoxes}>
             {props.featureDescriptions}
           </div>

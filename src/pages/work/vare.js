@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { get } from 'lodash';
 import React, { useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import vareHero from '../../assets/png/vare-hero.png';
@@ -27,6 +28,7 @@ export default ({ data, ...props }) => {
   const currentShowcase = data.showcase.edges.find(
     edge => edge.node.contentfulid === `work:vare:showcase${showcaseIndex + 1}`
   );
+  const currentShowcaseImage = get(currentShowcase, 'node.images[0]');
   const boxRefs = useRef(
     (currentShowcase.node.featureDescriptions || []).map(() =>
       React.createRef()
@@ -193,14 +195,17 @@ export default ({ data, ...props }) => {
           title={currentShowcase.node.title}
           featureDescriptions={renderFeatureDescriptions()}
           bgColor="#dc143c"
-          height={currentShowcase.node.image?.file?.details.image.height / 2}
+          height={
+            !!currentShowcaseImage &&
+            currentShowcaseImage.file.details.image.height / 2
+          }
           handleAnimate={handleAnimate}
           handlePreviousShowcase={handlePreviousShowcase}
           handleNextShowcase={handleNextShowcase}
         >
-          {!!currentShowcase.node.image && (
+          {!!currentShowcaseImage && (
             <Img
-              fluid={currentShowcase.node.image?.fluid}
+              fluid={currentShowcaseImage.fluid}
               imgStyle={{
                 width: '28rem',
                 height: 'unset',
@@ -286,7 +291,7 @@ export const query = graphql`
             id
             description
           }
-          image {
+          images {
             fluid {
               ...GatsbyContentfulFluid
             }
