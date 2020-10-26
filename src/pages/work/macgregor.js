@@ -1,6 +1,7 @@
 import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import { get } from 'lodash';
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import macgregorHero from '../../assets/png/macgregor-hero.png';
 import Feature from '../../components/feature';
@@ -11,6 +12,7 @@ import Hero from '../../components/hero';
 import ImageAndText from '../../components/imageAndText';
 import Quote from '../../components/quote';
 import Results from '../../components/results';
+import Showcase from '../../components/showcase';
 import Timeline from '../../components/timeline';
 import pagesStyles from '../pages.module.css';
 import styles from './work.module.css';
@@ -24,6 +26,20 @@ const reversed = [
 const greyed = ['work:macgregor:imageAndText3'];
 
 export default ({ data, ...props }) => {
+  const [showcaseIndex, setShowcaseIndex] = useState(0);
+
+  const currentShowcase = data.showcase.edges.find(
+    edge =>
+      edge.node.contentfulid === `work:macgregor:showcase${showcaseIndex + 1}`
+  );
+  const currentShowcaseImages = [
+    get(currentShowcase, 'node.images[0]'),
+    get(currentShowcase, 'node.images[1]'),
+  ].filter(x => !!x);
+
+  console.log('currentShowcase :>> ', currentShowcase);
+  console.log('currentShowcaseImages :>> ', currentShowcaseImages);
+
   const renderImageAndText = edge => {
     if (
       edge &&
@@ -46,11 +62,28 @@ export default ({ data, ...props }) => {
       );
     } else return null;
   };
+
   const findQuote = (data, id) => {
     return get(
       data.quotation.edges.find(edge => edge.node.contentfulid === id),
       'node'
     );
+  };
+
+  const handlePreviousShowcase = () => {
+    if (showcaseIndex === 0) {
+      setShowcaseIndex(data.showcase.edges.length - 1);
+    } else {
+      setShowcaseIndex(showcaseIndex - 1);
+    }
+  };
+
+  const handleNextShowcase = () => {
+    if (showcaseIndex === data.showcase.edges.length - 1) {
+      setShowcaseIndex(0);
+    } else {
+      setShowcaseIndex(showcaseIndex + 1);
+    }
   };
 
   return (
@@ -129,6 +162,46 @@ export default ({ data, ...props }) => {
             edge => edge.node.contentfulid === 'work:macgregor:imageAndText6'
           )
         )}
+        <Showcase
+          title={currentShowcase.node.title}
+          featureDescriptions={currentShowcase.node.featureDescriptions}
+          bgColor="#3D68B0"
+          height={
+            !!currentShowcaseImages.length &&
+            currentShowcaseImages[0].file.details.image.height / 2
+          }
+          handlePreviousShowcase={handlePreviousShowcase}
+          handleNextShowcase={handleNextShowcase}
+        >
+          {!!currentShowcaseImages.length && (
+            <>
+              <Img
+                fluid={currentShowcaseImages[0].fluid}
+                style={{ width: '40%' }}
+                imgStyle={{
+                  width: '75%',
+                  height: '45rem',
+                  left: 0,
+                  right: 0,
+                  margin: '0 auto',
+                  objectFit: 'contain',
+                }}
+              />
+              <Img
+                fluid={currentShowcaseImages[1].fluid}
+                style={{ width: '40%' }}
+                imgStyle={{
+                  width: '75%',
+                  height: '45rem',
+                  left: 0,
+                  right: 0,
+                  margin: '0 auto',
+                  objectFit: 'contain',
+                }}
+              />
+            </>
+          )}
+        </Showcase>
         <Quote quote={findQuote(data, 'work:macgregor:quotation2')} />
         <Results results={data.results} />
       </div>
@@ -191,6 +264,28 @@ export const query = graphql`
       image {
         fluid {
           ...GatsbyContentfulFluid
+        }
+      }
+    }
+    showcase: allContentfulShowcase(
+      filter: { contentfulid: { regex: "/work:macgregor:showcase/" } }
+    ) {
+      edges {
+        node {
+          contentfulid
+          title
+          images {
+            fluid {
+              ...GatsbyContentfulFluid
+            }
+            file {
+              details {
+                image {
+                  height
+                }
+              }
+            }
+          }
         }
       }
     }
