@@ -1,4 +1,5 @@
 import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import abbHero from '../../assets/png/abb-hero.png';
@@ -116,14 +117,24 @@ export default ({ data, ...props }) => {
           title={currentShowcase.node.title}
           featureDescriptions={currentShowcase.node.featureDescriptions}
           bgColor="#21B8BF"
-          imagePath={currentShowcase.node.image?.fluid}
-          imageHeight={
-            currentShowcase.node.image?.file?.details.image.height + 240
-          }
-          imageWidth={'75%'}
+          height={currentShowcase.node.image?.file?.details.image.height + 240}
           handlePreviousShowcase={handlePreviousShowcase}
           handleNextShowcase={handleNextShowcase}
-        />
+        >
+          {!!currentShowcase.node.image && (
+            <Img
+              fluid={currentShowcase.node.image?.fluid}
+              imgStyle={{
+                width: '75%',
+                height: 'unset',
+                left: 0,
+                right: 0,
+                margin: '0 auto',
+                objectFit: 'contain',
+              }}
+            />
+          )}
+        </Showcase>
         <Quote quote={data.quotation} />
         <Results results={data.results} />
       </div>
