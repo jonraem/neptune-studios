@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import abbHero from '../../assets/png/abb-hero.png';
 import Feature from '../../components/feature';
@@ -9,6 +9,7 @@ import Hero from '../../components/hero';
 import ImageAndText from '../../components/imageAndText';
 import Quote from '../../components/quote';
 import Results from '../../components/results';
+import Showcase from '../../components/showcase';
 import pagesStyles from '../pages.module.css';
 import styles from './work.module.css';
 
@@ -16,6 +17,12 @@ const reversed = ['work:abb:imageAndText2', 'work:abb:imageAndText4'];
 const greyed = ['work:abb:imageAndText1'];
 
 export default ({ data, ...props }) => {
+  const [showcaseIndex, setShowcaseIndex] = useState(0);
+
+  const currentShowcase = data.showcase.edges.find(
+    edge => edge.node.contentfulid === `work:abb:showcase${showcaseIndex + 1}`
+  );
+
   const renderImageAndText = edge => {
     if (
       edge &&
@@ -36,6 +43,22 @@ export default ({ data, ...props }) => {
         />
       );
     } else return null;
+  };
+
+  const handlePreviousShowcase = () => {
+    if (showcaseIndex === 0) {
+      setShowcaseIndex(data.showcase.edges.length - 1);
+    } else {
+      setShowcaseIndex(showcaseIndex - 1);
+    }
+  };
+
+  const handleNextShowcase = () => {
+    if (showcaseIndex === data.showcase.edges.length - 1) {
+      setShowcaseIndex(0);
+    } else {
+      setShowcaseIndex(showcaseIndex + 1);
+    }
   };
 
   return (
@@ -89,6 +112,18 @@ export default ({ data, ...props }) => {
             edge => edge.node.contentfulid === 'work:abb:imageAndText4'
           )
         )}
+        <Showcase
+          title={currentShowcase.node.title}
+          featureDescriptions={currentShowcase.node.featureDescriptions}
+          bgColor="#21B8BF"
+          imagePath={currentShowcase.node.image?.fluid}
+          imageHeight={
+            currentShowcase.node.image?.file?.details.image.height + 240
+          }
+          imageWidth={'75%'}
+          handlePreviousShowcase={handlePreviousShowcase}
+          handleNextShowcase={handleNextShowcase}
+        />
         <Quote quote={data.quotation} />
         <Results results={data.results} />
       </div>
@@ -130,6 +165,28 @@ export const query = graphql`
           image {
             fluid {
               ...GatsbyContentfulFluid
+            }
+          }
+        }
+      }
+    }
+    showcase: allContentfulShowcase(
+      filter: { contentfulid: { regex: "/work:abb:showcase/" } }
+    ) {
+      edges {
+        node {
+          contentfulid
+          title
+          image {
+            fluid {
+              ...GatsbyContentfulFluid
+            }
+            file {
+              details {
+                image {
+                  height
+                }
+              }
             }
           }
         }
