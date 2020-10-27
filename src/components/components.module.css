@@ -426,7 +426,8 @@
   display: flex;
   justify-content: center;
   position: relative;
-  margin-bottom: 5rem;
+  height: 10rem;
+  margin-bottom: 2rem;
 }
 
 .timelineTitle {
@@ -454,7 +455,7 @@
 .timelineLine {
   position: absolute;
   width: 2px;
-  height: 130%;
+  height: 85%;
   top: 2.75rem;
   background: #3D68B0;
 }
