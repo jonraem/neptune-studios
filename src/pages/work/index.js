@@ -42,6 +42,13 @@ export default ({ data, ...props }) => (
               description={edge.node.description.description}
               linkTo={edge.node.URL}
               imagePath={edge.node.image && edge.node.image.fluid}
+              imageSideStyle={
+                edge.node.contentfulid === 'case:various'
+                  ? {
+                      justifyContent: 'flex-end',
+                    }
+                  : undefined
+              }
               isReversed={reversed.includes(edge.node.contentfulid)}
               hasGreyBackground={!reversed.includes(edge.node.contentfulid)}
             />
