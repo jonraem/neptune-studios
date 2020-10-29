@@ -2,7 +2,6 @@ import classnames from 'classnames';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 import { get } from 'lodash';
 import React, { useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
@@ -18,6 +17,7 @@ import Quote from '../../components/quote';
 import { VareResults as Results } from '../../components/results';
 import Showcase from '../../components/showcase';
 import Timeline from '../../components/timeline';
+import { initializeScrollTrigger } from '../../util/helpers';
 import pagesStyles from '../pages.module.css';
 import styles from './work.module.css';
 
@@ -34,6 +34,59 @@ export default ({ data, ...props }) => {
       React.createRef()
     )
   );
+
+  const calculateAnimationOffset = () => window.innerWidth / 2;
+
+  const animateBoxesFromLeft = (ref, index) => {
+    gsap.from(ref, {
+      x: -calculateAnimationOffset(),
+      scrollTrigger: {
+        id: `box-${index + 1}`,
+        trigger: ref,
+        start: 'top center',
+      },
+    });
+  };
+
+  const animateBoxesFromRight = (ref, index) => {
+    gsap.from(ref, {
+      x: calculateAnimationOffset(),
+      scrollTrigger: {
+        id: `box-${index + 1}`,
+        trigger: ref,
+        start: 'top center',
+      },
+    });
+  };
+
+  const handleAnimate = () => {
+    initializeScrollTrigger();
+    boxRefs.current.forEach((boxRef, index) => {
+      if (index % 2) {
+        // Animate from right
+        animateBoxesFromRight(boxRef.current, index);
+      } else {
+        // Animate from left
+        animateBoxesFromLeft(boxRef.current, index);
+      }
+    });
+  };
+
+  const handlePreviousShowcase = () => {
+    if (showcaseIndex === 0) {
+      setShowcaseIndex(data.showcase.edges.length - 1);
+    } else {
+      setShowcaseIndex(showcaseIndex - 1);
+    }
+  };
+
+  const handleNextShowcase = () => {
+    if (showcaseIndex === data.showcase.edges.length - 1) {
+      setShowcaseIndex(0);
+    } else {
+      setShowcaseIndex(showcaseIndex + 1);
+    }
+  };
 
   const renderImageAndText = edge => {
     if (
@@ -80,53 +133,6 @@ export default ({ data, ...props }) => {
         );
       }
     );
-  };
-
-  const handleAnimate = () => {
-    // Initialize ScrollTrigger
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.core.globals('ScrollTrigger', ScrollTrigger);
-
-    const calculateOffset = () => window.innerWidth / 2;
-    boxRefs.current.forEach((boxRef, index) => {
-      if (index % 2) {
-        // Animate from right
-        gsap.from(boxRef.current, {
-          x: calculateOffset(),
-          scrollTrigger: {
-            id: `box-${index + 1}`,
-            trigger: boxRef.current,
-            start: 'top center',
-          },
-        });
-      } else {
-        // Animate from left
-        gsap.from(boxRef.current, {
-          x: -calculateOffset(),
-          scrollTrigger: {
-            id: `box-${index + 1}`,
-            trigger: boxRef.current,
-            start: 'top center',
-          },
-        });
-      }
-    });
-  };
-
-  const handlePreviousShowcase = () => {
-    if (showcaseIndex === 0) {
-      setShowcaseIndex(data.showcase.edges.length - 1);
-    } else {
-      setShowcaseIndex(showcaseIndex - 1);
-    }
-  };
-
-  const handleNextShowcase = () => {
-    if (showcaseIndex === data.showcase.edges.length - 1) {
-      setShowcaseIndex(0);
-    } else {
-      setShowcaseIndex(showcaseIndex + 1);
-    }
   };
 
   return (
