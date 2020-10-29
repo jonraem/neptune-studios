@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { sortBy } from 'lodash';
+import { get, sortBy } from 'lodash';
 
 export const getActiveColorFromPath = pathName => {
   switch (pathName) {
@@ -24,4 +24,11 @@ export const getSortedCases = (cases, sortOrder) =>
 export const initializeScrollTrigger = () => {
   gsap.registerPlugin(ScrollTrigger);
   gsap.core.globals('ScrollTrigger', ScrollTrigger);
+};
+
+export const findQuote = (data, id) => {
+  return get(
+    data.quotation.edges.find(edge => edge.node.contentfulid === id),
+    'node'
+  );
 };

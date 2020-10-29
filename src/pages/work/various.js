@@ -1,6 +1,5 @@
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import { get } from 'lodash';
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import variousHero from '../../assets/png/various-hero.png';
@@ -11,6 +10,7 @@ import Hero from '../../components/hero';
 import ImageAndText from '../../components/imageAndText';
 import Quote from '../../components/quote';
 import Showcase from '../../components/showcase';
+import { findQuote } from '../../utils/helpers';
 import pagesStyles from '../pages.module.css';
 import styles from './work.module.css';
 
@@ -23,13 +23,6 @@ export default ({ data, ...props }) => {
     edge =>
       edge.node.contentfulid === `work:various:showcase${showcaseIndex + 1}`
   );
-
-  const findQuote = (data, id) => {
-    return get(
-      data.quotation.edges.find(edge => edge.node.contentfulid === id),
-      'node'
-    );
-  };
 
   const handlePreviousShowcase = () => {
     if (showcaseIndex === 0) {

@@ -14,6 +14,7 @@ import Quote from '../../components/quote';
 import Results from '../../components/results';
 import Showcase from '../../components/showcase';
 import Timeline from '../../components/timeline';
+import { findQuote } from '../../utils/helpers';
 import pagesStyles from '../pages.module.css';
 import styles from './work.module.css';
 
@@ -36,13 +37,6 @@ export default ({ data, ...props }) => {
     get(currentShowcase, 'node.images[0]'),
     get(currentShowcase, 'node.images[1]'),
   ].filter(x => !!x);
-
-  const findQuote = (data, id) => {
-    return get(
-      data.quotation.edges.find(edge => edge.node.contentfulid === id),
-      'node'
-    );
-  };
 
   const handlePreviousShowcase = () => {
     if (showcaseIndex === 0) {
