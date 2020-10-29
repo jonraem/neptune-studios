@@ -26,6 +26,22 @@ export default ({ data, ...props }) => {
   );
   const currentShowcaseImage = get(currentShowcase, 'node.images[0]');
 
+  const handlePreviousShowcase = () => {
+    if (showcaseIndex === 0) {
+      setShowcaseIndex(data.showcase.edges.length - 1);
+    } else {
+      setShowcaseIndex(showcaseIndex - 1);
+    }
+  };
+
+  const handleNextShowcase = () => {
+    if (showcaseIndex === data.showcase.edges.length - 1) {
+      setShowcaseIndex(0);
+    } else {
+      setShowcaseIndex(showcaseIndex + 1);
+    }
+  };
+
   const renderImageAndText = edge => {
     if (
       edge &&
@@ -46,22 +62,6 @@ export default ({ data, ...props }) => {
         />
       );
     } else return null;
-  };
-
-  const handlePreviousShowcase = () => {
-    if (showcaseIndex === 0) {
-      setShowcaseIndex(data.showcase.edges.length - 1);
-    } else {
-      setShowcaseIndex(showcaseIndex - 1);
-    }
-  };
-
-  const handleNextShowcase = () => {
-    if (showcaseIndex === data.showcase.edges.length - 1) {
-      setShowcaseIndex(0);
-    } else {
-      setShowcaseIndex(showcaseIndex + 1);
-    }
   };
 
   return (

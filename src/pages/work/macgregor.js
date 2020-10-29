@@ -37,29 +37,6 @@ export default ({ data, ...props }) => {
     get(currentShowcase, 'node.images[1]'),
   ].filter(x => !!x);
 
-  const renderImageAndText = edge => {
-    if (
-      edge &&
-      edge.node &&
-      edge.node.contentfulid &&
-      edge.node.title &&
-      edge.node.description &&
-      edge.node.image
-    ) {
-      return (
-        <ImageAndText
-          key={edge.node.contentfulid}
-          title={edge.node.title}
-          description={edge.node.description.childContentfulRichText.html}
-          imagePath={edge.node.image && edge.node.image.fluid}
-          maxHeight={500}
-          isReversed={reversed.includes(edge.node.contentfulid)}
-          hasGreyBackground={greyed.includes(edge.node.contentfulid)}
-        />
-      );
-    } else return null;
-  };
-
   const findQuote = (data, id) => {
     return get(
       data.quotation.edges.find(edge => edge.node.contentfulid === id),
@@ -81,6 +58,29 @@ export default ({ data, ...props }) => {
     } else {
       setShowcaseIndex(showcaseIndex + 1);
     }
+  };
+
+  const renderImageAndText = edge => {
+    if (
+      edge &&
+      edge.node &&
+      edge.node.contentfulid &&
+      edge.node.title &&
+      edge.node.description &&
+      edge.node.image
+    ) {
+      return (
+        <ImageAndText
+          key={edge.node.contentfulid}
+          title={edge.node.title}
+          description={edge.node.description.childContentfulRichText.html}
+          imagePath={edge.node.image && edge.node.image.fluid}
+          maxHeight={500}
+          isReversed={reversed.includes(edge.node.contentfulid)}
+          hasGreyBackground={greyed.includes(edge.node.contentfulid)}
+        />
+      );
+    } else return null;
   };
 
   return (

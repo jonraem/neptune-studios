@@ -24,6 +24,29 @@ export default ({ data, ...props }) => {
       edge.node.contentfulid === `work:various:showcase${showcaseIndex + 1}`
   );
 
+  const findQuote = (data, id) => {
+    return get(
+      data.quotation.edges.find(edge => edge.node.contentfulid === id),
+      'node'
+    );
+  };
+
+  const handlePreviousShowcase = () => {
+    if (showcaseIndex === 0) {
+      setShowcaseIndex(data.showcase.edges.length - 1);
+    } else {
+      setShowcaseIndex(showcaseIndex - 1);
+    }
+  };
+
+  const handleNextShowcase = () => {
+    if (showcaseIndex === data.showcase.edges.length - 1) {
+      setShowcaseIndex(0);
+    } else {
+      setShowcaseIndex(showcaseIndex + 1);
+    }
+  };
+
   const renderImageAndText = edge => {
     if (
       edge &&
@@ -46,13 +69,6 @@ export default ({ data, ...props }) => {
         />
       );
     } else return null;
-  };
-
-  const findQuote = (data, id) => {
-    return get(
-      data.quotation.edges.find(edge => edge.node.contentfulid === id),
-      'node'
-    );
   };
 
   const renderShowcaseImages = () => {
@@ -193,22 +209,6 @@ export default ({ data, ...props }) => {
         default:
           return <div style={{ color: '#fff' }}>No content</div>;
       }
-    }
-  };
-
-  const handlePreviousShowcase = () => {
-    if (showcaseIndex === 0) {
-      setShowcaseIndex(data.showcase.edges.length - 1);
-    } else {
-      setShowcaseIndex(showcaseIndex - 1);
-    }
-  };
-
-  const handleNextShowcase = () => {
-    if (showcaseIndex === data.showcase.edges.length - 1) {
-      setShowcaseIndex(0);
-    } else {
-      setShowcaseIndex(showcaseIndex + 1);
     }
   };
 
