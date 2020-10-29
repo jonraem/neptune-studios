@@ -6,7 +6,11 @@ export default props => {
     <div className={styles.feature}>
       <div className={styles.featureHeader}>
         {!!props.svgPath && (
-          <img className={styles.featureIcon} src={props.svgPath} />
+          <img
+            alt="Feature icon"
+            className={styles.featureIcon}
+            src={props.svgPath}
+          />
         )}
         <div className={styles.featureTitles}>
           <div className={styles.featureTitle}>{props.title}</div>
