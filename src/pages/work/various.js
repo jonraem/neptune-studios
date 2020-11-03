@@ -182,7 +182,7 @@ export default ({ data, ...props }) => {
                       boxShadow: '0px 2px 6px 2px rgba(0, 0, 0, 0.16)',
                     }}
                   />
-                  <Img
+                  {/* <Img
                     fluid={currentShowcase.node.images[4].fluid}
                     style={{ width: '15.5rem', height: '15.5rem' }}
                     imgStyle={{
@@ -194,7 +194,7 @@ export default ({ data, ...props }) => {
                       objectFit: 'contain',
                       boxShadow: '0px 2px 6px 2px rgba(0, 0, 0, 0.16)',
                     }}
-                  />
+                  /> */}
                 </div>
               </div>
             </>
