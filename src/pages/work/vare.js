@@ -17,7 +17,7 @@ import Quote from '../../components/quote';
 import { VareResults as Results } from '../../components/results';
 import Showcase from '../../components/showcase';
 import Timeline from '../../components/timeline';
-import { initializeScrollTrigger } from '../../util/helpers';
+import { initializeScrollTrigger } from '../../utils/helpers';
 import pagesStyles from '../pages.module.css';
 import styles from './work.module.css';
 
