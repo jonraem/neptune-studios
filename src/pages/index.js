@@ -8,7 +8,6 @@ import CenterTitle from '../components/centerTitle';
 import Footer from '../components/footer';
 import Header from '../components/header';
 import Hero from '../components/hero';
-import globalStyles from '../global.module.css';
 import { getSortedCases } from '../utils/helpers';
 import styles from './main.module.css';
 import pagesStyles from './pages.module.css';
@@ -35,30 +34,27 @@ export default ({ data, ...props }) => (
       }
     />
     <div className={pagesStyles.content}>
-      <div>
-        <CenterTitle>
-          Neptune Studios <br /> can help you with:
-        </CenterTitle>
-        <div className={styles.mainHelp}>
-          <p className={styles.mainHelpPara}>
-            The goal is to help clients achieve the best solution with a design
-            related problem. Functionality and practicality does not have to
-            mean “dull” or “My nephew could’ve done it!”. On the right side is
-            presented part of the skill set I’ve worked with.
-          </p>
-          <div className={pagesStyles.divider} />
-          <div className={styles.mainHelpItems}>
-            <div className={styles.mainHelpItem}>User interface design</div>
-            <div className={styles.mainHelpItem}>User experience design</div>
-            <div className={styles.mainHelpItem}>Workshops</div>
-            <div className={styles.mainHelpItem}>User testing</div>
-            <div className={styles.mainHelpItem}>Prototypes</div>
-            <div className={styles.mainHelpItem}>Visual design</div>
-          </div>
+      <CenterTitle>
+        Neptune Studios <br /> can help you with:
+      </CenterTitle>
+      <div className={styles.mainHelp}>
+        <p className={styles.mainHelpPara}>
+          The goal is to help clients achieve the best solution with a design
+          related problem. Functionality and practicality does not have to mean
+          “dull” or “My nephew could’ve done it!”. On the right side is
+          presented part of the skill set I’ve worked with.
+        </p>
+        <div className={pagesStyles.divider} />
+        <div className={styles.mainHelpItems}>
+          <div className={styles.mainHelpItem}>User interface design</div>
+          <div className={styles.mainHelpItem}>User experience design</div>
+          <div className={styles.mainHelpItem}>Workshops</div>
+          <div className={styles.mainHelpItem}>User testing</div>
+          <div className={styles.mainHelpItem}>Prototypes</div>
+          <div className={styles.mainHelpItem}>Visual design</div>
         </div>
       </div>
       <div className={styles.mainCases}>
-        <div className={globalStyles.fullWidthGrey} />
         <h3>Have a peek</h3>
         <p className={pagesStyles.largePara}>
           Some of the selected works from different creative fields.

@@ -35,11 +35,12 @@
 }
 
 .mainCases {
-  composes: fullWidthGrey from '../global.module.css';
+  margin: 10rem 0;
 }
 
 .mainCaseCards {
   display: flex;
+  margin-top: 3rem;
 }
 
 @media only screen and (max-width: 1200px) {
