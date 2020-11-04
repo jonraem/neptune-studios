@@ -72,8 +72,8 @@ export default props => {
         </div>
         <div className={styles.resultsSection2}>
           <div className={styles.resultsContent}>
-            <h3 className={styles.resultsTitle2}>{props.results.title2}</h3>
-            <div className={styles.resultsDescription2}>
+            <h3 className={styles.resultsTitle}>{props.results.title2}</h3>
+            <div className={styles.resultsDescription}>
               {props.results.description2}
             </div>
           </div>

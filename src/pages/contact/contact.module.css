@@ -16,7 +16,7 @@
 
 .contactFormDescription {
   composes: largePara from '../pages.module.css';
-  width: 40%;
+  width: 42%;
   margin: 0;
   margin-left: 5rem;
 }

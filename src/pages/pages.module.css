@@ -29,6 +29,11 @@
   white-space: pre-line;
 }
 
+.heroDescription p {
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+
 .subtitle {
   font-size: 1.5rem;
   margin: 1rem 0 1.5rem;
@@ -48,7 +53,7 @@
 
 .largePara {
   font-size: 1.5rem;
-  line-height: 2rem;
+  line-height: 2.5rem;
 }
 
 .divider {
