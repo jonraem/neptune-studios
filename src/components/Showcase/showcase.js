@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import styles from './components.module.css';
-import ProgressionButton from './progressionButton';
+import ProgressionButton from '../Buttons/progressionButton';
+import styles from './showcase.module.css';
 
 export default props => {
   const shouldRenderFeatureDescriptions =
@@ -27,7 +27,7 @@ export default props => {
         }}
       >
         <h3>{props.title}</h3>
-        <div className={styles.showcaseButtons}>
+        <div className={styles.buttons}>
           <ProgressionButton
             type="previous"
             onClick={props.handlePreviousShowcase}
@@ -38,7 +38,7 @@ export default props => {
             Next screen
           </ProgressionButton>
         </div>
-        <div className={styles.showcaseContent}>{props.children}</div>
+        <div className={styles.content}>{props.children}</div>
         {shouldRenderFeatureDescriptions && (
           <div className={styles.descriptionBoxes}>
             {props.featureDescriptions}

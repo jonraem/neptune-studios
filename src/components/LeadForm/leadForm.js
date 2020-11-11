@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import styles from './components.module.css';
+import styles from './leadForm.module.css';
 
 export default props => {
   const { register, handleSubmit, errors } = useForm();
@@ -9,7 +9,7 @@ export default props => {
   return (
     <form className={styles.leadForm} onSubmit={handleSubmit(onSubmit)}>
       <input
-        className={errors.name ? styles.errorInput : styles.leadFormInput}
+        className={errors.name ? styles.errorInput : styles.input}
         name="name"
         placeholder="Name (Required)"
         ref={register({ required: true })}
@@ -18,7 +18,7 @@ export default props => {
         <span className={styles.inputError}>Please, enter your name.</span>
       )}
       <input
-        className={errors.email ? styles.errorInput : styles.leadFormInput}
+        className={errors.email ? styles.errorInput : styles.input}
         name="email"
         placeholder="Email (Required)"
         ref={register({ required: true })}
@@ -30,19 +30,19 @@ export default props => {
         </span>
       )}
       <input
-        className={styles.leadFormInput}
+        className={styles.input}
         name="subject"
         placeholder="Subject"
         ref={register}
       />
       <textarea
-        className={styles.leadFormInput}
+        className={styles.input}
         name="subject"
         placeholder="Your inquiry"
         rows="6"
         ref={register}
       />
-      <button className={styles.leadFormSubmit} type="submit">
+      <button className={styles.submit} type="submit">
         Send message
       </button>
     </form>

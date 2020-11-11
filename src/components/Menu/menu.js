@@ -1,11 +1,11 @@
 import { Link } from 'gatsby';
 import React, { useContext, useEffect } from 'react';
-import { ReactComponent as Behance } from '../assets/svg/behance--white.svg';
-import { ReactComponent as Cross } from '../assets/svg/cross.svg';
-import { ReactComponent as LinkedIn } from '../assets/svg/linkedin--white.svg';
-import MenuContext from '../context/MenuContext';
-import { getActiveColorFromPath } from '../utils/helpers';
-import styles from './components.module.css';
+import { ReactComponent as Behance } from '../../assets/svg/behance--white.svg';
+import { ReactComponent as Cross } from '../../assets/svg/cross.svg';
+import { ReactComponent as LinkedIn } from '../../assets/svg/linkedin--white.svg';
+import MenuContext from '../../context/MenuContext';
+import { getActiveColorFromPath } from '../../utils/helpers';
+import styles from './menu.module.css';
 
 export default props => {
   const { setIsOpen } = useContext(MenuContext);
@@ -30,13 +30,13 @@ export default props => {
 
   const getLinkClass = pathName => {
     if (props.currentPath === pathName) {
-      return styles.menuLinkActive;
-    } else return styles.menuLink;
+      return styles.linkActive;
+    } else return styles.link;
   };
 
   return (
     <div className={styles.menu} style={getMenuStyle()}>
-      <div className={styles.menuLinks}>
+      <div className={styles.links}>
         <Link
           to="/"
           onClick={() => setIsOpen(false)}
@@ -70,26 +70,23 @@ export default props => {
           Contact
         </Link>
       </div>
-      <div className={styles.menuSocial}>
+      <div className={styles.social}>
         <a
           href="https://fi.linkedin.com/in/pnousiainen"
-          className={styles.menuSocialLink}
+          className={styles.socialLink}
         >
           <LinkedIn />
           LinkedIn
         </a>
         <a
           href="https://www.behance.net/pnousiainen"
-          className={styles.menuSocialLink}
+          className={styles.socialLink}
         >
           <Behance />
           Behance
         </a>
       </div>
-      <button
-        className={styles.menuCloseButton}
-        onClick={() => setIsOpen(false)}
-      >
+      <button className={styles.closeButton} onClick={() => setIsOpen(false)}>
         <Cross />
       </button>
     </div>

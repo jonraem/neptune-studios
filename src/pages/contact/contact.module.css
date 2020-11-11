@@ -1,10 +1,10 @@
 .contactHero {
-  composes: hero from '../pages.module.css';
+  composes: hero from '../../components/Hero/hero.module.css';
   background: #3d68b0;
 }
 
 .contactHeroImage {
-  composes: heroImage from '../pages.module.css';
+  composes: image from '../../components/Hero/hero.module.css';
   bottom: -1rem;
   right: 0;
   height: 68vh;

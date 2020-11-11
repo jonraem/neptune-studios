@@ -1,8 +1,8 @@
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
-import globalStyles from '../global.module.css';
-import styles from './components.module.css';
+import globalStyles from '../../global.module.css';
+import styles from './imageAndText.module.css';
 
 export default props => {
   return (

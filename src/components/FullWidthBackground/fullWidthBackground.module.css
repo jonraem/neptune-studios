@@ -1,0 +1,3 @@
+.fullWidthBackground {
+  composes: fullWidthGrey from '../../global.module.css';
+}

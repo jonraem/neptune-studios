@@ -1,0 +1,62 @@
+.leadForm {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.input {
+  background: #f2f2f2;
+  color: #0e0c3c;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  border: 2px solid #f2f2f2;
+  border-radius: 4px;
+  margin: 1rem 0;
+  padding: 1rem;
+  transition: border 0.25s, background 0.25s;
+}
+
+.input:focus {
+  background: #fff;
+}
+
+.errorInput {
+  composes: input;
+  border: 2px solid #dc143c;
+  background: #fff;
+}
+
+.inputError {
+  margin-bottom: 1rem;
+  color: #e23c52;
+}
+
+.submit {
+  width: 14rem;
+  margin-top: 2rem;
+  border: none;
+  border-radius: 4px;
+  background: #005783;
+  color: #fff;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  padding: 0.75rem;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background: #349acd;
+}
+
+@media only screen and (max-width: 768px) {
+  .leadForm {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .submit {
+    width: 12rem;
+    margin: 0 auto;
+    font-size: 0.9rem;
+  }
+}

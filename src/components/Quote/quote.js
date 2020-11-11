@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './components.module.css';
+import styles from './quote.module.css';
 
 const QuotationMarks = () => (
   <div className={styles.quotationMarks}>
@@ -19,7 +19,7 @@ export default props => {
     return (
       <div className={styles.quote}>
         <QuotationMarks />
-        <h3 className={styles.quoteText}>{props.quote.quote}</h3>
+        <h3 className={styles.text}>{props.quote.quote}</h3>
       </div>
     );
   } else return null;

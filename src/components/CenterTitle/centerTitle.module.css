@@ -1,0 +1,35 @@
+.centerTitle {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.centerTitle h3 {
+  width: max-content;
+  margin: 3rem auto;
+  padding: 0 2rem;
+  background: #fff;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  background: #d8d8d8;
+  z-index: -1;
+}
+
+@media only screen and (max-width: 768px) {
+  .centerTitle {
+    text-align: left;
+  }
+
+  .centerTitle h3 {
+    padding: 0;
+  }
+
+  .divider {
+    display: none;
+  }
+}

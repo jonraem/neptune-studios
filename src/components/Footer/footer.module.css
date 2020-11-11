@@ -1,0 +1,35 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 2rem 1rem;
+  padding: 2rem 0;
+  border-top: 1px solid #d8d8d8;
+}
+
+.social {
+  display: flex;
+}
+
+.socialLink {
+  margin-left: 1rem;
+}
+
+.socialLink svg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .footer {
+    margin: 1rem 2rem;
+    padding: 1rem 0;
+    font-size: 0.75rem;
+    border-top: none;
+  }
+
+  .socialLink svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}

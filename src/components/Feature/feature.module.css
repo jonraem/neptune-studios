@@ -1,0 +1,57 @@
+.feature {
+  flex: 1;
+  margin: 1rem 2rem;
+}
+
+.header {
+  display: flex;
+  height: 7rem;
+  margin-bottom: 3rem;
+}
+
+.icon {
+  width: 5rem;
+  height: 5rem;
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+
+.title {
+  font-family: 'Zilla Slab', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  line-height: 1.75rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .feature {
+    margin-bottom: 2rem;
+  }
+
+  .header {
+    height: 6rem;
+    margin-bottom: 1rem;
+  }
+
+  .icon {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .subtitle,
+  .description {
+    font-size: 0.9rem;
+  }
+}

@@ -1,10 +1,10 @@
 .mainHero {
-  composes: hero from './pages.module.css';
+  composes: hero from '../components/Hero/hero.module.css';
   background-color: #5dbbe3;
 }
 
 .mainHeroImage {
-  composes: heroImage from './pages.module.css';
+  composes: image from '../components/Hero/hero.module.css';
   top: 8rem;
   right: 0;
   height: 80vh;

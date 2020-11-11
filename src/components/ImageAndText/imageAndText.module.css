@@ -1,0 +1,37 @@
+.imageAndText {
+  display: flex;
+  justify-content: space-between;
+  height: 38rem;
+  max-width: 80rem;
+  margin: 2rem auto;
+}
+
+.textSide,
+.imageSide {
+  width: 45%;
+}
+
+.textSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-size: 48px;
+  margin-bottom: 1rem;
+}
+
+.description {
+  width: 30rem;
+}
+
+.description p {
+  line-height: 1.75rem;
+}
+
+.imageSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

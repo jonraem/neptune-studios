@@ -1,0 +1,30 @@
+.header {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.logo {
+  margin-left: 2rem;
+}
+
+.links {
+  color: #fff;
+  margin-right: 4rem;
+}
+
+.link {
+  font-family: 'Zilla Slab', sans-serif;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin-right: 2rem;
+}
+
+.hamburger {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 2rem;
+}

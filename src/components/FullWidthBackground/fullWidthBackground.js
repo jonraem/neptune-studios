@@ -1,6 +1,6 @@
 import Img from 'gatsby-image';
 import React from 'react';
-import styles from './components.module.css';
+import styles from './fullWidthBackground.module.css';
 
 export default props => {
   return (

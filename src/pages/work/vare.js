@@ -6,17 +6,17 @@ import { get } from 'lodash';
 import React, { useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import vareHero from '../../assets/png/vare-hero.png';
-import componentsStyles from '../../components/components.module.css';
-import Feature from '../../components/feature';
-import Footer from '../../components/footer';
-import FullWidthBackground from '../../components/fullWidthBackground';
-import Header from '../../components/header';
-import Hero from '../../components/hero';
-import ImageAndText from '../../components/imageAndText';
-import Quote from '../../components/quote';
-import { VareResults as Results } from '../../components/results';
-import Showcase from '../../components/showcase';
-import Timeline from '../../components/timeline';
+import Feature from '../../components/Feature/feature';
+import Footer from '../../components/Footer/footer';
+import FullWidthBackground from '../../components/FullWidthBackground/fullWidthBackground';
+import Header from '../../components/Header/header';
+import Hero from '../../components/Hero/hero';
+import ImageAndText from '../../components/ImageAndText/imageAndText';
+import Quote from '../../components/Quote/quote';
+import { VareResults as Results } from '../../components/Results/results';
+import Showcase from '../../components/Showcase/showcase';
+import showcaseStyles from '../../components/Showcase/showcase.module.css';
+import Timeline from '../../components/Timeline/timeline';
 import { initializeScrollTrigger } from '../../utils/helpers';
 import pagesStyles from '../pages.module.css';
 import styles from './work.module.css';
@@ -121,10 +121,10 @@ export default ({ data, ...props }) => {
           <div
             key={featureDescription.id}
             className={classnames(
-              componentsStyles.descriptionBox,
+              showcaseStyles.descriptionBox,
               index % 2
-                ? componentsStyles.descriptionBoxRight
-                : componentsStyles.descriptionBoxLeft
+                ? showcaseStyles.descriptionBoxRight
+                : showcaseStyles.descriptionBoxLeft
             )}
             ref={boxRefs.current[index]}
           >

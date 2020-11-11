@@ -1,13 +1,13 @@
 import { graphql } from 'gatsby';
-import React from 'react';
 import { get } from 'lodash';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import aboutHero from '../../assets/png/about-hero.png';
 import { ReactComponent as CurriculumVitae } from '../../assets/svg/curriculum-vitae.svg';
-import Feature from '../../components/feature';
-import Footer from '../../components/footer';
-import Header from '../../components/header';
-import Hero from '../../components/hero';
+import Feature from '../../components/Feature/feature';
+import Footer from '../../components/Footer/footer';
+import Header from '../../components/Header/header';
+import Hero from '../../components/Hero/hero';
 import pagesStyles from '../pages.module.css';
 import styles from './about.module.css';
 

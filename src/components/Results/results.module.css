@@ -1,0 +1,81 @@
+.results {
+  margin: 4rem 0;
+}
+
+.title {
+  margin-bottom: 5rem;
+}
+
+.description {
+  font-family: 'Zilla Slab', sans-serif;
+  font-style: italic;
+}
+
+.description,
+.description p {
+  line-height: 1.65rem;
+}
+
+.sections {
+  display: flex;
+  flex-direction: row;
+}
+
+.section1,
+.section2 {
+  width: 40%;
+}
+
+.section1 {
+  margin-right: 3rem;
+}
+
+.content {
+  padding: 0 1rem;
+  border-left: 1px solid #d8d8d8;
+}
+
+.section2 h3,
+.section3 h3 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+
+.vareResults .sections {
+  justify-content: space-between;
+}
+
+.vareResults .section1 {
+  margin-right: 0;
+}
+
+.vareResults .section2,
+.vareResults .section3 {
+  width: 25%;
+}
+
+.vareResults .ratingTitle {
+  margin-right: 1rem;
+}
+
+.vareResults .ratingTitle,
+.vareResults .ratingSubtitle {
+  display: inline-block;
+}
+
+@media only screen and (max-width: 768px) {
+  .title {
+    margin-bottom: 2rem;
+  }
+
+  .sections {
+    flex-direction: column;
+  }
+
+  .section1,
+  .section2,
+  .section3 {
+    width: 80%;
+    margin: 0 auto 3rem;
+  }
+}

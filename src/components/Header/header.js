@@ -1,10 +1,10 @@
 import { Link } from 'gatsby';
 import React, { useContext } from 'react';
-import { ReactComponent as Hamburger } from '../assets/svg/hamburger.svg';
-import { ReactComponent as NeptuneStudios } from '../assets/svg/neptune-studios--white.svg';
-import MenuContext from '../context/MenuContext';
-import useMedia from '../hooks/useMedia';
-import styles from './components.module.css';
+import { ReactComponent as Hamburger } from '../../assets/svg/hamburger.svg';
+import { ReactComponent as NeptuneStudios } from '../../assets/svg/neptune-studios--white.svg';
+import MenuContext from '../../context/MenuContext';
+import useMedia from '../../hooks/useMedia';
+import styles from './header.module.css';
 
 export default props => {
   const { setIsOpen } = useContext(MenuContext);
@@ -24,40 +24,36 @@ export default props => {
 
   return (
     <div className={styles.header}>
-      <NeptuneStudios className={styles.headerLogo} />
+      <NeptuneStudios className={styles.logo} />
       {isMobile ? (
         <button
           className={styles.unstyledButton}
           onClick={() => setIsOpen(true)}
         >
-          <Hamburger className={styles.headerHamburger} />
+          <Hamburger className={styles.hamburger} />
         </button>
       ) : (
-        <div className={styles.headerLinks}>
-          <Link
-            to="/"
-            className={styles.headerLink}
-            style={getActiveBorder('/')}
-          >
+        <div className={styles.links}>
+          <Link to="/" className={styles.link} style={getActiveBorder('/')}>
             Main
           </Link>
           <Link
             to="/work"
-            className={styles.headerLink}
+            className={styles.link}
             style={getActiveBorder('/work')}
           >
             Work
           </Link>
           <Link
             to="/about"
-            className={styles.headerLink}
+            className={styles.link}
             style={getActiveBorder('/about')}
           >
             About
           </Link>
           <Link
             to="/contact"
-            className={styles.headerLink}
+            className={styles.link}
             style={getActiveBorder('/contact')}
           >
             Contact

@@ -1,0 +1,60 @@
+.timeline {
+  composes: fullWidthGrey from '../../global.module.css';
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline h3 {
+  background: #f8f8fe;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 10rem;
+  margin-bottom: 2rem;
+}
+
+.title {
+  width: 26rem;
+  margin-right: 2rem;
+  text-align: right;
+  font-family: 'Zilla Slab', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.description {
+  width: 26rem;
+  margin-left: 2rem;
+  line-height: 1.75rem;
+}
+
+.point {
+  border-radius: 30px/30px;
+  border: solid 2px #E23C52;
+  width: 30px;
+  height: 30px;
+}
+
+.line {
+  position: absolute;
+  width: 2px;
+  height: 85%;
+  top: 2.75rem;
+  background: #3D68B0;
+}
+
+.item:last-of-type .point {
+  border-radius: 50%;
+  border: solid 2px #E23C52;
+  background: #E23C52;
+  width: 30px;
+  height: 30px;
+}
+
+.item:last-of-type .line {
+  display: none;
+}

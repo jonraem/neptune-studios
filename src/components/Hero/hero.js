@@ -1,6 +1,6 @@
 import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
-import styles from '../pages/pages.module.css';
+import styles from './hero.module.css';
 
 export default props => (
   <StaticQuery
@@ -29,13 +29,13 @@ export default props => (
       if (content) {
         return (
           <div className={props.heroStyles}>
-            <div className={styles.heroText}>
-              <div className={styles.heroTitle}>
+            <div className={styles.text}>
+              <div className={styles.title}>
                 <div className={styles.subtitle}>{content.subtitle}</div>
                 <h1>{content.title}</h1>
               </div>
               <div
-                className={styles.heroDescription}
+                className={styles.description}
                 dangerouslySetInnerHTML={{
                   __html: content.description.childContentfulRichText.html,
                 }}

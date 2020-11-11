@@ -2,11 +2,11 @@ import { graphql } from 'gatsby';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import contactHero from '../../assets/png/contact-hero.png';
-import CenterTitle from '../../components/centerTitle';
-import Footer from '../../components/footer';
-import Header from '../../components/header';
-import Hero from '../../components/hero';
-import LeadForm from '../../components/leadForm';
+import CenterTitle from '../../components/CenterTitle/centerTitle';
+import Footer from '../../components/Footer/footer';
+import Header from '../../components/Header/header';
+import Hero from '../../components/Hero/hero';
+import LeadForm from '../../components/LeadForm/leadForm';
 import pagesStyles from '../pages.module.css';
 import styles from './contact.module.css';
 
