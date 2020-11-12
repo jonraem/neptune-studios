@@ -1,50 +1,31 @@
-import { graphql, StaticQuery } from 'gatsby';
+import Img from 'gatsby-image';
 import React from 'react';
 import styles from './hero.module.css';
 
-export default props => (
-  <StaticQuery
-    query={graphql`
-      query {
-        allContentfulHero {
-          edges {
-            node {
-              contentfulid
-              title
-              subtitle
-              description {
-                childContentfulRichText {
-                  html
-                }
-              }
-            }
-          }
-        }
-      }
-    `}
-    render={data => {
-      const content = data.allContentfulHero.edges.find(
-        edge => edge.node.contentfulid === `${props.for}:hero`
-      ).node;
-      if (content) {
-        return (
-          <div className={props.heroStyles}>
-            <div className={styles.text}>
-              <div className={styles.title}>
-                <div className={styles.subtitle}>{content.subtitle}</div>
-                <h1>{content.title}</h1>
-              </div>
-              <div
-                className={styles.description}
-                dangerouslySetInnerHTML={{
-                  __html: content.description.childContentfulRichText.html,
-                }}
-              />
-            </div>
-            {props.heroImage}
-          </div>
-        );
-      }
-    }}
-  />
-);
+export default props => {
+  return (
+    <div className={props.className}>
+      <div className={styles.text}>
+        <div className={styles.title}>
+          <div className={styles.subtitle}>{props.subtitle}</div>
+          <h1>{props.title}</h1>
+        </div>
+        <div
+          className={styles.description}
+          dangerouslySetInnerHTML={{
+            __html: props.description,
+          }}
+        />
+      </div>
+      {!!props.heroImage && (
+        <Img
+          className={props.heroClassName}
+          alt={props.heroAlt}
+          style={{ position: 'absolute' }}
+          imgStyle={{ position: 'unset' }}
+          fluid={props.heroImage}
+        />
+      )}
+    </div>
+  );
+};
