@@ -22,15 +22,13 @@ export default ({ data, ...props }) => (
     </Helmet>
     <Header currentPath={props.path} />
     <Hero
-      for="work"
-      heroStyles={styles.workHero}
-      heroImage={
-        <img
-          className={styles.workHeroImage}
-          src={caseHero}
-          alt="Phone with Väppi application"
-        />
-      }
+      className={styles.workHero}
+      title={data.hero.title}
+      subtitle={data.hero.subtitle}
+      description={data.hero.description?.childContentfulRichText?.html}
+      heroClassName={styles.workHeroImage}
+      heroAlt="Phone with Väppi application"
+      heroImage={data.hero?.image?.fluid}
     />
     <div className={pagesStyles.content}>
       <div className={styles.workCases}>
@@ -62,6 +60,20 @@ export default ({ data, ...props }) => (
 
 export const query = graphql`
   query {
+    hero: contentfulHero(contentfulid: { eq: "work:hero" }) {
+      title
+      subtitle
+      description {
+        childContentfulRichText {
+          html
+        }
+      }
+      image {
+        fluid {
+          src
+        }
+      }
+    }
     allContentfulCase {
       edges {
         node {

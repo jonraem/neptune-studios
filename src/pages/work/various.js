@@ -214,15 +214,13 @@ export default ({ data, ...props }) => {
       </Helmet>
       <Header currentPath={props.path} />
       <Hero
-        for="work:various"
-        heroStyles={styles.variousHero}
-        heroImage={
-          <img
-            className={styles.variousHeroImage}
-            src={variousHero}
-            alt="Images of various applications"
-          />
-        }
+        className={styles.variousHero}
+        title={data.hero.title}
+        subtitle={data.hero.subtitle}
+        description={data.hero.description?.childContentfulRichText?.html}
+        heroClassName={styles.variousHeroImage}
+        heroAlt="Images of various applications"
+        heroImage={data.hero?.image?.fluid}
       />
       <div className={pagesStyles.content}>
         {renderImageAndText(
@@ -266,6 +264,20 @@ export default ({ data, ...props }) => {
 
 export const query = graphql`
   query {
+    hero: contentfulHero(contentfulid: { eq: "work:various:hero" }) {
+      title
+      subtitle
+      description {
+        childContentfulRichText {
+          html
+        }
+      }
+      image {
+        fluid {
+          src
+        }
+      }
+    }
     imageAndText: allContentfulImageAndText(
       filter: { contentfulid: { regex: "/work:various:imageAndText/" } }
     ) {

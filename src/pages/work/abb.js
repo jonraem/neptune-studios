@@ -73,15 +73,13 @@ export default ({ data, ...props }) => {
       </Helmet>
       <Header currentPath={props.path} />
       <Hero
-        for="work:abb"
-        heroStyles={styles.abbHero}
-        heroImage={
-          <img
-            className={styles.abbHeroImage}
-            src={abbHero}
-            alt="Tablets with ABB application"
-          />
-        }
+        className={styles.abbHero}
+        title={data.hero.title}
+        subtitle={data.hero.subtitle}
+        description={data.hero.description?.childContentfulRichText?.html}
+        heroClassName={styles.abbHeroImage}
+        heroAlt="Tablets with ABB application"
+        heroImage={data.hero?.image?.fluid}
       />
       <div className={pagesStyles.content}>
         <div className={styles.abbFeatures}>
@@ -151,6 +149,20 @@ export default ({ data, ...props }) => {
 
 export const query = graphql`
   query {
+    hero: contentfulHero(contentfulid: { eq: "work:abb:hero" }) {
+      title
+      subtitle
+      description {
+        childContentfulRichText {
+          html
+        }
+      }
+      image {
+        fluid {
+          src
+        }
+      }
+    }
     tripleFeature: contentfulTripleFeature(
       contentfulid: { eq: "work:abb:triplefeature" }
     ) {
