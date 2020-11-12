@@ -61,7 +61,7 @@ export default ({ data, ...props }) => (
         </p>
         <div className={styles.mainCaseCards}>
           {filter(
-            getSortedCases(data.allContentfulCase.edges, sortOrder),
+            getSortedCases(data.cases.edges, sortOrder),
             edge => edge.node.contentfulid !== 'case:various'
           ).map((edge, index) => (
             <CaseCard
@@ -81,7 +81,7 @@ export default ({ data, ...props }) => (
 
 export const query = graphql`
   query {
-    allContentfulCase {
+    cases: allContentfulCase {
       edges {
         node {
           contentfulid
