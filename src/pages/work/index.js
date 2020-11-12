@@ -1,7 +1,6 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import caseHero from '../../assets/png/case-hero.png';
 import Footer from '../../components/Footer/footer';
 import Header from '../../components/Header/header';
 import Hero from '../../components/Hero/hero';

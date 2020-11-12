@@ -3,7 +3,6 @@ import Img from 'gatsby-image';
 import { get } from 'lodash';
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import macgregorHero from '../../assets/png/macgregor-hero.png';
 import Feature from '../../components/Feature/feature';
 import Footer from '../../components/Footer/footer';
 import FullWidthBackground from '../../components/FullWidthBackground/fullWidthBackground';

@@ -2,7 +2,6 @@ import { graphql } from 'gatsby';
 import { get } from 'lodash';
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import aboutHero from '../../assets/png/about-hero.png';
 import { ReactComponent as CurriculumVitae } from '../../assets/svg/curriculum-vitae.svg';
 import Feature from '../../components/Feature/feature';
 import Footer from '../../components/Footer/footer';

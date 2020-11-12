@@ -5,7 +5,6 @@ import gsap from 'gsap';
 import { get } from 'lodash';
 import React, { useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import vareHero from '../../assets/png/vare-hero.png';
 import Feature from '../../components/Feature/feature';
 import Footer from '../../components/Footer/footer';
 import FullWidthBackground from '../../components/FullWidthBackground/fullWidthBackground';
