@@ -2,7 +2,6 @@ import { graphql } from 'gatsby';
 import { filter } from 'lodash';
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import diverHero from '../assets/png/diver-hero.png';
 import CaseCard from '../components/CaseCard/caseCard';
 import CenterTitle from '../components/CenterTitle/centerTitle';
 import Footer from '../components/Footer/footer';
@@ -23,15 +22,13 @@ export default ({ data, ...props }) => (
     </Helmet>
     <Header currentPath={props.path} />
     <Hero
-      for="main"
-      heroStyles={styles.mainHero}
-      heroImage={
-        <img
-          className={styles.mainHeroImage}
-          src={diverHero}
-          alt="Illustration of a diver"
-        />
-      }
+      className={styles.mainHero}
+      title={data.hero.title}
+      subtitle={data.hero.subtitle}
+      description={data.hero.description?.childContentfulRichText?.html}
+      heroClassName={styles.mainHeroImage}
+      heroImage={data.hero?.image?.fluid}
+      heroAlt="Illustration of a diver"
     />
     <div className={pagesStyles.content}>
       <CenterTitle>
@@ -81,6 +78,20 @@ export default ({ data, ...props }) => (
 
 export const query = graphql`
   query {
+    hero: contentfulHero(contentfulid: { eq: "main:hero" }) {
+      title
+      subtitle
+      description {
+        childContentfulRichText {
+          html
+        }
+      }
+      image {
+        fluid {
+          src
+        }
+      }
+    }
     cases: allContentfulCase {
       edges {
         node {
