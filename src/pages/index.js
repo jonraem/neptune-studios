@@ -27,8 +27,8 @@ export default ({ data, ...props }) => (
       subtitle={data.hero.subtitle}
       description={data.hero.description?.childContentfulRichText?.html}
       heroClassName={styles.mainHeroImage}
-      heroImage={data.hero?.image?.fluid}
       heroAlt="Illustration of a diver"
+      heroImage={data.hero?.image?.fluid}
     />
     <div className={pagesStyles.content}>
       <CenterTitle>

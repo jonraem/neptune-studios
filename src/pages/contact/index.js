@@ -19,15 +19,13 @@ export default ({ data, ...props }) => (
     </Helmet>
     <Header currentPath={props.path} />
     <Hero
-      for="contact"
-      heroStyles={styles.contactHero}
-      heroImage={
-        <img
-          className={styles.contactHeroImage}
-          src={contactHero}
-          alt="Contact Neptune Studios"
-        />
-      }
+      className={styles.contactHero}
+      title={data.hero.title}
+      subtitle={data.hero.subtitle}
+      description={data.hero.description?.childContentfulRichText?.html}
+      heroClassName={styles.contactHeroImage}
+      heroAlt="Contact Neptune Studios"
+      heroImage={data.hero?.image?.fluid}
     />
     <div className={pagesStyles.content}>
       <CenterTitle>
@@ -55,6 +53,11 @@ export const query = graphql`
       description {
         childContentfulRichText {
           html
+        }
+      }
+      image {
+        fluid {
+          src
         }
       }
     }

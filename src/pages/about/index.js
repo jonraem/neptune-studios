@@ -20,15 +20,13 @@ export default ({ data, ...props }) => (
     </Helmet>
     <Header currentPath={props.path} />
     <Hero
-      for="about"
-      heroStyles={styles.aboutHero}
-      heroImage={
-        <img
-          className={styles.aboutHeroImage}
-          src={aboutHero}
-          alt="Pyry Nousiainen"
-        />
-      }
+      className={styles.aboutHero}
+      title={data.hero.title}
+      subtitle={data.hero.subtitle}
+      description={data.hero.description?.childContentfulRichText?.html}
+      heroClassName={styles.aboutHeroImage}
+      heroAlt="Pyry Nousiainen"
+      heroImage={data.hero?.image?.fluid}
     />
     <div className={pagesStyles.content}>
       <div className={styles.aboutFeatures}>
@@ -56,6 +54,20 @@ export default ({ data, ...props }) => (
 
 export const query = graphql`
   query {
+    hero: contentfulHero(contentfulid: { eq: "about:hero" }) {
+      title
+      subtitle
+      description {
+        childContentfulRichText {
+          html
+        }
+      }
+      image {
+        fluid {
+          src
+        }
+      }
+    }
     tripleFeature: contentfulTripleFeature(
       contentfulid: { eq: "about:triplefeature" }
     ) {
