@@ -1,11 +1,13 @@
 import Img from 'gatsby-image';
 import React from 'react';
+import BackButton from '../Buttons/backButton';
 import styles from './hero.module.css';
 
 export default props => {
   return (
     <div className={props.className}>
-      <div className={styles.text}>
+      <div className={styles.content}>
+        {!!props.linkBackTo && <BackButton linkTo={props.linkBackTo} />}
         <div className={styles.title}>
           <div className={styles.subtitle}>{props.subtitle}</div>
           <h1>{props.title}</h1>

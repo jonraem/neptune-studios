@@ -5,14 +5,15 @@
   color: #fff;
 }
 
-.text {
+.content {
   max-width: 1200px;
   margin: auto;
-  padding: 30vh 2rem 0;
+  padding: 18vh 2rem 0;
 }
 
 .title {
   width: 36rem;
+  margin-top: 16vh;
   text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
 }
 
@@ -37,11 +38,11 @@
 }
 
 @media only screen and (max-width: 1200px) {
-  .text {
+  .content {
     max-width: 1000px;
   }
 
-  .text .subtitle {
+  .content .subtitle {
     font-size: 1.25rem;
   }
 
@@ -56,8 +57,8 @@
     max-height: 68rem;
   }
 
-  .text {
-    padding: 28vh 2rem 0;
+  .content {
+    padding: 18vh 2rem 0;
   }
 }
 
@@ -75,7 +76,7 @@
     display: none;
   }
 
-  .text {
+  .content {
     width: 85%;
     left: 10%;
   }
