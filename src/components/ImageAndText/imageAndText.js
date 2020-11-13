@@ -1,6 +1,7 @@
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
+import FullWidthGrey from '../FullWidth/grey';
 import globalStyles from '../../global.module.css';
 import styles from './imageAndText.module.css';
 
@@ -10,9 +11,7 @@ export default props => {
       className={styles.imageAndText}
       style={props.isReversed ? { flexDirection: 'row-reverse' } : {}}
     >
-      {props.hasGreyBackground && (
-        <div className={globalStyles.fullWidthGrey} />
-      )}
+      {props.hasGreyBackground && <FullWidthGrey />}
       <div className={styles.textSide} style={props.textSideStyle}>
         <h2 className={styles.title}>{props.title}</h2>
         <div

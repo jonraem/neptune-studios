@@ -3,7 +3,7 @@ import Img from 'gatsby-image';
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Footer from '../../components/Footer/footer';
-import FullWidthBackground from '../../components/FullWidthBackground/fullWidthBackground';
+import FullWidthBackground from '../../components/FullWidth/background';
 import Header from '../../components/Header/header';
 import Hero from '../../components/Hero/hero';
 import ImageAndText from '../../components/ImageAndText/imageAndText';
