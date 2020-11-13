@@ -1,12 +1,12 @@
 import Img from 'gatsby-image';
 import React from 'react';
-import globalStyles from '../../global.module.css';
-import styles from './fullWidthBackground.module.css';
+import FullWidthGrey from './grey';
+import styles from './fullWidth.module.css';
 
 export default props => {
   return (
     <div className={styles.fullWidthBackground}>
-      <div className={globalStyles.fullWidthGrey} />
+      <FullWidthGrey />
       <Img
         fluid={props.imagePath}
         style={{
