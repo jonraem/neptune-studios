@@ -95,6 +95,7 @@ export default ({ data, ...props }) => {
         heroClassName={styles.macgregorHeroImage}
         heroAlt="Phone with MacGregor application"
         heroImage={data.hero?.image?.fluid}
+        linkBackTo="/work"
       />
       <div className={pagesStyles.content}>
         <div className={styles.macgregorFeatures}>

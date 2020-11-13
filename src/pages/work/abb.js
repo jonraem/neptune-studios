@@ -79,6 +79,7 @@ export default ({ data, ...props }) => {
         heroClassName={styles.abbHeroImage}
         heroAlt="Tablets with ABB application"
         heroImage={data.hero?.image?.fluid}
+        linkBackTo="/work"
       />
       <div className={pagesStyles.content}>
         <div className={styles.abbFeatures}>

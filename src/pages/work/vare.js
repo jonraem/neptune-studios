@@ -150,6 +150,7 @@ export default ({ data, ...props }) => {
         heroClassName={styles.vareHeroImage}
         heroAlt="Phone with Väppi application"
         heroImage={data.hero?.image?.fluid}
+        linkBackTo="/work"
       />
       <div className={pagesStyles.content}>
         <div className={styles.vareFeatures}>

@@ -220,6 +220,7 @@ export default ({ data, ...props }) => {
         heroClassName={styles.variousHeroImage}
         heroAlt="Images of various applications"
         heroImage={data.hero?.image?.fluid}
+        linkBackTo="/work"
       />
       <div className={pagesStyles.content}>
         {renderImageAndText(
