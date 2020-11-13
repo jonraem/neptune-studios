@@ -1,4 +1,5 @@
 .imageAndText {
+  position: relative;
   display: flex;
   justify-content: space-between;
   height: 38rem;

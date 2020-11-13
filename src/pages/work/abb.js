@@ -15,7 +15,7 @@ import pagesStyles from '../pages.module.css';
 import styles from './work.module.css';
 
 const reversed = ['work:abb:imageAndText2', 'work:abb:imageAndText4'];
-const greyed = ['work:abb:imageAndText1'];
+const greyed = ['work:abb:imageAndText1', 'work:abb:imageAndText3'];
 
 export default ({ data, ...props }) => {
   const [showcaseIndex, setShowcaseIndex] = useState(0);

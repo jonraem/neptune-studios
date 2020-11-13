@@ -23,7 +23,7 @@ const reversed = [
   'work:macgregor:imageAndText4',
   'work:macgregor:imageAndText6',
 ];
-const greyed = ['work:macgregor:imageAndText3'];
+const greyed = ['work:macgregor:imageAndText2', 'work:macgregor:imageAndText3'];
 
 export default ({ data, ...props }) => {
   const [showcaseIndex, setShowcaseIndex] = useState(0);

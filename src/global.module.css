@@ -97,7 +97,11 @@ body {
 }
 
 .fullWidthGrey {
+  position: absolute;
+  width: 100%; 
+  height: 100%;
   margin: 0 -9999rem !important;
   padding: 0 9999rem !important;
   background: #f8f8fe;
+  z-index: -1;
 }

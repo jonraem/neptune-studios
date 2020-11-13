@@ -1,5 +1,5 @@
 .timeline {
-  composes: fullWidthGrey from '../../global.module.css';
+  position: relative;
   display: flex;
   flex-direction: column;
 }

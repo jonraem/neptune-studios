@@ -7,6 +7,7 @@ import Feature from '../../components/Feature/feature';
 import Footer from '../../components/Footer/footer';
 import Header from '../../components/Header/header';
 import Hero from '../../components/Hero/hero';
+import globalStyles from '../../global.module.css';
 import pagesStyles from '../pages.module.css';
 import styles from './about.module.css';
 
@@ -40,6 +41,7 @@ export default ({ data, ...props }) => (
         ))}
       </div>
       <div className={styles.aboutCV}>
+        <div className={globalStyles.fullWidthGrey} />
         <CurriculumVitae className={styles.aboutCVIcon} />
         <div className={styles.aboutCVTitle}>
           Download Curriculum Vitae{' '}

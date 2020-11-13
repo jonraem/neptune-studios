@@ -1,10 +1,12 @@
 import React from 'react';
 import CenterTitle from '../CenterTitle/centerTitle';
+import globalStyles from '../../global.module.css';
 import styles from './timeline.module.css';
 
 export default props => {
   return (
     <div className={styles.timeline}>
+      <div className={globalStyles.fullWidthGrey} />
       <CenterTitle>{props.title}</CenterTitle>
       {props.timelineItems.map(item => {
         return (
