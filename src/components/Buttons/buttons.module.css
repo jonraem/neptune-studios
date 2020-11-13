@@ -33,3 +33,16 @@
 .next .content {
   left: -12.5rem;
 }
+
+/* BACK BUTTON */
+
+.backButton {
+  position: absolute;
+  padding: .2rem .75rem;
+  color: #fff;
+  background: unset;
+  border-radius: 26px;
+  border: 2px solid #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
