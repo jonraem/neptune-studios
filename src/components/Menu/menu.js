@@ -1,6 +1,6 @@
 import { Link } from 'gatsby';
 import React, { useContext, useEffect } from 'react';
-import { ReactComponent as Behance } from '../../assets/svg/behance--white.svg';
+// import { ReactComponent as Behance } from '../../assets/svg/behance--white.svg';
 import { ReactComponent as Cross } from '../../assets/svg/cross.svg';
 import { ReactComponent as LinkedIn } from '../../assets/svg/linkedin--white.svg';
 import MenuContext from '../../context/MenuContext';
@@ -78,13 +78,13 @@ export default props => {
           <LinkedIn />
           LinkedIn
         </a>
-        <a
+        {/* <a
           href="https://www.behance.net/pnousiainen"
           className={styles.socialLink}
         >
           <Behance />
           Behance
-        </a>
+        </a> */}
       </div>
       <button className={styles.closeButton} onClick={() => setIsOpen(false)}>
         <Cross />
