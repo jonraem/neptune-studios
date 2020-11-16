@@ -24,7 +24,11 @@ export default props => {
           className={props.heroClassName}
           alt={props.heroAlt}
           style={{ position: 'absolute' }}
-          imgStyle={{ position: 'unset' }}
+          imgStyle={{
+            position: 'unset',
+            objectFit: 'contain',
+            objectPosition: 'center right',
+          }}
           fluid={props.heroImage}
         />
       )}
