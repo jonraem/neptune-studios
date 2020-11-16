@@ -4,6 +4,7 @@ import { ReactComponent as Hamburger } from '../../assets/svg/hamburger.svg';
 import { ReactComponent as NeptuneStudios } from '../../assets/svg/neptune-studios--white.svg';
 import MenuContext from '../../context/MenuContext';
 import useMedia from '../../hooks/useMedia';
+import buttonStyles from '../Buttons/buttons.module.css';
 import styles from './header.module.css';
 
 export default props => {
@@ -27,7 +28,7 @@ export default props => {
       <NeptuneStudios className={styles.logo} />
       {isMobile ? (
         <button
-          className={styles.unstyledButton}
+          className={buttonStyles.unstyledButton}
           onClick={() => setIsOpen(true)}
         >
           <Hamburger className={styles.hamburger} />
