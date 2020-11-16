@@ -12,6 +12,7 @@ export default props => {
       <ReactModal
         isOpen={isOpen}
         onRequestClose={() => setIsOpen(false)}
+        style={{ overlay: { zIndex: 1 } }}
         contentLabel="Menu"
       >
         <Menu currentPath={props.currentPath} />
