@@ -14,7 +14,7 @@ export default props => {
         onRequestClose={() => setIsOpen(false)}
         contentLabel="Menu"
       >
-        <Menu currentPath={props.currentPath} />}
+        <Menu currentPath={props.currentPath} />
       </ReactModal>
       {props.children}
     </>
