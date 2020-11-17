@@ -26,6 +26,27 @@ export const getActiveColorFromPath = pathName => {
   }
 };
 
+export const getActiveStyleForNavigation = (pathName, currentPath) => {
+  if (pathName === '/') {
+    if (currentPath === pathName) {
+      return { textDecoration: 'line-through' };
+    } else return {};
+  } else {
+    if (currentPath.includes(pathName)) {
+      return { textDecoration: 'line-through' };
+    } else return {};
+  }
+};
+
+export const getActiveStyleForDropdown = (pathName, currentPath) => {
+  if (currentPath.includes(pathName)) {
+    return {
+      color: getActiveColorFromPath(pathName),
+      textDecoration: 'line-through',
+    };
+  } else return {};
+};
+
 export const getSortedCases = (cases, sortOrder) =>
   sortBy(cases, item => sortOrder.indexOf(item.node.contentfulid));
 
