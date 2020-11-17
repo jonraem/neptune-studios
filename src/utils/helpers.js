@@ -9,6 +9,14 @@ export const getActiveColorFromPath = pathName => {
       return '#5dbbe3';
     case '/work':
       return '#21b8bf';
+    case '/work/vare':
+      return '#e23c52';
+    case '/work/abb':
+      return '#21b8bf';
+    case '/work/macgregor':
+      return '#3d68b0';
+    case '/work/various':
+      return '#5dbbe3';
     case '/about':
       return '#e23c52';
     case '/contact':
