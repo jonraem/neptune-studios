@@ -5,16 +5,27 @@ import { ReactComponent as NeptuneStudios } from '../../assets/svg/neptune-studi
 import MenuContext from '../../context/MenuContext';
 import useMedia from '../../hooks/useMedia';
 import {
+  getActiveStyleForDropdown,
   getActiveStyleForNavigation,
 } from '../../utils/helpers';
 import buttonStyles from '../Buttons/buttons.module.css';
+import Dropdown from '../Dropdown/dropdown';
 import styles from './header.module.css';
+
+const menuOptions = [
+  { value: '/work/vare', label: 'Case Väre' },
+  { value: '/work/abb', label: 'Case ABB' },
+  { value: '/work/macgregor', label: 'Case MacGregor' },
+  { value: '/work/various', label: 'Various projects' },
+];
 
 export default props => {
   const { setIsOpen } = useContext(MenuContext);
   const isMobile = useMedia('(max-width: 480px)');
   const getActiveStyleForNavigationWithCurrentPath = pathName =>
     getActiveStyleForNavigation(pathName, props.currentPath);
+  const getActiveStyleForDropdownWithCurrentPath = pathName =>
+    getActiveStyleForDropdown(pathName, props.currentPath);
 
   return (
     <div className={styles.header}>
@@ -35,6 +46,12 @@ export default props => {
           >
             Main
           </Link>
+          <Dropdown
+            options={menuOptions}
+            getActiveStyleForDropdownWithCurrentPath={
+              getActiveStyleForDropdownWithCurrentPath
+            }
+          >
             <Link
               to="/work"
               className={styles.link}
@@ -42,6 +59,7 @@ export default props => {
             >
               Work
             </Link>
+          </Dropdown>
           <Link
             to="/about"
             className={styles.link}
