@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  min-height: 34rem;
+  min-height: 38rem;
   height: 100vh;
   color: #fff;
 }
@@ -18,7 +18,7 @@
 }
 
 .description {
-  width: 36rem;
+  width: 34rem;
   white-space: pre-line;
 }
 
@@ -34,6 +34,7 @@
 
 .image {
   position: absolute;
+  width: 80vw;
   pointer-events: none;
 }
 
