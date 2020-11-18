@@ -297,7 +297,7 @@ export const query = graphql`
       contentfulid: { eq: "work:vare:fullWidthBackground" }
     ) {
       image {
-        fluid {
+        fluid(maxWidth: 2800, quality: 100) {
           ...GatsbyContentfulFluid_noBase64
         }
       }
