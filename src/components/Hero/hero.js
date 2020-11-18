@@ -25,7 +25,6 @@ export default props => {
           alt={props.heroAlt}
           style={{ position: 'absolute' }}
           imgStyle={{
-            position: 'unset',
             objectFit: 'contain',
             objectPosition: 'center right',
           }}

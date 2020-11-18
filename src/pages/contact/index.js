@@ -56,7 +56,7 @@ export const query = graphql`
       }
       image {
         fluid {
-          src
+          ...GatsbyContentfulFluid
         }
       }
     }
