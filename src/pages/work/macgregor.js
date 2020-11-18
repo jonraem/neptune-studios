@@ -211,7 +211,7 @@ export const query = graphql`
       }
       image {
         fluid {
-          ...GatsbyContentfulFluid
+          ...GatsbyContentfulFluid_noBase64
         }
       }
     }
@@ -255,7 +255,7 @@ export const query = graphql`
           }
           image {
             fluid {
-              ...GatsbyContentfulFluid
+              ...GatsbyContentfulFluid_noBase64
             }
           }
         }
@@ -266,7 +266,7 @@ export const query = graphql`
     ) {
       image {
         fluid {
-          ...GatsbyContentfulFluid
+          ...GatsbyContentfulFluid_noBase64
         }
       }
     }
@@ -279,7 +279,7 @@ export const query = graphql`
           title
           images {
             fluid {
-              ...GatsbyContentfulFluid
+              ...GatsbyContentfulFluid_noBase64
             }
             file {
               details {
