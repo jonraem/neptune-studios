@@ -11,12 +11,12 @@
 
 .progressionButton {
   position: relative;
-  padding: .2rem .75rem;
+  padding: .1rem .5rem;
   color: #fff;
   background: unset;
   border-radius: 26px;
   border: 2px solid #fff;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   cursor: pointer;
 }
 
@@ -27,11 +27,11 @@
 }
 
 .previous .content {
-  left: 4.5rem;
+  left: 3rem;
 }
 
 .next .content {
-  left: -12.5rem;
+  left: -10.5rem;
 }
 
 /* BACK BUTTON */

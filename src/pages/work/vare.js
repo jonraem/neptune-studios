@@ -198,7 +198,7 @@ export default ({ data, ...props }) => {
         <Showcase
           title={currentShowcase.node.title}
           featureDescriptions={renderFeatureDescriptions()}
-          bgColor="#dc143c"
+          bgColor="#e23c52"
           height={
             !!currentShowcaseImage &&
             currentShowcaseImage.file.details.image.height / 2
