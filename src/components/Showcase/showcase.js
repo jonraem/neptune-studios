@@ -41,7 +41,9 @@ export default props => {
         <div className={styles.content}>{props.children}</div>
         {shouldRenderFeatureDescriptions && (
           <div className={styles.descriptionBoxes}>
-            {props.featureDescriptions}
+            <div style={{ position: 'relative' }}>
+              {props.featureDescriptions}
+            </div>
           </div>
         )}
       </div>

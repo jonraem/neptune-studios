@@ -61,3 +61,23 @@ export const findQuote = (data, id) => {
     'node'
   );
 };
+
+export const getYPositionsForFeatureDescriptions = contentfulId => {
+  switch (contentfulId) {
+    case 'work:vare:showcase1':
+      return [
+        '12rem',
+        '32rem',
+        '37rem',
+        '52rem',
+        '68rem',
+        '68rem',
+        '84rem',
+        '84rem',
+        '100rem',
+        '112rem',
+      ];
+    default:
+      return [];
+  }
+};

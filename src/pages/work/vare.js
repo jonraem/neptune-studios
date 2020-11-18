@@ -16,7 +16,10 @@ import { VareResults as Results } from '../../components/Results/results';
 import Showcase from '../../components/Showcase/showcase';
 import showcaseStyles from '../../components/Showcase/showcase.module.css';
 import Timeline from '../../components/Timeline/timeline';
-import { initializeScrollTrigger } from '../../utils/helpers';
+import {
+  initializeScrollTrigger,
+  getYPositionsForFeatureDescriptions,
+} from '../../utils/helpers';
 import pagesStyles from '../pages.module.css';
 import styles from './work.module.css';
 
@@ -32,6 +35,9 @@ export default ({ data, ...props }) => {
     (currentShowcase.node.featureDescriptions || []).map(() =>
       React.createRef()
     )
+  );
+  const yPositionsForFeatureDescriptions = getYPositionsForFeatureDescriptions(
+    currentShowcase?.node?.contentfulid
   );
 
   const calculateAnimationOffset = () => window.innerWidth / 2;
@@ -62,10 +68,8 @@ export default ({ data, ...props }) => {
     initializeScrollTrigger();
     boxRefs.current.forEach((boxRef, index) => {
       if (index % 2) {
-        // Animate from right
         animateBoxesFromRight(boxRef.current, index);
       } else {
-        // Animate from left
         animateBoxesFromLeft(boxRef.current, index);
       }
     });
@@ -115,22 +119,21 @@ export default ({ data, ...props }) => {
 
   const renderFeatureDescriptions = () => {
     return (currentShowcase.node.featureDescriptions || []).map(
-      (featureDescription, index) => {
-        return (
-          <div
-            key={featureDescription.id}
-            className={classnames(
-              showcaseStyles.descriptionBox,
-              index % 2
-                ? showcaseStyles.descriptionBoxRight
-                : showcaseStyles.descriptionBoxLeft
-            )}
-            ref={boxRefs.current[index]}
-          >
-            {featureDescription.description}
-          </div>
-        );
-      }
+      (featureDescription, index) => (
+        <div
+          key={featureDescription.id}
+          className={classnames(
+            showcaseStyles.descriptionBox,
+            index % 2
+              ? showcaseStyles.descriptionBoxRight
+              : showcaseStyles.descriptionBoxLeft
+          )}
+          style={{ top: yPositionsForFeatureDescriptions[index] }}
+          ref={boxRefs.current[index]}
+        >
+          {featureDescription.description}
+        </div>
+      )
     );
   };
 
