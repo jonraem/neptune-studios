@@ -7,8 +7,8 @@ export default props => {
     <div className={styles.dropdown}>
       {props.children}
       <ul className={styles.options}>
-        {props.options.map(option => (
-          <li className={styles.option}>
+        {props.options.map((option, index) => (
+          <li key={`${option.value}${index}`} className={styles.option}>
             <Link
               to={option.value}
               className={styles.optionLink}
