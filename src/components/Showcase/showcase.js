@@ -1,4 +1,3 @@
-import classnames from 'classnames';
 import gsap from 'gsap';
 import React, { useCallback, useEffect, useRef } from 'react';
 import {
@@ -6,10 +5,11 @@ import {
   initializeScrollTrigger,
 } from '../../utils/helpers';
 import ProgressionButton from '../Buttons/progressionButton';
+import DescriptionBox from './descriptionBox';
 import styles from './showcase.module.css';
 
 export default props => {
-  const shouldRenderFeatureDescriptions =
+  const shouldRenderDescriptionBoxes =
     !!props.currentShowcase.node.featureDescriptions &&
     !!props.currentShowcase.node.featureDescriptions.length;
 
@@ -58,25 +58,24 @@ export default props => {
   }, [animateBoxesFromLeft, animateBoxesFromRight]);
 
   useEffect(() => {
-    if (shouldRenderFeatureDescriptions && typeof window !== `undefined`) {
+    if (shouldRenderDescriptionBoxes && typeof window !== `undefined`) {
       handleAnimate();
     }
-  }, [handleAnimate, shouldRenderFeatureDescriptions]);
+  }, [handleAnimate, shouldRenderDescriptionBoxes]);
 
-  const renderFeatureDescriptions = () => {
+  const renderDescriptionBoxes = () => {
     return (props.currentShowcase.node.featureDescriptions || []).map(
       (featureDescription, index) => (
-        <div
+        <DescriptionBox
           key={featureDescription.id}
-          className={classnames(
-            styles.descriptionBox,
+          className={
             index % 2 ? styles.descriptionBoxRight : styles.descriptionBoxLeft
-          )}
+          }
           style={{ top: yPositionsForFeatureDescriptions[index] }}
-          ref={boxRefs.current[index]}
+          boxRef={boxRefs.current[index]}
         >
           {featureDescription.description}
-        </div>
+        </DescriptionBox>
       )
     );
   };
@@ -104,10 +103,10 @@ export default props => {
           </ProgressionButton>
         </div>
         <div className={styles.content}>{props.children}</div>
-        {shouldRenderFeatureDescriptions && (
+        {shouldRenderDescriptionBoxes && (
           <div className={styles.descriptionBoxes}>
             <div style={{ position: 'relative' }}>
-              {renderFeatureDescriptions()}
+              {renderDescriptionBoxes()}
             </div>
           </div>
         )}
