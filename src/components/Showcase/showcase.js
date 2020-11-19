@@ -12,9 +12,6 @@ export default props => {
   const shouldRenderFeatureDescriptions =
     !!props.currentShowcase.node.featureDescriptions &&
     !!props.currentShowcase.node.featureDescriptions.length;
-  const showcaseImageHeight =
-    !!props.currentShowcaseImage &&
-    props.currentShowcaseImage.file.details.image.height / 2;
 
   const boxRefs = useRef(
     (props.currentShowcase.node.featureDescriptions || []).map(() =>
@@ -90,7 +87,7 @@ export default props => {
         className={styles.showCase}
         style={{
           background: props.bgColor ? props.bgColor : '#fff',
-          height: showcaseImageHeight,
+          height: props.height,
           maxHeight: '180rem',
         }}
       >
