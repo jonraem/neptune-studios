@@ -247,9 +247,9 @@ export default ({ data, ...props }) => {
         />
         <Quote quote={findQuote(data, 'work:various:quotation1')} />
         <Showcase
-          title={currentShowcase.node.title}
           bgColor="#5DBBE3"
-          height={'52rem'}
+          height="52rem"
+          currentShowcase={currentShowcase}
           handlePreviousShowcase={handlePreviousShowcase}
           handleNextShowcase={handleNextShowcase}
         >

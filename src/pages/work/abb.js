@@ -114,13 +114,9 @@ export default ({ data, ...props }) => {
           )
         )}
         <Showcase
-          title={currentShowcase.node.title}
-          featureDescriptions={currentShowcase.node.featureDescriptions}
           bgColor="#21B8BF"
-          height={
-            !!currentShowcaseImage &&
-            currentShowcaseImage.file.details.image.height + 240
-          }
+          height={currentShowcaseImage.file.details.image.height + 240}
+          currentShowcase={currentShowcase}
           handlePreviousShowcase={handlePreviousShowcase}
           handleNextShowcase={handleNextShowcase}
         >

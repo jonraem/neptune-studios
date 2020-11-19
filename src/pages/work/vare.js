@@ -1,9 +1,7 @@
-import classnames from 'classnames';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import gsap from 'gsap';
 import { get } from 'lodash';
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Feature from '../../components/Feature/feature';
 import Footer from '../../components/Footer/footer';
@@ -14,12 +12,7 @@ import ImageAndText from '../../components/ImageAndText/imageAndText';
 import Quote from '../../components/Quote/quote';
 import { VareResults as Results } from '../../components/Results/results';
 import Showcase from '../../components/Showcase/showcase';
-import showcaseStyles from '../../components/Showcase/showcase.module.css';
 import Timeline from '../../components/Timeline/timeline';
-import {
-  initializeScrollTrigger,
-  getYPositionsForFeatureDescriptions,
-} from '../../utils/helpers';
 import pagesStyles from '../pages.module.css';
 import styles from './work.module.css';
 
@@ -31,49 +24,6 @@ export default ({ data, ...props }) => {
     edge => edge.node.contentfulid === `work:vare:showcase${showcaseIndex + 1}`
   );
   const currentShowcaseImage = get(currentShowcase, 'node.images[0]');
-  const boxRefs = useRef(
-    (currentShowcase.node.featureDescriptions || []).map(() =>
-      React.createRef()
-    )
-  );
-  const yPositionsForFeatureDescriptions = getYPositionsForFeatureDescriptions(
-    currentShowcase?.node?.contentfulid
-  );
-
-  const calculateAnimationOffset = () => window.innerWidth / 2;
-
-  const animateBoxesFromLeft = (ref, index) => {
-    gsap.from(ref, {
-      x: -calculateAnimationOffset(),
-      scrollTrigger: {
-        id: `box-${index + 1}`,
-        trigger: ref,
-        start: 'top center',
-      },
-    });
-  };
-
-  const animateBoxesFromRight = (ref, index) => {
-    gsap.from(ref, {
-      x: calculateAnimationOffset(),
-      scrollTrigger: {
-        id: `box-${index + 1}`,
-        trigger: ref,
-        start: 'top center',
-      },
-    });
-  };
-
-  const handleAnimate = () => {
-    initializeScrollTrigger();
-    boxRefs.current.forEach((boxRef, index) => {
-      if (index % 2) {
-        animateBoxesFromRight(boxRef.current, index);
-      } else {
-        animateBoxesFromLeft(boxRef.current, index);
-      }
-    });
-  };
 
   const handlePreviousShowcase = () => {
     if (showcaseIndex === 0) {
@@ -115,26 +65,6 @@ export default ({ data, ...props }) => {
         />
       );
     } else return null;
-  };
-
-  const renderFeatureDescriptions = () => {
-    return (currentShowcase.node.featureDescriptions || []).map(
-      (featureDescription, index) => (
-        <div
-          key={featureDescription.id}
-          className={classnames(
-            showcaseStyles.descriptionBox,
-            index % 2
-              ? showcaseStyles.descriptionBoxRight
-              : showcaseStyles.descriptionBoxLeft
-          )}
-          style={{ top: yPositionsForFeatureDescriptions[index] }}
-          ref={boxRefs.current[index]}
-        >
-          {featureDescription.description}
-        </div>
-      )
-    );
   };
 
   return (
@@ -199,14 +129,9 @@ export default ({ data, ...props }) => {
           )
         )}
         <Showcase
-          title={currentShowcase.node.title}
-          featureDescriptions={renderFeatureDescriptions()}
           bgColor="#e23c52"
-          height={
-            !!currentShowcaseImage &&
-            currentShowcaseImage.file.details.image.height / 2
-          }
-          handleAnimate={handleAnimate}
+          currentShowcase={currentShowcase}
+          height={currentShowcaseImage.file.details.image.height / 2}
           handlePreviousShowcase={handlePreviousShowcase}
           handleNextShowcase={handleNextShowcase}
         >
