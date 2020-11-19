@@ -18,6 +18,11 @@ export default props => {
       React.createRef()
     )
   );
+  const lineRefs = useRef(
+    (props.currentShowcase.node.featureDescriptions || []).map(() =>
+      React.createRef()
+    )
+  );
   const yPositionsForFeatureDescriptions = getYPositionsForFeatureDescriptions(
     props.currentShowcase?.node?.contentfulid
   );
@@ -46,8 +51,18 @@ export default props => {
     });
   }, []);
 
+  const fadeInDottedLine = useCallback((ref, index) => {
+    gsap.from(ref, {
+      opacity: 0,
+      scrollTrigger: {
+        id: `line-${index + 1}`,
+        trigger: ref,
+        start: 'bottom+=100 center',
+      },
+    });
+  }, []);
+
   const handleAnimate = useCallback(() => {
-    initializeScrollTrigger();
     boxRefs.current.forEach((boxRef, index) => {
       if (index % 2) {
         animateBoxesFromRight(boxRef.current, index);
@@ -57,11 +72,19 @@ export default props => {
     });
   }, [animateBoxesFromLeft, animateBoxesFromRight]);
 
+  const handleFadeIn = useCallback(() => {
+    lineRefs.current.forEach((lineRef, index) => {
+      fadeInDottedLine(lineRef.current, index);
+    });
+  }, [fadeInDottedLine]);
+
   useEffect(() => {
     if (shouldRenderDescriptionBoxes && typeof window !== `undefined`) {
+      initializeScrollTrigger();
       handleAnimate();
+      handleFadeIn();
     }
-  }, [handleAnimate, shouldRenderDescriptionBoxes]);
+  }, [shouldRenderDescriptionBoxes, handleAnimate, handleFadeIn]);
 
   const renderDescriptionBoxes = () => {
     return (props.currentShowcase.node.featureDescriptions || []).map(
@@ -73,6 +96,7 @@ export default props => {
           }
           style={{ top: yPositionsForFeatureDescriptions[index] }}
           boxRef={boxRefs.current[index]}
+          lineRef={lineRefs.current[index]}
         >
           {featureDescription.description}
         </DescriptionBox>

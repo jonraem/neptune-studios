@@ -23,6 +23,13 @@
   justify-content: space-between;
 }
 
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
 .descriptionBoxes {
   padding: 3rem 2rem;
   display: flex;
@@ -56,9 +63,19 @@
   right: 0;
 }
 
-.content {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 5rem;
+.dottedLine {
+  position: absolute;
+  top: 50%;
+  height: 2px;
+  max-width: 180px;
+  width: 12vw;
+  border-bottom: 3px dotted #fff;
+}
+
+.descriptionBoxLeft .dottedLine {
+  left: 15rem;
+}
+
+.descriptionBoxRight .dottedLine {
+  right: 15rem;
 }

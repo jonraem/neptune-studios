@@ -9,6 +9,7 @@ export default props => {
       style={props.style}
       ref={props.boxRef}
     >
+      <div className={styles.dottedLine} ref={props.lineRef} />
       {props.children}
     </div>
   );
