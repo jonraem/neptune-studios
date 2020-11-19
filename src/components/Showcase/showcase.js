@@ -57,7 +57,7 @@ export default props => {
       scrollTrigger: {
         id: `line-${index + 1}`,
         trigger: ref,
-        start: 'bottom+=100 center',
+        start: 'bottom+=200 center',
       },
     });
   }, []);
