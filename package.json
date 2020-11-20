@@ -15,7 +15,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",
+    "@contentful/rich-text-types": "^14.1.2",
     "@svgr/webpack": "^5.5.0",
     "classnames": "^2.2.6",
     "dotenv": "^8.2.0",

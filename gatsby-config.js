@@ -25,6 +25,5 @@ module.exports = {
     },
     'gatsby-plugin-svgr',
     'gatsby-plugin-react-helmet',
-    '@contentful/gatsby-transformer-contentful-richtext',
   ],
 };
