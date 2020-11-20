@@ -1,11 +1,11 @@
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
-import FullWidthGrey from '../FullWidth/grey';
 import globalStyles from '../../global.module.css';
+import FullWidthGrey from '../FullWidth/grey';
 import styles from './imageAndText.module.css';
 
-export default props => {
+const imageAndText = props => {
   return (
     <div
       className={styles.imageAndText}
@@ -41,3 +41,5 @@ export default props => {
     </div>
   );
 };
+
+export default imageAndText;

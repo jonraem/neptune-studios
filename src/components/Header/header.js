@@ -19,7 +19,7 @@ const menuOptions = [
   { value: '/work/various', label: 'Various projects' },
 ];
 
-export default props => {
+const header = props => {
   const { setIsOpen } = useContext(MenuContext);
   const isMobile = useMedia('(max-width: 480px)');
   const getActiveStyleForNavigationWithCurrentPath = pathName =>
@@ -79,3 +79,5 @@ export default props => {
     </div>
   );
 };
+
+export default header;

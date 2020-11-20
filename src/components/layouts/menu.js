@@ -5,7 +5,7 @@ import Menu from '../Menu/menu';
 
 ReactModal.setAppElement('#___gatsby');
 
-export default props => {
+const menuLayout = props => {
   const { isOpen, setIsOpen } = useContext(MenuContext);
   return (
     <>
@@ -21,3 +21,5 @@ export default props => {
     </>
   );
 };
+
+export default menuLayout;

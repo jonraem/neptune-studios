@@ -13,7 +13,7 @@ import pagesStyles from './pages.module.css';
 
 const sortOrder = ['case:vare', 'case:abb', 'case:macgregor'];
 
-export default ({ data, ...props }) => (
+const main = ({ data, ...props }) => (
   <div className={pagesStyles.page}>
     <Helmet>
       <meta charSet="utf-8" />
@@ -75,6 +75,8 @@ export default ({ data, ...props }) => (
     <Footer />
   </div>
 );
+
+export default main;
 
 export const query = graphql`
   query {

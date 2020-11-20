@@ -9,7 +9,7 @@ import LeadForm from '../../components/LeadForm/leadForm';
 import pagesStyles from '../pages.module.css';
 import styles from './contact.module.css';
 
-export default ({ data, ...props }) => (
+const contact = ({ data, ...props }) => (
   <div className={pagesStyles.page}>
     <Helmet>
       <meta charSet="utf-8" />
@@ -43,6 +43,8 @@ export default ({ data, ...props }) => (
     <Footer />
   </div>
 );
+
+export default contact;
 
 export const query = graphql`
   query {

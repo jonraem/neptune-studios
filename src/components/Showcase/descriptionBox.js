@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import React from 'react';
 import styles from './showcase.module.css';
 
-export default props => {
+const descriptionBox = props => {
   return (
     <div
       className={classnames(styles.descriptionBox, props.className)}
@@ -14,3 +14,5 @@ export default props => {
     </div>
   );
 };
+
+export default descriptionBox;

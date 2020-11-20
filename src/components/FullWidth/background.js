@@ -1,9 +1,9 @@
 import Img from 'gatsby-image';
 import React from 'react';
-import FullWidthGrey from './grey';
 import styles from './fullWidth.module.css';
+import FullWidthGrey from './grey';
 
-export default props => {
+const fullWidthBackground = props => {
   return (
     <div className={styles.fullWidthBackground}>
       <FullWidthGrey />
@@ -29,3 +29,5 @@ export default props => {
     </div>
   );
 };
+
+export default fullWidthBackground;

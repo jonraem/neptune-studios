@@ -47,7 +47,7 @@ export const VareResults = props => {
   );
 };
 
-export default props => {
+const results = props => {
   return (
     <div className={styles.results}>
       <CenterTitle className={styles.title}>{props.results.title}</CenterTitle>
@@ -74,3 +74,5 @@ export default props => {
     </div>
   );
 };
+
+export default results;

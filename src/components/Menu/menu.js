@@ -7,7 +7,7 @@ import MenuContext from '../../context/MenuContext';
 import { getActiveColorFromPath } from '../../utils/helpers';
 import styles from './menu.module.css';
 
-export default props => {
+const menu = props => {
   const { setIsOpen } = useContext(MenuContext);
 
   useEffect(() => {
@@ -92,3 +92,5 @@ export default props => {
     </div>
   );
 };
+
+export default menu;

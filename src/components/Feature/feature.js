@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './feature.module.css';
 
-export default props => {
+const feature = props => {
   return (
     <div className={styles.feature}>
       <div className={styles.header}>
@@ -17,3 +17,5 @@ export default props => {
     </div>
   );
 };
+
+export default feature;

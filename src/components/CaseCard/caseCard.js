@@ -4,7 +4,7 @@ import React from 'react';
 import { ReactComponent as ArrowRight } from '../../assets/svg/arrow-right--blue.svg';
 import styles from './caseCard.module.css';
 
-export default props => {
+const caseCard = props => {
   return (
     <div className={styles.caseCard}>
       {props.imagePath && (
@@ -23,3 +23,5 @@ export default props => {
     </div>
   );
 };
+
+export default caseCard;

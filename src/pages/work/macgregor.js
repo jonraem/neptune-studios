@@ -25,7 +25,7 @@ const reversed = [
 ];
 const greyed = ['work:macgregor:imageAndText2', 'work:macgregor:imageAndText3'];
 
-export default ({ data, ...props }) => {
+const macgregor = ({ data, ...props }) => {
   const [showcaseIndex, setShowcaseIndex] = useState(0);
 
   const currentShowcase = data.showcase.edges.find(
@@ -194,6 +194,8 @@ export default ({ data, ...props }) => {
     </div>
   );
 };
+
+export default macgregor;
 
 export const query = graphql`
   query {
