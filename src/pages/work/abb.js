@@ -54,7 +54,7 @@ const ABB = ({ data, ...props }) => {
         <ImageAndText
           key={edge.node.contentfulid}
           title={edge.node.title}
-          description={edge.node.description.childContentfulRichText.html}
+          description={edge.node.description}
           imagePath={edge.node.image && edge.node.image.fluid}
           isReversed={reversed.includes(edge.node.contentfulid)}
           hasGreyBackground={greyed.includes(edge.node.contentfulid)}
@@ -75,7 +75,7 @@ const ABB = ({ data, ...props }) => {
         className={styles.abbHero}
         title={data.hero.title}
         subtitle={data.hero.subtitle}
-        description={data.hero.description?.childContentfulRichText?.html}
+        description={data.hero.description}
         heroClassName={styles.abbHeroImage}
         heroAlt="Tablets with ABB application"
         heroImage={data.hero?.image?.fluid}
@@ -151,9 +151,7 @@ export const query = graphql`
       title
       subtitle
       description {
-        childContentfulRichText {
-          html
-        }
+        raw
       }
       image {
         fluid {
@@ -185,9 +183,7 @@ export const query = graphql`
           contentfulid
           title
           description {
-            childContentfulRichText {
-              html
-            }
+            raw
           }
           image {
             fluid {
@@ -225,9 +221,7 @@ export const query = graphql`
     results: contentfulResults(contentfulid: { eq: "work:abb:results" }) {
       title
       description {
-        childContentfulRichText {
-          html
-        }
+        raw
       }
       title2
       description2

@@ -1,6 +1,7 @@
 import classnames from 'classnames';
 import React from 'react';
 import CenterTitle from '../CenterTitle/centerTitle';
+import RichText from '../RichText/richText';
 import styles from './results.module.css';
 
 export const VareResults = props => {
@@ -10,11 +11,9 @@ export const VareResults = props => {
       <div className={styles.sections}>
         <div className={styles.section1}>
           <div className={styles.content}>
-            <div
+            <RichText
               className={styles.description}
-              dangerouslySetInnerHTML={{
-                __html: props.results.description.childContentfulRichText.html,
-              }}
+              rawText={props.results.description}
             />
           </div>
         </div>
@@ -54,11 +53,9 @@ const Results = props => {
       <div className={styles.sections}>
         <div className={styles.section1}>
           <div className={styles.content}>
-            <div
+            <RichText
               className={styles.description}
-              dangerouslySetInnerHTML={{
-                __html: props.results.description.childContentfulRichText.html,
-              }}
+              rawText={props.results.description}
             />
           </div>
         </div>

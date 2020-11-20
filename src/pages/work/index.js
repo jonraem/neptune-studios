@@ -24,7 +24,7 @@ const Work = ({ data, ...props }) => (
       className={styles.workHero}
       title={data.hero.title}
       subtitle={data.hero.subtitle}
-      description={data.hero.description?.childContentfulRichText?.html}
+      description={data.hero.description}
       heroClassName={styles.workHeroImage}
       heroAlt="Phone with Väppi application"
       heroImage={data.hero?.image?.fluid}
@@ -65,9 +65,7 @@ export const query = graphql`
       title
       subtitle
       description {
-        childContentfulRichText {
-          html
-        }
+        raw
       }
       image {
         fluid {

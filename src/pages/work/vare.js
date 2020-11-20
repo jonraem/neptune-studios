@@ -54,7 +54,7 @@ const Vare = ({ data, ...props }) => {
         <ImageAndText
           key={edge.node.contentfulid}
           title={edge.node.title}
-          description={edge.node.description.childContentfulRichText.html}
+          description={edge.node.description}
           imagePath={edge.node.image && edge.node.image.fluid}
           maxHeight={
             edge.node.contentfulid === 'work:vare:imageAndText2'
@@ -79,7 +79,7 @@ const Vare = ({ data, ...props }) => {
         className={styles.vareHero}
         title={data.hero.title}
         subtitle={data.hero.subtitle}
-        description={data.hero.description?.childContentfulRichText?.html}
+        description={data.hero.description}
         heroClassName={styles.vareHeroImage}
         heroAlt="Phone with Väppi application"
         heroImage={data.hero?.image?.fluid}
@@ -166,9 +166,7 @@ export const query = graphql`
       title
       subtitle
       description {
-        childContentfulRichText {
-          html
-        }
+        raw
       }
       image {
         fluid {
@@ -208,9 +206,7 @@ export const query = graphql`
           contentfulid
           title
           description {
-            childContentfulRichText {
-              html
-            }
+            raw
           }
           image {
             fluid {
@@ -263,9 +259,7 @@ export const query = graphql`
     results: contentfulResults(contentfulid: { eq: "work:vare:results" }) {
       title
       description {
-        childContentfulRichText {
-          html
-        }
+        raw
       }
       title2
       description2

@@ -1,6 +1,7 @@
 import Img from 'gatsby-image';
 import React from 'react';
 import BackButton from '../Buttons/backButton';
+import RichText from '../RichText/richText';
 import styles from './hero.module.css';
 
 const Hero = props => {
@@ -12,12 +13,7 @@ const Hero = props => {
           <div className={styles.subtitle}>{props.subtitle}</div>
           <h1>{props.title}</h1>
         </div>
-        <div
-          className={styles.description}
-          dangerouslySetInnerHTML={{
-            __html: props.description,
-          }}
-        />
+        <RichText className={styles.description} rawText={props.description} />
       </div>
       {!!props.heroImage && (
         <Img

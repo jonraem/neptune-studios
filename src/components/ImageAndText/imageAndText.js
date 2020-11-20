@@ -3,6 +3,7 @@ import Img from 'gatsby-image';
 import React from 'react';
 import globalStyles from '../../global.module.css';
 import FullWidthGrey from '../FullWidth/grey';
+import RichText from '../RichText/richText';
 import styles from './imageAndText.module.css';
 
 const ImageAndText = props => {
@@ -14,12 +15,7 @@ const ImageAndText = props => {
       {props.hasGreyBackground && <FullWidthGrey />}
       <div className={styles.textSide} style={props.textSideStyle}>
         <h2 className={styles.title}>{props.title}</h2>
-        <div
-          className={styles.description}
-          dangerouslySetInnerHTML={{
-            __html: props.description,
-          }}
-        />
+        <RichText className={styles.description} rawText={props.description} />
         {!!props.linkTo && (
           <Link className={globalStyles.button} to={props.linkTo}>
             {`Go to ${props.title}`}
