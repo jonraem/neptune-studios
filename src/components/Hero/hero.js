@@ -3,7 +3,7 @@ import React from 'react';
 import BackButton from '../Buttons/backButton';
 import styles from './hero.module.css';
 
-const hero = props => {
+const Hero = props => {
   return (
     <div className={props.className}>
       <div className={styles.content}>
@@ -35,4 +35,4 @@ const hero = props => {
   );
 };
 
-export default hero;
+export default Hero;

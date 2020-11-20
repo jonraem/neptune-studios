@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './feature.module.css';
 
-const feature = props => {
+const Feature = props => {
   return (
     <div className={styles.feature}>
       <div className={styles.header}>
@@ -18,4 +18,4 @@ const feature = props => {
   );
 };
 
-export default feature;
+export default Feature;

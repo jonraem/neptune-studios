@@ -4,8 +4,8 @@ import styles from './fullWidth.module.css';
 /**
  * FullWidthGrey requires that the parent component is relatively positioned.
  */
-const fullWidthGrey = () => {
+const FullWidthGrey = () => {
   return <div className={styles.fullWidthGrey} />;
 };
 
-export default fullWidthGrey;
+export default FullWidthGrey;

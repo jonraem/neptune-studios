@@ -4,7 +4,7 @@ import { ReactComponent as ArrowPrevious } from '../../assets/svg/arrow-left--wh
 import { ReactComponent as ArrowNext } from '../../assets/svg/arrow-right--white.svg';
 import styles from './buttons.module.css';
 
-const progressionButton = props => {
+const ProgressionButton = props => {
   return (
     <button
       className={classnames(
@@ -21,4 +21,4 @@ const progressionButton = props => {
   );
 };
 
-export default progressionButton;
+export default ProgressionButton;

@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './leadForm.module.css';
 
-const leadForm = props => {
+const LeadForm = props => {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = data => console.log(data);
 
@@ -49,4 +49,4 @@ const leadForm = props => {
   );
 };
 
-export default leadForm;
+export default LeadForm;

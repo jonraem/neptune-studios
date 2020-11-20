@@ -6,7 +6,7 @@ import styles from './footer.module.css';
 
 const currentYear = new Date().getFullYear();
 
-const footer = props => {
+const Footer = props => {
   return (
     <StaticQuery
       query={graphql`
@@ -45,4 +45,4 @@ const footer = props => {
   );
 };
 
-export default footer;
+export default Footer;

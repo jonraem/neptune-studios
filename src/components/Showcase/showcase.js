@@ -8,7 +8,7 @@ import ProgressionButton from '../Buttons/progressionButton';
 import DescriptionBox from './descriptionBox';
 import styles from './showcase.module.css';
 
-const showcase = props => {
+const Showcase = props => {
   const shouldRenderDescriptionBoxes =
     !!props.currentShowcase.node.featureDescriptions &&
     !!props.currentShowcase.node.featureDescriptions.length;
@@ -139,4 +139,4 @@ const showcase = props => {
   } else return null;
 };
 
-export default showcase;
+export default Showcase;

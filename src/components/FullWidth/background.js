@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './fullWidth.module.css';
 import FullWidthGrey from './grey';
 
-const fullWidthBackground = props => {
+const FullWidthBackground = props => {
   return (
     <div className={styles.fullWidthBackground}>
       <FullWidthGrey />
@@ -30,4 +30,4 @@ const fullWidthBackground = props => {
   );
 };
 
-export default fullWidthBackground;
+export default FullWidthBackground;

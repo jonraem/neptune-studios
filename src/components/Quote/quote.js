@@ -14,7 +14,7 @@ const QuotationMarks = () => (
   </div>
 );
 
-const quote = props => {
+const Quote = props => {
   if (!!props.quote) {
     return (
       <div className={styles.quote}>
@@ -25,4 +25,4 @@ const quote = props => {
   } else return null;
 };
 
-export default quote;
+export default Quote;

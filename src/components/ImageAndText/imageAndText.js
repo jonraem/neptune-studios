@@ -5,7 +5,7 @@ import globalStyles from '../../global.module.css';
 import FullWidthGrey from '../FullWidth/grey';
 import styles from './imageAndText.module.css';
 
-const imageAndText = props => {
+const ImageAndText = props => {
   return (
     <div
       className={styles.imageAndText}
@@ -42,4 +42,4 @@ const imageAndText = props => {
   );
 };
 
-export default imageAndText;
+export default ImageAndText;

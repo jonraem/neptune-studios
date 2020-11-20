@@ -3,7 +3,7 @@ import React from 'react';
 import { ReactComponent as ArrowPrevious } from '../../assets/svg/arrow-left--white.svg';
 import styles from './buttons.module.css';
 
-const backButton = props => {
+const BackButton = props => {
   return (
     <Link className={styles.backButton} to={props.linkTo}>
       <ArrowPrevious styles={{ pointerEvents: 'none' }} />
@@ -11,4 +11,4 @@ const backButton = props => {
   );
 };
 
-export default backButton;
+export default BackButton;

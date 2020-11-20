@@ -11,7 +11,7 @@ import Hero from '../../components/Hero/hero';
 import pagesStyles from '../pages.module.css';
 import styles from './about.module.css';
 
-const about = ({ data, ...props }) => (
+const About = ({ data, ...props }) => (
   <div className={pagesStyles.page}>
     <Helmet>
       <meta charSet="utf-8" />
@@ -53,7 +53,7 @@ const about = ({ data, ...props }) => (
   </div>
 );
 
-export default about;
+export default About;
 
 export const query = graphql`
   query {

@@ -15,7 +15,7 @@ import styles from './work.module.css';
 
 const reversed = ['work:various:imageAndText1', 'work:various:imageAndText3'];
 
-const various = ({ data, ...props }) => {
+const Various = ({ data, ...props }) => {
   const [showcaseIndex, setShowcaseIndex] = useState(0);
 
   const currentShowcase = data.showcase.edges.find(
@@ -262,7 +262,7 @@ const various = ({ data, ...props }) => {
   );
 };
 
-export default various;
+export default Various;
 
 export const query = graphql`
   query {

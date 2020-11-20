@@ -2,7 +2,7 @@ import { Link } from 'gatsby';
 import React from 'react';
 import styles from './dropdown.module.css';
 
-const dropdown = props => {
+const Dropdown = props => {
   return (
     <div className={styles.dropdown}>
       {props.children}
@@ -25,4 +25,4 @@ const dropdown = props => {
   );
 };
 
-export default dropdown;
+export default Dropdown;

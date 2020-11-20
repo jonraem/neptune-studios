@@ -3,7 +3,7 @@ import CenterTitle from '../CenterTitle/centerTitle';
 import FullWidthGrey from '../FullWidth/grey';
 import styles from './timeline.module.css';
 
-const timeline = props => {
+const Timeline = props => {
   return (
     <div className={styles.timeline}>
       <FullWidthGrey />
@@ -22,4 +22,4 @@ const timeline = props => {
   );
 };
 
-export default timeline;
+export default Timeline;

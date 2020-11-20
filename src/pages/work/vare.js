@@ -18,7 +18,7 @@ import styles from './work.module.css';
 
 const reversed = ['work:vare:imageAndText2', 'work:vare:imageAndText4'];
 
-const vare = ({ data, ...props }) => {
+const Vare = ({ data, ...props }) => {
   const [showcaseIndex, setShowcaseIndex] = useState(0);
   const currentShowcase = data.showcase.edges.find(
     edge => edge.node.contentfulid === `work:vare:showcase${showcaseIndex + 1}`
@@ -158,7 +158,7 @@ const vare = ({ data, ...props }) => {
   );
 };
 
-export default vare;
+export default Vare;
 
 export const query = graphql`
   query {

@@ -17,7 +17,7 @@ import styles from './work.module.css';
 const reversed = ['work:abb:imageAndText2', 'work:abb:imageAndText4'];
 const greyed = ['work:abb:imageAndText1', 'work:abb:imageAndText3'];
 
-const abb = ({ data, ...props }) => {
+const ABB = ({ data, ...props }) => {
   const [showcaseIndex, setShowcaseIndex] = useState(0);
 
   const currentShowcase = data.showcase.edges.find(
@@ -143,7 +143,8 @@ const abb = ({ data, ...props }) => {
   );
 };
 
-export default abb;
+export default ABB;
+
 export const query = graphql`
   query {
     hero: contentfulHero(contentfulid: { eq: "work:abb:hero" }) {

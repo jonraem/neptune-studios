@@ -12,7 +12,7 @@ import styles from './work.module.css';
 const reversed = ['case:vare', 'case:macgregor'];
 const sortOrder = ['case:vare', 'case:abb', 'case:macgregor', 'case:various'];
 
-const work = ({ data, ...props }) => (
+const Work = ({ data, ...props }) => (
   <div className={pagesStyles.page}>
     <Helmet>
       <meta charSet="utf-8" />
@@ -57,7 +57,7 @@ const work = ({ data, ...props }) => (
   </div>
 );
 
-export default work;
+export default Work;
 
 export const query = graphql`
   query {

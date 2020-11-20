@@ -47,7 +47,7 @@ export const VareResults = props => {
   );
 };
 
-const results = props => {
+const Results = props => {
   return (
     <div className={styles.results}>
       <CenterTitle className={styles.title}>{props.results.title}</CenterTitle>
@@ -75,4 +75,4 @@ const results = props => {
   );
 };
 
-export default results;
+export default Results;

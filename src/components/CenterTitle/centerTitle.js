@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import React from 'react';
 import styles from './centerTitle.module.css';
 
-const centerTitle = props => {
+const CenterTitle = props => {
   return (
     <div className={classnames(styles.centerTitle, props.className)}>
       <h3>{props.children}</h3>
@@ -11,4 +11,4 @@ const centerTitle = props => {
   );
 };
 
-export default centerTitle;
+export default CenterTitle;
