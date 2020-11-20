@@ -25,11 +25,9 @@
 
 .description {
   width: 30rem;
-}
-
-.description p {
   line-height: 1.75rem;
 }
+
 
 .imageSide {
   display: flex;

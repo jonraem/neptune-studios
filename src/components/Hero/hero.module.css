@@ -20,9 +20,6 @@
 .description {
   width: 34rem;
   white-space: pre-line;
-}
-
-.description p {
   font-size: 1.25rem;
   line-height: 2rem;
 }

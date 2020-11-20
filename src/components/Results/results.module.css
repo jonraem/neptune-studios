@@ -9,10 +9,6 @@
 .description {
   font-family: 'Zilla Slab', sans-serif;
   font-style: italic;
-}
-
-.description,
-.description p {
   line-height: 1.65rem;
 }
 
