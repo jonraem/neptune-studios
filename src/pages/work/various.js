@@ -100,10 +100,10 @@ const Various = ({ data, ...props }) => {
             <>
               <Img
                 fluid={currentShowcase.node.images[0].fluid}
-                style={{ width: '40%' }}
+                style={{ width: '36%' }}
                 imgStyle={{
-                  width: '75%',
-                  height: '34rem',
+                  width: '100%',
+                  height: '36rem',
                   left: 0,
                   right: 0,
                   margin: '0 auto',
@@ -112,10 +112,10 @@ const Various = ({ data, ...props }) => {
               />
               <Img
                 fluid={currentShowcase.node.images[1].fluid}
-                style={{ width: '40%' }}
+                style={{ width: '36%' }}
                 imgStyle={{
-                  width: '75%',
-                  height: '34rem',
+                  width: '100%',
+                  height: '36rem',
                   left: 0,
                   right: 0,
                   margin: '0 auto',
