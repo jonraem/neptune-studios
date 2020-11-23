@@ -81,10 +81,10 @@ const Various = ({ data, ...props }) => {
                 <Img
                   key={image.id}
                   fluid={image.fluid}
-                  style={{ width: '12rem', height: '12rem' }}
+                  style={{ width: '13rem', height: '13rem' }}
                   imgStyle={{
-                    width: '75%',
-                    height: '9rem',
+                    width: '92%',
+                    height: '12rem',
                     left: 0,
                     right: 0,
                     margin: '0 auto',
@@ -248,7 +248,7 @@ const Various = ({ data, ...props }) => {
         <Quote quote={findQuote(data, 'work:various:quotation1')} />
         <Showcase
           bgColor="#5DBBE3"
-          height="52rem"
+          height="54rem"
           currentShowcase={currentShowcase}
           handlePreviousShowcase={handlePreviousShowcase}
           handleNextShowcase={handleNextShowcase}
