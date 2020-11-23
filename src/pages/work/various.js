@@ -129,71 +129,76 @@ const Various = ({ data, ...props }) => {
             <>
               <Img
                 fluid={currentShowcase.node.images[0].fluid}
-                style={{ width: '22rem', minWidth: '22rem' }}
+                style={{
+                  width: '22rem',
+                  minWidth: '22rem',
+                  margin: '0.5rem',
+                  boxShadow: '0px 2px 6px 2px rgba(0, 0, 0, 0.16)',
+                }}
                 imgStyle={{
                   width: '100%',
-                  // height: '30rem',
                   left: 0,
                   right: 0,
-                  margin: '0.5rem',
-                  objectFit: 'contain',
-                  boxShadow: '0px 2px 6px 2px rgba(0, 0, 0, 0.16)',
+                  margin: '0',
+                  borderRadius: '4px',
+                  objectFit: 'cover',
                 }}
               />
               <Img
                 fluid={currentShowcase.node.images[1].fluid}
-                style={{ width: '22rem', minWidth: '22rem' }}
-                imgStyle={{
-                  width: '100%',
-                  // height: '30rem',
-                  left: 0,
-                  right: 0,
+                style={{
+                  width: '22rem',
+                  minWidth: '22rem',
                   margin: '0.5rem',
-                  objectFit: 'contain',
                   boxShadow: '0px 2px 6px 2px rgba(0, 0, 0, 0.16)',
                 }}
+                imgStyle={{
+                  width: '100%',
+                  left: 0,
+                  right: 0,
+                  margin: '0',
+                  borderRadius: '4px',
+                  objectFit: 'cover',
+                }}
               />
-              <div style={{ width: '40rem', height: '22rem' }}>
-                <Img
-                  fluid={currentShowcase.node.images[2].fluid}
-                  style={{ width: '100%' }}
-                  imgStyle={{
-                    width: '100%',
-                    height: 'unset',
-                    left: 0,
-                    right: 0,
-                    margin: '0.5rem',
-                    objectFit: 'contain',
-                    boxShadow: '0px 2px 6px 2px rgba(0, 0, 0, 0.16)',
-                  }}
-                />
-                <div style={{ display: 'flex' }}>
+              <div style={{ width: '17rem', height: '33rem' }}>
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
                   <Img
-                    fluid={currentShowcase.node.images[3].fluid}
-                    style={{ width: '15.5rem', height: '15.5rem' }}
+                    fluid={currentShowcase.node.images[2].fluid}
+                    style={{
+                      width: '16.5rem',
+                      height: '16rem',
+                      margin: '0.5rem',
+                      boxShadow: '0px 2px 6px 2px rgba(0, 0, 0, 0.16)',
+                    }}
                     imgStyle={{
                       width: '100%',
-                      height: 'unset',
+                      height: '100%',
                       left: 0,
                       right: 0,
-                      margin: '0.5rem',
-                      objectFit: 'contain',
-                      boxShadow: '0px 2px 6px 2px rgba(0, 0, 0, 0.16)',
+                      margin: '0',
+                      borderRadius: '4px',
+                      objectFit: 'cover',
                     }}
                   />
-                  {/* <Img
-                    fluid={currentShowcase.node.images[4].fluid}
-                    style={{ width: '15.5rem', height: '15.5rem' }}
-                    imgStyle={{
-                      width: '100%',
-                      height: 'unset',
-                      left: 0,
-                      right: 0,
+                  <Img
+                    fluid={currentShowcase.node.images[3].fluid}
+                    style={{
+                      width: '16.5rem',
+                      height: '16rem',
                       margin: '0.5rem',
-                      objectFit: 'contain',
                       boxShadow: '0px 2px 6px 2px rgba(0, 0, 0, 0.16)',
                     }}
-                  /> */}
+                    imgStyle={{
+                      width: '100%',
+                      height: '100%',
+                      left: 0,
+                      right: 0,
+                      margin: '0',
+                      borderRadius: '4px',
+                      objectFit: 'cover',
+                    }}
+                  />
                 </div>
               </div>
             </>
