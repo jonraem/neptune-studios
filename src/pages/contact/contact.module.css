@@ -5,7 +5,7 @@
 
 .contactHeroImage {
   composes: image from '../../components/Hero/hero.module.css';
-  bottom: -1rem;
+  bottom: -2.1rem;
   right: 0;
   height: 68vh;
 }
@@ -23,7 +23,7 @@
 
 @media only screen and (max-width: 1200px) {
   .contactHeroImage {
-    bottom: -2.1rem;
+    bottom: -1em;
     right: 0;
     height: 44vh;
   }
