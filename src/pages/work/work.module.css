@@ -31,9 +31,10 @@
 
 .vareHeroImage {
   composes: image from '../../components/Hero/hero.module.css';
-  top: 16vh;
-  right: 8rem;
-  height: 80vh;
+  top: 30vh;
+  right: -12rem;
+  height: 64vh;
+
 }
 
 .vareFeatures {
@@ -43,9 +44,9 @@
 
 @media only screen and (max-width: 1200px) {
   .vareHeroImage {
-    top: 30vh;
-    right: 5rem;
-    height: 52vh;
+    top: 44vh;
+    right: -8rem;
+    height: 42vh;
   }
 }
 
