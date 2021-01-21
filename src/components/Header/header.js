@@ -67,13 +67,13 @@ const Header = props => {
           >
             About
           </Link>
-          <Link
+          {/* <Link
             to="/contact"
             className={styles.link}
             style={getActiveStyleForNavigationWithCurrentPath('/contact')}
           >
             Contact
-          </Link>
+          </Link> */}
         </div>
       )}
     </div>
