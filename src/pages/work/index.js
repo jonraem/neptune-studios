@@ -44,6 +44,7 @@ const Work = ({ data, ...props }) => (
                   ? {
                       justifyContent: 'flex-end',
                       padding: '0',
+                      width: '55%',
                     }
                   : undefined
               }
