@@ -9,7 +9,12 @@ const CaseCard = props => {
     <div className={styles.caseCard}>
       {props.imagePath && (
         <div className={styles.image}>
-          <Img fluid={props.imagePath} />
+          <Img
+            fluid={props.imagePath}
+            imgStyle={{
+              objectFit: 'contain',
+            }}
+          />
         </div>
       )}
       <div className={styles.title}>{props.title}</div>
