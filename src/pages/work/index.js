@@ -43,6 +43,7 @@ const Work = ({ data, ...props }) => (
                 edge.node.contentfulid === 'case:various'
                   ? {
                       justifyContent: 'flex-end',
+                      padding: '0',
                     }
                   : undefined
               }
