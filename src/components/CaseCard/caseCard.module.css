@@ -45,4 +45,8 @@
   .caseCard {
     margin: 0.5rem 0;
   }
+
+  .image {
+    height: 12rem;
+  }
 }

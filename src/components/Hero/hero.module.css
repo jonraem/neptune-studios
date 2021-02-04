@@ -70,6 +70,14 @@
     width: unset;
   }
 
+  .title {
+    margin-top: 8vh;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
   .image {
     display: none;
   }

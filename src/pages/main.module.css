@@ -51,6 +51,10 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .mainCases {
+    margin: 4rem 0;
+  }
+
   .mainCaseCards {
     flex-direction: column;
   }
