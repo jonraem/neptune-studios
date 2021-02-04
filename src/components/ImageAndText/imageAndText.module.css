@@ -35,3 +35,22 @@
   justify-content: center;
   padding: 3rem 0px;
 }
+
+@media only screen and (max-width: 768px) {
+  .imageAndText {
+    flex-direction: column;
+    height: 24rem;
+  }
+
+  .textSide {
+    width: 100%;
+  }
+
+  .imageSide {
+    display: none;
+  }
+
+  .description {
+    width: unset;
+  }
+}
