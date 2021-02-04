@@ -42,5 +42,6 @@
 @media only screen and (max-width: 768px) {
   .aboutFeatures {
     flex-direction: column;
+    margin: 2rem 0;
   }
 }

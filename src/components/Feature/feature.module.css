@@ -33,7 +33,7 @@
 
 @media only screen and (max-width: 768px) {
   .feature {
-    margin-bottom: 2rem;
+    margin: 1rem 0 2rem;
   }
 
   .header {
@@ -52,6 +52,6 @@
 
   .subtitle,
   .description {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 }
