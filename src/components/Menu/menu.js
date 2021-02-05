@@ -61,14 +61,14 @@ const Menu = props => {
         >
           About
         </Link>
-        <Link
+        {/* <Link
           to="/contact"
           onClick={() => setIsOpen(false)}
           className={getLinkClass('/contact')}
           style={getActiveLinkColor('/contact')}
         >
           Contact
-        </Link>
+        </Link> */}
       </div>
       <div className={styles.social}>
         <a
