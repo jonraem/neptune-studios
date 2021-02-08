@@ -10,7 +10,9 @@ import Hero from '../../components/Hero/hero';
 import ImageAndText from '../../components/ImageAndText/imageAndText';
 import Quote from '../../components/Quote/quote';
 import Results from '../../components/Results/results';
+import MobileShowcase from '../../components/Showcase/mobileShowcase';
 import Showcase from '../../components/Showcase/showcase';
+import useMedia from '../../hooks/useMedia';
 import pagesStyles from '../pages.module.css';
 import styles from './work.module.css';
 
@@ -18,6 +20,7 @@ const reversed = ['work:abb:imageAndText2', 'work:abb:imageAndText4'];
 const greyed = ['work:abb:imageAndText1', 'work:abb:imageAndText3'];
 
 const ABB = ({ data, ...props }) => {
+  const isMobile = useMedia('(max-width: 480px)');
   const [showcaseIndex, setShowcaseIndex] = useState(0);
 
   const currentShowcase = data.showcase.edges.find(
@@ -113,28 +116,55 @@ const ABB = ({ data, ...props }) => {
             edge => edge.node.contentfulid === 'work:abb:imageAndText4'
           )
         )}
-        <Showcase
-          bgColor="#21B8BF"
-          height={currentShowcaseImage.file.details.image.height + 240}
-          currentShowcase={currentShowcase}
-          handlePreviousShowcase={handlePreviousShowcase}
-          handleNextShowcase={handleNextShowcase}
-        >
-          {!!currentShowcaseImage && (
-            <Img
-              fluid={currentShowcaseImage.fluid}
-              style={{ width: '100%' }}
-              imgStyle={{
-                width: '75%',
-                height: 'unset',
-                left: 0,
-                right: 0,
-                margin: '0 auto',
-                objectFit: 'contain',
-              }}
-            />
-          )}
-        </Showcase>
+        {!isMobile && (
+          <Showcase
+            bgColor="#21B8BF"
+            height={currentShowcaseImage.file.details.image.height + 240}
+            currentShowcase={currentShowcase}
+            handlePreviousShowcase={handlePreviousShowcase}
+            handleNextShowcase={handleNextShowcase}
+          >
+            {!!currentShowcaseImage && (
+              <Img
+                fluid={currentShowcaseImage.fluid}
+                style={{ width: '100%' }}
+                imgStyle={{
+                  width: '75%',
+                  height: 'unset',
+                  left: 0,
+                  right: 0,
+                  margin: '0 auto',
+                  objectFit: 'contain',
+                }}
+              />
+            )}
+          </Showcase>
+        )}
+        {isMobile && (
+          <MobileShowcase
+            bgColor="#21B8BF"
+            height={currentShowcaseImage.file.details.image.height - 75}
+            currentShowcase={currentShowcase}
+            showcaseIndex={showcaseIndex}
+            showcaseImagesLength={data.showcase.edges.length}
+            handleChangeShowcaseIndex={index => setShowcaseIndex(index)}
+          >
+            {!!currentShowcaseImage && (
+              <Img
+                fluid={currentShowcaseImage.fluid}
+                style={{ width: '100%' }}
+                imgStyle={{
+                  width: '100%',
+                  height: 'unset',
+                  left: 0,
+                  right: 0,
+                  margin: '0 auto',
+                  objectFit: 'contain',
+                }}
+              />
+            )}
+          </MobileShowcase>
+        )}
         <Quote quote={data.quotation} />
         <Results results={data.results} />
       </div>
