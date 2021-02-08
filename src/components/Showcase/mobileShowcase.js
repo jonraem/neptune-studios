@@ -1,5 +1,6 @@
 import { times } from 'lodash';
 import React from 'react';
+import { v4 as uuid } from 'uuid';
 import styles from './showcase.module.css';
 
 const MobileShowcase = props => {
@@ -17,6 +18,7 @@ const MobileShowcase = props => {
         <div className={styles.breadcrumbs}>
           {times(props.showcaseImagesLength, index => (
             <div
+              key={uuid()}
               className={
                 index === props.showcaseIndex
                   ? styles.activeBreadcrumb
