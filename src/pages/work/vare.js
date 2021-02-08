@@ -168,7 +168,7 @@ const Vare = ({ data, ...props }) => {
                 fluid={currentShowcaseImage.fluid}
                 style={{ width: '100%' }}
                 imgStyle={{
-                  width: '20rem',
+                  width: '19rem',
                   height: 'unset',
                   left: 0,
                   right: 0,
