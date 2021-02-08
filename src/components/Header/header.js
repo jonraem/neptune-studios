@@ -29,7 +29,9 @@ const Header = props => {
 
   return (
     <div className={styles.header}>
-      <NeptuneStudios className={styles.logo} />
+      <Link to="/">
+        <NeptuneStudios className={styles.logo} />
+      </Link>
       {isMobile ? (
         <button
           className={buttonStyles.unstyledButton}
