@@ -34,3 +34,19 @@
   margin-right: 2.5rem;
   transform: skew(-15deg);
 }
+
+@media only screen and (max-width: 768px) {
+  .quote {
+    width: 85%;
+  }
+
+  .quote h3 {
+    font-size: 1.75rem;
+    line-height: 2.5rem;
+  }
+
+  .apostrophe {
+    height: 6rem;
+    width: 3rem;
+  }
+}

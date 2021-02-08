@@ -2,10 +2,6 @@
   margin: 4rem 0;
 }
 
-.results h3 {
-  font-size: 2.5rem;
-}
-
 .title {
   margin-bottom: 5rem;
 }
@@ -67,7 +63,13 @@
   .title {
     margin-bottom: 2rem;
   }
+}
 
+@media only screen and (max-width: 450px) {
+  .title {
+    font-size: 2rem;
+  }
+  
   .sections {
     flex-direction: column;
   }
@@ -76,6 +78,21 @@
   .section2,
   .section3 {
     width: 80%;
-    margin: 0 auto 3rem;
+    margin: 0 0 3rem;
+  }
+
+  .vareResults .section1,
+  .vareResults .section2,
+  .vareResults .section3 {
+    width: 100%;
+  }
+
+  .vareResults .ratingTitle,
+  .vareResults .ratingSubtitle {
+    display: block;
+  }
+
+  .vareResults .ratingSubtitle {
+    margin-bottom: 1rem;
   }
 }
