@@ -23,7 +23,6 @@
   font-family: 'Zilla Slab', sans-serif;
   font-size: 24px;
   font-weight: 500;
-  font-style: italic;
 }
 
 .description {
@@ -57,4 +56,48 @@
 
 .item:last-of-type .line {
   display: none;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 85%;
+}
+
+@media only screen and (max-width: 768px) {
+  .title {
+    font-size: 1.2rem;
+  }
+  
+  .description {
+    font-size: .8rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .timeline {
+    padding: 1rem 0px;
+  }
+
+  .item {
+    margin-bottom: 3rem;
+  }
+
+  .line {
+    height: 90%;
+    left: 5.5vw;
+  }
+
+  .title, .description {
+    width: unset;
+    text-align: left;
+  }
+
+  .title {
+    margin: 0 0 .75rem 2rem;
+  }
+
+  .description {
+    margin: 0 0 0 2rem;
+  }
 }
