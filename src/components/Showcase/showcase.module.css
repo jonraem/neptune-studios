@@ -81,3 +81,37 @@
 .descriptionBoxRight .dottedLine {
   right: 15rem;
 }
+
+/* MOBILE SHOWCASE */
+
+.breadcrumbs {
+  height: 1rem;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin: 2rem auto 0;
+}
+
+.breadcrumb {
+  height: .25rem;
+  width: 10rem;
+  background: #fff;
+  margin: 0 .25rem;
+  opacity: .5;
+  transition: .1s all;
+}
+
+.activeBreadcrumb {
+  composes: breadcrumb;
+  height: .5rem;
+  background: #fff;
+  opacity: 1;
+}
+
+@media only screen and (max-width: 450px) {
+  .showCase h3 {
+    height: 4.5rem;
+    width: 80%;
+  }
+}
