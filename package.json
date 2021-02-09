@@ -22,6 +22,7 @@
     "focus-visible": "^5.2.0",
     "gatsby": "^2.27.0",
     "gatsby-image": "^2.6.0",
+    "gatsby-plugin-manifest": "^2.12.0",
     "gatsby-plugin-react-helmet": "^3.5.0",
     "gatsby-plugin-svgr": "^2.0.2",
     "gatsby-source-contentful": "^4.1.0",

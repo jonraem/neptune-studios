@@ -23,6 +23,16 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'Neptune Studios',
+        short_name: 'Neptune Studios',
+        start_url: '/',
+        display: 'standalone',
+        icon: 'static/favicon.png',
+      },
+    },
     'gatsby-plugin-svgr',
     'gatsby-plugin-react-helmet',
   ],
