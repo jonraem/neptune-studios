@@ -13,10 +13,10 @@ import Dropdown from '../Dropdown/dropdown';
 import styles from './header.module.css';
 
 const menuOptions = [
-  { value: '/work/vare', label: 'Case Väre' },
-  { value: '/work/abb', label: 'Case ABB' },
-  { value: '/work/macgregor', label: 'Case MacGregor' },
-  { value: '/work/various', label: 'Various projects' },
+  { value: '/work/vare/', label: 'Case Väre' },
+  { value: '/work/abb/', label: 'Case ABB' },
+  { value: '/work/macgregor/', label: 'Case MacGregor' },
+  { value: '/work/various/', label: 'Various projects' },
 ];
 
 const Header = props => {
@@ -55,17 +55,17 @@ const Header = props => {
             }
           >
             <Link
-              to="/work"
+              to="/work/"
               className={styles.link}
-              style={getActiveStyleForNavigationWithCurrentPath('/work')}
+              style={getActiveStyleForNavigationWithCurrentPath('/work/')}
             >
               Work
             </Link>
           </Dropdown>
           <Link
-            to="/about"
+            to="/about/"
             className={styles.link}
-            style={getActiveStyleForNavigationWithCurrentPath('/about')}
+            style={getActiveStyleForNavigationWithCurrentPath('/about/')}
           >
             About
           </Link>

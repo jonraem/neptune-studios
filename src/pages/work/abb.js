@@ -71,7 +71,7 @@ const ABB = ({ data, ...props }) => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Neptune Studios | Case ABB</title>
-        <link rel="canonical" href="https://neptunestudios.com/work/abb" />
+        <link rel="canonical" href="https://neptunestudios.com/work/abb/" />
       </Helmet>
       <Header currentPath={props.path} />
       <Hero

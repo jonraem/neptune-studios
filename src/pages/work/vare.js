@@ -75,7 +75,7 @@ const Vare = ({ data, ...props }) => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Neptune Studios | Case Väre</title>
-        <link rel="canonical" href="https://neptunestudios.com/work/vare" />
+        <link rel="canonical" href="https://neptunestudios.com/work/vare/" />
       </Helmet>
       <Header currentPath={props.path} />
       <Hero

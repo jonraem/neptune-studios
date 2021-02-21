@@ -214,7 +214,7 @@ const Various = ({ data, ...props }) => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Neptune Studios | Various Projects</title>
-        <link rel="canonical" href="https://neptunestudios.com/work/various" />
+        <link rel="canonical" href="https://neptunestudios.com/work/various/" />
       </Helmet>
       <Header currentPath={props.path} />
       <Hero

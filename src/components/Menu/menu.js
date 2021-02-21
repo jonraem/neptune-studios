@@ -46,18 +46,18 @@ const Menu = props => {
           Main
         </Link>
         <Link
-          to="/work"
+          to="/work/"
           onClick={() => setIsOpen(false)}
-          className={getLinkClass('/work')}
-          style={getActiveLinkColor('/work')}
+          className={getLinkClass('/work/')}
+          style={getActiveLinkColor('/work/')}
         >
           Work
         </Link>
         <Link
-          to="/about"
+          to="/about/"
           onClick={() => setIsOpen(false)}
-          className={getLinkClass('/about')}
-          style={getActiveLinkColor('/about')}
+          className={getLinkClass('/about/')}
+          style={getActiveLinkColor('/about/')}
         >
           About
         </Link>

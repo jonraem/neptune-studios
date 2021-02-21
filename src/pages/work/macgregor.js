@@ -83,7 +83,7 @@ const MacGregor = ({ data, ...props }) => {
         <title>Neptune Studios | Case MacGregor</title>
         <link
           rel="canonical"
-          href="https://neptunestudios.com/work/macgregor"
+          href="https://neptunestudios.com/work/macgregor/"
         />
       </Helmet>
       <Header currentPath={props.path} />

@@ -5,24 +5,24 @@ import { get, sortBy } from 'lodash';
 export const getActiveColorFromPath = pathName => {
   switch (pathName) {
     case '/':
-    case '/main':
+    case '/main/':
       return '#5dbbe3';
-    case '/work':
+    case '/work/':
       return '#21b8bf';
-    case '/work/vare':
+    case '/work/vare/':
       return '#e23c52';
-    case '/work/abb':
+    case '/work/abb/':
       return '#21b8bf';
-    case '/work/macgregor':
+    case '/work/macgregor/':
       return '#3d68b0';
-    case '/work/various':
+    case '/work/various/':
       return '#5dbbe3';
-    case '/about':
+    case '/about/':
       return '#e23c52';
-    case '/contact':
+    case '/contact/':
       return '#3d68b0';
     default:
-      return '0e0c3c';
+      return '#808080';
   }
 };
 

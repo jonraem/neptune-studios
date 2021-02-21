@@ -14,7 +14,7 @@ const Contact = ({ data, ...props }) => (
     <Helmet>
       <meta charSet="utf-8" />
       <title>Neptune Studios | Contact</title>
-      <link rel="canonical" href="https://neptunestudios.com/contact" />
+      <link rel="canonical" href="https://neptunestudios.com/contact/" />
     </Helmet>
     <Header currentPath={props.path} />
     <Hero
