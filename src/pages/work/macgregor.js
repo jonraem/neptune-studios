@@ -11,8 +11,10 @@ import Hero from '../../components/Hero/hero';
 import ImageAndText from '../../components/ImageAndText/imageAndText';
 import Quote from '../../components/Quote/quote';
 import Results from '../../components/Results/results';
+import MobileShowcase from '../../components/Showcase/mobileShowcase';
 import Showcase from '../../components/Showcase/showcase';
 import Timeline from '../../components/Timeline/timeline';
+import useMedia from '../../hooks/useMedia';
 import { findQuote } from '../../utils/helpers';
 import pagesStyles from '../pages.module.css';
 import styles from './work.module.css';
@@ -26,6 +28,7 @@ const reversed = [
 const greyed = ['work:macgregor:imageAndText2', 'work:macgregor:imageAndText3'];
 
 const MacGregor = ({ data, ...props }) => {
+  const isMobile = useMedia('(max-width: 480px)');
   const [showcaseIndex, setShowcaseIndex] = useState(0);
 
   const currentShowcase = data.showcase.edges.find(
@@ -151,42 +154,82 @@ const MacGregor = ({ data, ...props }) => {
             edge => edge.node.contentfulid === 'work:macgregor:imageAndText6'
           )
         )}
-        <Showcase
-          bgColor="#3D68B0"
-          height={currentShowcaseImages[0].file.details.image.height / 2}
-          currentShowcase={currentShowcase}
-          handlePreviousShowcase={handlePreviousShowcase}
-          handleNextShowcase={handleNextShowcase}
-        >
-          {!!currentShowcaseImages.length && (
-            <>
-              <Img
-                fluid={currentShowcaseImages[0].fluid}
-                style={{ width: '40%' }}
-                imgStyle={{
-                  width: '75%',
-                  height: '45rem',
-                  left: 0,
-                  right: 0,
-                  margin: '0 auto',
-                  objectFit: 'contain',
-                }}
-              />
-              <Img
-                fluid={currentShowcaseImages[1].fluid}
-                style={{ width: '40%' }}
-                imgStyle={{
-                  width: '75%',
-                  height: '45rem',
-                  left: 0,
-                  right: 0,
-                  margin: '0 auto',
-                  objectFit: 'contain',
-                }}
-              />
-            </>
-          )}
-        </Showcase>
+        {!isMobile && (
+          <Showcase
+            bgColor="#3D68B0"
+            height={currentShowcaseImages[0].file.details.image.height / 2}
+            currentShowcase={currentShowcase}
+            handlePreviousShowcase={handlePreviousShowcase}
+            handleNextShowcase={handleNextShowcase}
+          >
+            {!!currentShowcaseImages.length && (
+              <>
+                <Img
+                  fluid={currentShowcaseImages[0].fluid}
+                  style={{ width: '40%' }}
+                  imgStyle={{
+                    width: '75%',
+                    height: '45rem',
+                    left: 0,
+                    right: 0,
+                    margin: '0 auto',
+                    objectFit: 'contain',
+                  }}
+                />
+                <Img
+                  fluid={currentShowcaseImages[1].fluid}
+                  style={{ width: '40%' }}
+                  imgStyle={{
+                    width: '75%',
+                    height: '45rem',
+                    left: 0,
+                    right: 0,
+                    margin: '0 auto',
+                    objectFit: 'contain',
+                  }}
+                />
+              </>
+            )}
+          </Showcase>
+        )}
+        {isMobile && (
+          <MobileShowcase
+            bgColor="#3D68B0"
+            currentShowcase={currentShowcase}
+            showcaseIndex={showcaseIndex}
+            showcaseImagesLength={data.showcase.edges.length}
+            handleChangeShowcaseIndex={index => setShowcaseIndex(index)}
+          >
+            {!!currentShowcaseImages.length && (
+              <>
+                <Img
+                  fluid={currentShowcaseImages[0].fluid}
+                  style={{ width: '45%' }}
+                  imgStyle={{
+                    width: '90%',
+                    height: 'unset',
+                    left: 0,
+                    right: 0,
+                    margin: '0 auto',
+                    objectFit: 'contain',
+                  }}
+                />
+                <Img
+                  fluid={currentShowcaseImages[1].fluid}
+                  style={{ width: '45%' }}
+                  imgStyle={{
+                    width: '90%',
+                    height: 'unset',
+                    left: 0,
+                    right: 0,
+                    margin: '0 auto',
+                    objectFit: 'contain',
+                  }}
+                />
+              </>
+            )}
+          </MobileShowcase>
+        )}
         <Quote quote={findQuote(data, 'work:macgregor:quotation2')} />
         <Results results={data.results} />
       </div>

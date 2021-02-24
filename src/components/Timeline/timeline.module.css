@@ -68,6 +68,10 @@
   .title {
     font-size: 1.2rem;
   }
+
+  .item {
+    height: 8rem;
+  }
   
   .description {
     font-size: .8rem;
@@ -81,6 +85,7 @@
 
   .item {
     margin-bottom: 3rem;
+    height: unset;
   }
 
   .line {

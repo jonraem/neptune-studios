@@ -28,7 +28,6 @@
   line-height: 1.75rem;
 }
 
-
 .imageSide {
   display: flex;
   flex-direction: column;
@@ -36,10 +35,16 @@
   padding: 3rem 0px;
 }
 
+@media only screen and (max-width: 1024px) {
+  .imageAndText {
+    height: unset;
+    min-height: 24rem;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .imageAndText {
     flex-direction: column;
-    height: 24rem;
   }
 
   .textSide {
@@ -56,6 +61,11 @@
 }
 
 @media only screen and (max-width: 450px) {
+  .imageAndText {
+    min-height: unset;
+    padding: 1rem 0;
+  }
+
   .title {
     font-size: 36px;
     line-height: 3rem;
