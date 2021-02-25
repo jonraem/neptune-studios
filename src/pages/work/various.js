@@ -1,5 +1,4 @@
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Footer from '../../components/Footer/footer';
@@ -8,14 +7,21 @@ import Header from '../../components/Header/header';
 import Hero from '../../components/Hero/hero';
 import ImageAndText from '../../components/ImageAndText/imageAndText';
 import Quote from '../../components/Quote/quote';
+import MobileShowcase from '../../components/Showcase/mobileShowcase';
 import Showcase from '../../components/Showcase/showcase';
+import useMedia from '../../hooks/useMedia';
 import { findQuote } from '../../utils/helpers';
+import {
+  renderVariousMobileShowcaseImages,
+  renderVariousShowcaseImages,
+} from '../../utils/showcaseHelpers';
 import pagesStyles from '../pages.module.css';
 import styles from './work.module.css';
 
 const reversed = ['work:various:imageAndText1', 'work:various:imageAndText3'];
 
 const Various = ({ data, ...props }) => {
+  const isMobile = useMedia('(max-width: 480px)');
   const [showcaseIndex, setShowcaseIndex] = useState(0);
 
   const currentShowcase = data.showcase.edges.find(
@@ -65,147 +71,13 @@ const Various = ({ data, ...props }) => {
 
   const renderShowcaseImages = () => {
     if (!!currentShowcase.node.images && !!currentShowcase.node.images.length) {
-      switch (currentShowcase.node.contentfulid) {
-        case 'work:various:showcase1':
-          return (
-            <div
-              style={{
-                width: '75%',
-                display: 'flex',
-                flexWrap: 'wrap',
-                justifyContent: 'center',
-                margin: 'auto',
-              }}
-            >
-              {currentShowcase.node.images.map(image => (
-                <Img
-                  key={image.id}
-                  fluid={image.fluid}
-                  style={{ width: '13rem', height: '13rem' }}
-                  imgStyle={{
-                    width: '92%',
-                    height: '12rem',
-                    left: 0,
-                    right: 0,
-                    margin: '0 auto',
-                    objectFit: 'contain',
-                    boxShadow: '0px 2px 6px 2px rgba(0, 0, 0, 0.16)',
-                  }}
-                />
-              ))}
-            </div>
-          );
-        case 'work:various:showcase2':
-          return (
-            <>
-              <Img
-                fluid={currentShowcase.node.images[0].fluid}
-                style={{ width: '36%' }}
-                imgStyle={{
-                  width: '100%',
-                  height: '36rem',
-                  left: 0,
-                  right: 0,
-                  margin: '0 auto',
-                  objectFit: 'contain',
-                }}
-              />
-              <Img
-                fluid={currentShowcase.node.images[1].fluid}
-                style={{ width: '36%' }}
-                imgStyle={{
-                  width: '100%',
-                  height: '36rem',
-                  left: 0,
-                  right: 0,
-                  margin: '0 auto',
-                  objectFit: 'contain',
-                }}
-              />
-            </>
-          );
-        case 'work:various:showcase3':
-          return (
-            <>
-              <Img
-                fluid={currentShowcase.node.images[0].fluid}
-                style={{
-                  width: '22rem',
-                  minWidth: '22rem',
-                  margin: '0.5rem',
-                  boxShadow: '0px 2px 6px 2px rgba(0, 0, 0, 0.16)',
-                }}
-                imgStyle={{
-                  width: '100%',
-                  left: 0,
-                  right: 0,
-                  margin: '0',
-                  borderRadius: '4px',
-                  objectFit: 'cover',
-                }}
-              />
-              <Img
-                fluid={currentShowcase.node.images[1].fluid}
-                style={{
-                  width: '22rem',
-                  minWidth: '22rem',
-                  margin: '0.5rem',
-                  boxShadow: '0px 2px 6px 2px rgba(0, 0, 0, 0.16)',
-                }}
-                imgStyle={{
-                  width: '100%',
-                  left: 0,
-                  right: 0,
-                  margin: '0',
-                  borderRadius: '4px',
-                  objectFit: 'cover',
-                }}
-              />
-              <div style={{ width: '17rem', height: '33rem' }}>
-                <div style={{ display: 'flex', flexDirection: 'column' }}>
-                  <Img
-                    fluid={currentShowcase.node.images[2].fluid}
-                    style={{
-                      width: '16.5rem',
-                      height: '16rem',
-                      margin: '0.5rem',
-                      boxShadow: '0px 2px 6px 2px rgba(0, 0, 0, 0.16)',
-                    }}
-                    imgStyle={{
-                      width: '100%',
-                      height: '100%',
-                      left: 0,
-                      right: 0,
-                      margin: '0',
-                      borderRadius: '4px',
-                      objectFit: 'cover',
-                    }}
-                  />
-                  <Img
-                    fluid={currentShowcase.node.images[3].fluid}
-                    style={{
-                      width: '16.5rem',
-                      height: '16rem',
-                      margin: '0.5rem',
-                      boxShadow: '0px 2px 6px 2px rgba(0, 0, 0, 0.16)',
-                    }}
-                    imgStyle={{
-                      width: '100%',
-                      height: '100%',
-                      left: 0,
-                      right: 0,
-                      margin: '0',
-                      borderRadius: '4px',
-                      objectFit: 'cover',
-                    }}
-                  />
-                </div>
-              </div>
-            </>
-          );
-        default:
-          return <div style={{ color: '#fff' }}>No content</div>;
-      }
+      return renderVariousShowcaseImages(currentShowcase);
+    }
+  };
+
+  const renderMobileShowcaseImages = () => {
+    if (!!currentShowcase.node.images && !!currentShowcase.node.images.length) {
+      return renderVariousMobileShowcaseImages(currentShowcase);
     }
   };
 
@@ -251,15 +123,28 @@ const Various = ({ data, ...props }) => {
           height={'50rem'}
         />
         <Quote quote={findQuote(data, 'work:various:quotation1')} />
-        <Showcase
-          bgColor="#5DBBE3"
-          height="54rem"
-          currentShowcase={currentShowcase}
-          handlePreviousShowcase={handlePreviousShowcase}
-          handleNextShowcase={handleNextShowcase}
-        >
-          {renderShowcaseImages()}
-        </Showcase>
+        {!isMobile && (
+          <Showcase
+            bgColor="#5DBBE3"
+            height="54rem"
+            currentShowcase={currentShowcase}
+            handlePreviousShowcase={handlePreviousShowcase}
+            handleNextShowcase={handleNextShowcase}
+          >
+            {renderShowcaseImages(currentShowcase)}
+          </Showcase>
+        )}
+        {isMobile && (
+          <MobileShowcase
+            bgColor="#5DBBE3"
+            currentShowcase={currentShowcase}
+            showcaseIndex={showcaseIndex}
+            showcaseImagesLength={data.showcase.edges.length}
+            handleChangeShowcaseIndex={index => setShowcaseIndex(index)}
+          >
+            {renderMobileShowcaseImages(currentShowcase)}
+          </MobileShowcase>
+        )}
         <Quote quote={findQuote(data, 'work:various:quotation2')} />
       </div>
       <Footer />
