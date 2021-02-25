@@ -1,4 +1,4 @@
-import Carousel from '@brainhubeu/react-carousel';
+import Carousel, { autoplayPlugin } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 import Img from 'gatsby-image';
 import React from 'react';
@@ -181,10 +181,22 @@ export const renderVariousMobileShowcaseImages = currentShowcase => {
       );
     case 'work:various:showcase2':
       return (
-        <Carousel draggabble>
-          {currentShowcase.node.images.map(currentShowcaseImage => (
+        <Carousel
+          plugins={[
+            'infinite',
+            {
+              resolve: autoplayPlugin,
+              options: {
+                interval: 2000,
+              },
+            },
+          ]}
+          draggabble
+        >
+          {currentShowcase.node.images.map(image => (
             <Img
-              fluid={currentShowcaseImage.fluid}
+              key={image.id}
+              fluid={image.fluid}
               style={{ width: '80%', marginBottom: '2rem' }}
               imgStyle={{
                 width: '100%',
@@ -199,7 +211,19 @@ export const renderVariousMobileShowcaseImages = currentShowcase => {
       );
     case 'work:various:showcase3':
       return (
-        <Carousel draggable>
+        <Carousel
+          plugins={[
+            'infinite',
+            {
+              resolve: autoplayPlugin,
+              options: {
+                interval: 2000,
+              },
+            },
+          ]}
+          animationSpeed={500}
+          draggable
+        >
           {currentShowcase.node.images.map(image => (
             <Img
               key={image.id}
