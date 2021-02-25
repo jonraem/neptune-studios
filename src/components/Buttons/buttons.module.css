@@ -35,6 +35,12 @@
   left: -10.5rem;
 }
 
+@media only screen and (max-width: 768px) {
+  .content {
+    display: none;
+  }
+}
+
 /* BACK BUTTON */
 
 .backButton {
