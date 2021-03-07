@@ -133,7 +133,7 @@ const Vare = ({ data, ...props }) => {
         )}
         {!isMobile && (
           <Showcase
-            bgColor="#e23c52"
+            bgColor="#5dbbe3"
             currentShowcase={currentShowcase}
             height={currentShowcaseImage.file.details.image.height / 2}
             handlePreviousShowcase={handlePreviousShowcase}
@@ -157,7 +157,7 @@ const Vare = ({ data, ...props }) => {
         )}
         {isMobile && (
           <MobileShowcase
-            bgColor="#e23c52"
+            bgColor="#5dbbe3"
             currentShowcase={currentShowcase}
             showcaseIndex={showcaseIndex}
             showcaseImagesLength={data.showcase.edges.length}

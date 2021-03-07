@@ -1,13 +1,13 @@
 .aboutHero {
   composes: hero from '../../components/Hero/hero.module.css';
-  background: #e23c52;
+  background: #3d68b0;
 }
 
 .aboutHeroImage {
   composes: image from '../../components/Hero/hero.module.css';
-  bottom: 0;
-  right: 2rem;
-  height: 90vh;
+  top: 6rem;
+  right: 0;
+  height: 86vh;
 }
 
 .aboutFeatures {
@@ -35,7 +35,8 @@
 
 @media only screen and (max-width: 1200px) {
   .aboutHeroImage {
-    height: 60vh;
+    top: 20vh;
+    height: 54vh;
   }
 }
 

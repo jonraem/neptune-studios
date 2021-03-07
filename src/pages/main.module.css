@@ -5,9 +5,9 @@
 
 .mainHeroImage {
   composes: image from '../components/Hero/hero.module.css';
-  top: 6rem;
+  bottom: -2.1rem;
   right: 0;
-  height: 86vh;
+  height: 68vh;
 }
 
 .mainHelp {
@@ -45,8 +45,9 @@
 
 @media only screen and (max-width: 1200px) {
   .mainHeroImage {
-    top: 20vh;
-    height: 54vh;
+    bottom: -1em;
+    right: 0;
+    height: 44vh;
   }
 }
 

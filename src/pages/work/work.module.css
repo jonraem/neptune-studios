@@ -26,7 +26,7 @@
 
 .vareHero {
   composes: hero from '../../components/Hero/hero.module.css';
-  background: #e23c52;
+  background: #5dbbe3;
 }
 
 .vareHeroImage {
@@ -133,13 +133,13 @@
 .variousHeroImage {
   composes: image from '../../components/Hero/hero.module.css';
   bottom: 0;
-  right: 0;
+  right: -10rem;
   height: 80vh;
 }
 
 @media only screen and (max-width: 1200px) {
   .variousHeroImage {
-    height: 52vh;
+    height: 48vh;
   }
 }
 
