@@ -35,7 +35,7 @@
 }
 
 .mainCases {
-  margin: 10rem 0;
+  margin: 10rem 0 6rem;
 }
 
 .mainCaseCards {
@@ -53,9 +53,11 @@
 
 @media only screen and (max-width: 768px) {
   .mainCases {
-    margin: 4rem 0;
+    margin: 3rem 0;
   }
+}
 
+@media only screen and (max-width: 700px) {
   .mainCaseCards {
     flex-direction: column;
   }
