@@ -119,7 +119,6 @@ const ABB = ({ data, ...props }) => {
         {!isMobile && (
           <Showcase
             bgColor="#21B8BF"
-            height={currentShowcaseImage.file.details.image.height + 240}
             currentShowcase={currentShowcase}
             handlePreviousShowcase={handlePreviousShowcase}
             handleNextShowcase={handleNextShowcase}
