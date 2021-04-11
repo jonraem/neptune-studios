@@ -50,7 +50,7 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 992px) {
   .vareFeatures {
     flex-direction: column;
   }
@@ -84,7 +84,7 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 992px) {
   .abbFeatures {
     flex-direction: column;
   }
@@ -117,7 +117,7 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 992px) {
   .macgregorFeatures {
     flex-direction: column;
   }
