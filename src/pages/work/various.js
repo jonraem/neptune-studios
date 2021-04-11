@@ -22,6 +22,7 @@ const reversed = ['work:various:imageAndText1', 'work:various:imageAndText3'];
 
 const Various = ({ data, ...props }) => {
   const isMobile = useMedia('(max-width: 480px)');
+  const isDesktop = useMedia('(min-width: 1025px)');
   const [showcaseIndex, setShowcaseIndex] = useState(0);
 
   const currentShowcase = data.showcase.edges.find(
@@ -71,7 +72,7 @@ const Various = ({ data, ...props }) => {
 
   const renderShowcaseImages = () => {
     if (!!currentShowcase.node.images && !!currentShowcase.node.images.length) {
-      return renderVariousShowcaseImages(currentShowcase);
+      return renderVariousShowcaseImages(currentShowcase, isDesktop);
     }
   };
 
@@ -126,12 +127,12 @@ const Various = ({ data, ...props }) => {
         {!isMobile && (
           <Showcase
             bgColor="#5DBBE3"
-            height="54rem"
+            height={isDesktop ? '54rem' : '62vh'}
             currentShowcase={currentShowcase}
             handlePreviousShowcase={handlePreviousShowcase}
             handleNextShowcase={handleNextShowcase}
           >
-            {renderShowcaseImages(currentShowcase)}
+            {renderShowcaseImages()}
           </Showcase>
         )}
         {isMobile && (
@@ -142,7 +143,7 @@ const Various = ({ data, ...props }) => {
             showcaseImagesLength={data.showcase.edges.length}
             handleChangeShowcaseIndex={index => setShowcaseIndex(index)}
           >
-            {renderMobileShowcaseImages(currentShowcase)}
+            {renderMobileShowcaseImages()}
           </MobileShowcase>
         )}
         <Quote quote={findQuote(data, 'work:various:quotation2')} />

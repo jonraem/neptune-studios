@@ -3,7 +3,7 @@ import '@brainhubeu/react-carousel/lib/style.css';
 import Img from 'gatsby-image';
 import React from 'react';
 
-export const renderVariousShowcaseImages = currentShowcase => {
+export const renderVariousShowcaseImages = (currentShowcase, isDesktop) => {
   switch (currentShowcase.node.contentfulid) {
     case 'work:various:showcase1':
       return (
@@ -20,10 +20,13 @@ export const renderVariousShowcaseImages = currentShowcase => {
             <Img
               key={image.id}
               fluid={image.fluid}
-              style={{ width: '13rem', height: '13rem' }}
+              style={{
+                width: isDesktop ? '13rem' : '12.5vh',
+                height: isDesktop ? '13rem' : '12.5vh',
+              }}
               imgStyle={{
                 width: '92%',
-                height: '12rem',
+                height: isDesktop ? '12rem' : '11.4vh',
                 left: 0,
                 right: 0,
                 margin: '0 auto',
@@ -41,11 +44,12 @@ export const renderVariousShowcaseImages = currentShowcase => {
             fluid={currentShowcase.node.images[0].fluid}
             style={{ width: '36%' }}
             imgStyle={{
-              width: '100%',
-              height: '36rem',
+              width: '95%',
+              height: isDesktop ? '36rem' : '35vh',
               left: 0,
               right: 0,
               margin: '0 auto',
+              marginRight: '5%',
               objectFit: 'contain',
             }}
           />
@@ -53,11 +57,12 @@ export const renderVariousShowcaseImages = currentShowcase => {
             fluid={currentShowcase.node.images[1].fluid}
             style={{ width: '36%' }}
             imgStyle={{
-              width: '100%',
-              height: '36rem',
+              width: '95%',
+              height: isDesktop ? '36rem' : '35vh',
               left: 0,
               right: 0,
               margin: '0 auto',
+              marginLeft: '5%',
               objectFit: 'contain',
             }}
           />
@@ -69,8 +74,9 @@ export const renderVariousShowcaseImages = currentShowcase => {
           <Img
             fluid={currentShowcase.node.images[0].fluid}
             style={{
-              width: '22rem',
-              minWidth: '22rem',
+              width: isDesktop ? '22rem' : '21vh',
+              minWidth: isDesktop ? '22rem' : '21vh',
+              height: !isDesktop && '38vh',
               margin: '0.5rem',
               boxShadow: '0px 2px 6px 2px rgba(0, 0, 0, 0.16)',
             }}
@@ -86,8 +92,9 @@ export const renderVariousShowcaseImages = currentShowcase => {
           <Img
             fluid={currentShowcase.node.images[1].fluid}
             style={{
-              width: '22rem',
-              minWidth: '22rem',
+              width: isDesktop ? '22rem' : '21vh',
+              minWidth: isDesktop ? '22rem' : '21vh',
+              height: !isDesktop && '38vh',
               margin: '0.5rem',
               boxShadow: '0px 2px 6px 2px rgba(0, 0, 0, 0.16)',
             }}
@@ -100,13 +107,24 @@ export const renderVariousShowcaseImages = currentShowcase => {
               objectFit: 'cover',
             }}
           />
-          <div style={{ width: '17rem', height: '33rem' }}>
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <div
+            style={{
+              width: isDesktop ? '17rem' : '21vh',
+            }}
+          >
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                height: '100%',
+              }}
+            >
               <Img
                 fluid={currentShowcase.node.images[2].fluid}
                 style={{
-                  width: '16.5rem',
-                  height: '16rem',
+                  width: isDesktop ? '16.5rem' : '20vh',
+                  height: isDesktop ? '16rem' : '18.2vh',
                   margin: '0.5rem',
                   boxShadow: '0px 2px 6px 2px rgba(0, 0, 0, 0.16)',
                 }}
@@ -123,8 +141,8 @@ export const renderVariousShowcaseImages = currentShowcase => {
               <Img
                 fluid={currentShowcase.node.images[3].fluid}
                 style={{
-                  width: '16.5rem',
-                  height: '16rem',
+                  width: isDesktop ? '16.5rem' : '20vh',
+                  height: isDesktop ? '16rem' : '18.2vh',
                   margin: '0.5rem',
                   boxShadow: '0px 2px 6px 2px rgba(0, 0, 0, 0.16)',
                 }}
