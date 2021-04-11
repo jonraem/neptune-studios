@@ -9,7 +9,7 @@
 
 .showcase h3 {
   width: 58%;
-  margin: 3rem auto 0;
+  margin: 2rem auto 0;
   text-align: center;
   color: #fff;
 }
@@ -92,6 +92,10 @@
 @media only screen and (max-width: 768px) {
   .content {
     margin-top: 6rem;
+  }
+
+  .showcase h3 {
+    margin-top: 3rem;
   }
 }
 

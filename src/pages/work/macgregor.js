@@ -29,6 +29,7 @@ const greyed = ['work:macgregor:imageAndText2', 'work:macgregor:imageAndText3'];
 
 const MacGregor = ({ data, ...props }) => {
   const isMobile = useMedia('(max-width: 480px)');
+  const isDesktop = useMedia('(min-width: 1024px)');
   const [showcaseIndex, setShowcaseIndex] = useState(0);
 
   const currentShowcase = data.showcase.edges.find(
@@ -157,7 +158,6 @@ const MacGregor = ({ data, ...props }) => {
         {!isMobile && (
           <Showcase
             bgColor="#3D68B0"
-            height={currentShowcaseImages[0].file.details.image.height / 2}
             currentShowcase={currentShowcase}
             handlePreviousShowcase={handlePreviousShowcase}
             handleNextShowcase={handleNextShowcase}
@@ -166,10 +166,10 @@ const MacGregor = ({ data, ...props }) => {
               <>
                 <Img
                   fluid={currentShowcaseImages[0].fluid}
-                  style={{ width: '40%' }}
+                  style={{ width: '40%', height: isDesktop && '46rem' }}
                   imgStyle={{
                     width: '75%',
-                    height: '45rem',
+                    height: '90%',
                     left: 0,
                     right: 0,
                     margin: '0 auto',
@@ -178,10 +178,10 @@ const MacGregor = ({ data, ...props }) => {
                 />
                 <Img
                   fluid={currentShowcaseImages[1].fluid}
-                  style={{ width: '40%' }}
+                  style={{ width: '40%', height: isDesktop && '46rem' }}
                   imgStyle={{
                     width: '75%',
-                    height: '45rem',
+                    height: '90%',
                     left: 0,
                     right: 0,
                     margin: '0 auto',
