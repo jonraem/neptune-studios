@@ -18,7 +18,7 @@
   .workHeroImage {
     top: 26vh;
     right: 3rem;
-    height: 52vh;
+    height: 50vh;
   }
 }
 
@@ -31,9 +31,9 @@
 
 .vareHeroImage {
   composes: image from '../../components/Hero/hero.module.css';
-  top: 30vh;
+  top: 34vh;
   right: -12rem;
-  height: 64vh;
+  height: 58vh;
 
 }
 
@@ -44,7 +44,7 @@
 
 @media only screen and (max-width: 1200px) {
   .vareHeroImage {
-    top: 44vh;
+    top: 36vh;
     right: -8rem;
     height: 42vh;
   }
@@ -99,7 +99,7 @@
 
 .macgregorHeroImage {
   composes: image from '../../components/Hero/hero.module.css';
-  top: 16vh;
+  top: 18vh;
   right: 8rem;
   height: 78vh;
 }
@@ -113,7 +113,7 @@
   .macgregorHeroImage {
     top: 26vh;
     right: 5rem;
-    height: 52vh;
+    height: 50vh;
   }
 }
 

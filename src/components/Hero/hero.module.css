@@ -13,7 +13,7 @@
 
 .title {
   width: 36rem;
-  margin-top: 16vh;
+  margin-top: 14vh;
   text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
 }
 
@@ -48,6 +48,10 @@
   .description {
     width: 42vw;
   }
+
+  .title {
+    margin-top: 8rem;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -56,11 +60,11 @@
   }
 
   .content {
-    padding: 20vh 2rem 0;
+    padding: 14rem 2rem 0;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 992px) {
   .hero {
     max-height: 46rem;
   }
