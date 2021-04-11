@@ -21,6 +21,7 @@ const greyed = ['work:abb:imageAndText1', 'work:abb:imageAndText3'];
 
 const ABB = ({ data, ...props }) => {
   const isMobile = useMedia('(max-width: 480px)');
+  const isDesktop = useMedia('(min-width: 1025px)');
   const [showcaseIndex, setShowcaseIndex] = useState(0);
 
   const currentShowcase = data.showcase.edges.find(
@@ -126,7 +127,7 @@ const ABB = ({ data, ...props }) => {
             {!!currentShowcaseImage && (
               <Img
                 fluid={currentShowcaseImage.fluid}
-                style={{ width: '100%' }}
+                style={{ width: '100%', height: isDesktop ? '44rem' : '40vh' }}
                 imgStyle={{
                   width: '75%',
                   height: 'unset',
