@@ -21,7 +21,7 @@ const menuOptions = [
 
 const Header = props => {
   const { setIsOpen } = useContext(MenuContext);
-  const isMobile = useMedia('(max-width: 480px)');
+  const isTablet = useMedia('(max-width: 992px)');
   const getActiveStyleForNavigationWithCurrentPath = pathName =>
     getActiveStyleForNavigation(pathName, props.currentPath);
   const getActiveStyleForDropdownWithCurrentPath = pathName =>
@@ -32,7 +32,7 @@ const Header = props => {
       <Link to="/">
         <NeptuneStudios className={styles.logo} />
       </Link>
-      {isMobile ? (
+      {isTablet ? (
         <button
           className={buttonStyles.unstyledButton}
           onClick={() => setIsOpen(true)}
