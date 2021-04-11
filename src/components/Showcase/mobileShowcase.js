@@ -7,7 +7,7 @@ const MobileShowcase = props => {
   if (props.children) {
     return (
       <div
-        className={styles.showCase}
+        className={styles.showcase}
         style={{
           background: props.bgColor ? props.bgColor : '#fff',
           height: props.height,

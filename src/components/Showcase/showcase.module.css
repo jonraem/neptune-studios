@@ -1,13 +1,13 @@
-.showCase {
+.showcase {
   position: relative;
   width: 100%;
   /* height: 100vh; */
   margin: 0 -9999rem !important;
-  padding: 1rem 9999rem !important;
+  padding: 2rem 9999rem !important;
   overflow: hidden;
 }
 
-.showCase h3 {
+.showcase h3 {
   width: 58%;
   margin: 3rem auto 0;
   text-align: center;
@@ -44,6 +44,7 @@
   width: 85vw;
   height: 100%;
   max-width: 80rem;
+  z-index: 1;
 }
 
 .descriptionBox {
@@ -82,7 +83,17 @@
   right: 15rem;
 }
 
-/* MOBILE SHOWCASE */
+@media only screen and (max-width: 768px) {
+  .dottedLine {
+    display: none;
+  }
+
+  .content {
+    margin-top: 6rem;
+  }
+}
+
+/* MOBILE SHOWcASE */
 
 .breadcrumbs {
   height: 1rem;
@@ -110,8 +121,17 @@
 }
 
 @media only screen and (max-width: 450px) {
-  .showCase h3 {
+  .showcase {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  .showcase h3 {
     height: 4.5rem;
     width: 80%;
+  }
+
+  .content {
+    margin-top: 5rem;
   }
 }
