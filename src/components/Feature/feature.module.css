@@ -31,7 +31,7 @@
   line-height: 1.75rem;
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 1024px) {
   .feature {
     margin: 1rem 0 2rem;
   }
