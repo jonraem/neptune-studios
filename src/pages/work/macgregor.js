@@ -29,7 +29,7 @@ const greyed = ['work:macgregor:imageAndText2', 'work:macgregor:imageAndText3'];
 
 const MacGregor = ({ data, ...props }) => {
   const isMobile = useMedia('(max-width: 480px)');
-  const isDesktop = useMedia('(min-width: 1024px)');
+  const isDesktop = useMedia('(min-width: 1025px)');
   const [showcaseIndex, setShowcaseIndex] = useState(0);
 
   const currentShowcase = data.showcase.edges.find(
