@@ -5,10 +5,10 @@ import Footer from '../../components/Footer/footer';
 import Header from '../../components/Header/header';
 import Hero from '../../components/Hero/hero';
 import ImageAndText from '../../components/ImageAndText/imageAndText';
+import useMedia from '../../hooks/useMedia';
 import { getSortedCases } from '../../utils/helpers';
 import pagesStyles from '../pages.module.css';
 import styles from './work.module.css';
-import useMedia from '../../hooks/useMedia';
 
 const reversed = ['case:vare', 'case:macgregor'];
 const sortOrder = ['case:vare', 'case:abb', 'case:macgregor', 'case:various'];
@@ -50,7 +50,7 @@ const Work = ({ data, ...props }) => {
                         padding: '0',
                         paddingTop: '1rem',
                         marginRight: '-8rem',
-                        width: '55%',
+                        width: '90%',
                       }
                     : undefined
                 }
