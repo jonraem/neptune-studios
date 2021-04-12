@@ -69,3 +69,13 @@
     margin: 0.5rem 0;
   }
 }
+
+@media only screen and (min-width: 480px) {
+  .caseCard:first-of-type {
+    margin-left: 0;
+  }
+
+  .caseCard:last-of-type {
+    margin-right: 0;
+  }
+}
