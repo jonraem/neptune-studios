@@ -64,7 +64,7 @@ const Vare = ({ data, ...props }) => {
               ? 350
               : undefined
           }
-          isReversed={reversed.includes(edge.node.contentfulid)}
+          isReversed={!isMobile && reversed.includes(edge.node.contentfulid)}
         />
       );
     } else return null;

@@ -64,7 +64,7 @@ const Various = ({ data, ...props }) => {
           maxHeight={
             edge.node.contentfulid === 'work:various:imageAndText1' ? 300 : 500
           }
-          isReversed={reversed.includes(edge.node.contentfulid)}
+          isReversed={!isMobile && reversed.includes(edge.node.contentfulid)}
         />
       );
     } else return null;

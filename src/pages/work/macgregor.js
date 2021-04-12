@@ -73,7 +73,7 @@ const MacGregor = ({ data, ...props }) => {
           description={edge.node.description}
           imagePath={edge.node.image && edge.node.image.fluid}
           maxHeight={500}
-          isReversed={reversed.includes(edge.node.contentfulid)}
+          isReversed={!isMobile && reversed.includes(edge.node.contentfulid)}
           hasGreyBackground={greyed.includes(edge.node.contentfulid)}
         />
       );

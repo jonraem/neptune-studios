@@ -60,7 +60,7 @@ const ABB = ({ data, ...props }) => {
           title={edge.node.title}
           description={edge.node.description}
           imagePath={edge.node.image && edge.node.image.fluid}
-          isReversed={reversed.includes(edge.node.contentfulid)}
+          isReversed={!isMobile && reversed.includes(edge.node.contentfulid)}
           hasGreyBackground={greyed.includes(edge.node.contentfulid)}
         />
       );
