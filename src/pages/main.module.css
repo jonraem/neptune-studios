@@ -84,6 +84,7 @@
 
   .mainHelpPara {
     width: 95%;
+    margin-bottom: 0;
   }
 
   .mainHelpItems {
