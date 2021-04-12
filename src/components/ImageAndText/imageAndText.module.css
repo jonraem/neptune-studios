@@ -42,7 +42,7 @@
 @media only screen and (max-width: 1024px) {
   .imageAndText {
     height: unset;
-    min-height: 24rem;
+    min-height: 45vh;
   }
 
   .description {
@@ -61,12 +61,15 @@
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .imageAndText {
+    min-height: 55vh;
+  }
+}
+
 @media only screen and (max-width: 450px) {
   .imageAndText {
     flex-direction: column;
-  }
-  
-  .imageAndText {
     min-height: unset;
     padding: 1rem 0;
   }
