@@ -44,6 +44,10 @@
     height: unset;
     min-height: 24rem;
   }
+
+  .description {
+    width: unset;
+  }
 }
 
 @media only screen and (max-width: 992px) {
@@ -54,10 +58,6 @@
   .imageSide {
     width: 75%;
     margin: 0 auto;
-  }
-
-  .description {
-    width: unset;
   }
 }
 
