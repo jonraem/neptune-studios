@@ -22,20 +22,20 @@
 
 @media only screen and (max-width: 768px) {
   .centerTitle {
-    text-align: left;
+    text-align: center;
   }
 
   .centerTitle h3 {
     padding: 0;
-  }
-
-  .divider {
-    display: none;
   }
 }
 
 @media only screen and (max-width: 450px) {
   .centerTitle h3 {
     font-size: 2rem;
+  }
+
+  .divider {
+    display: none;
   }
 }

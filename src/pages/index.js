@@ -41,14 +41,16 @@ const Main = ({ data, ...props }) => (
           “dull” or “My nephew could’ve done it!”. On the right side is
           presented part of the skill set I’ve worked with.
         </p>
-        <div className={pagesStyles.divider} />
-        <div className={styles.mainHelpItems}>
-          <div className={styles.mainHelpItem}>User interface design</div>
-          <div className={styles.mainHelpItem}>User experience design</div>
-          <div className={styles.mainHelpItem}>Workshops</div>
-          <div className={styles.mainHelpItem}>User testing</div>
-          <div className={styles.mainHelpItem}>Prototypes</div>
-          <div className={styles.mainHelpItem}>Visual design</div>
+        <div style={{ display: 'flex' }}>
+          <div className={pagesStyles.divider} />
+          <div className={styles.mainHelpItems}>
+            <div className={styles.mainHelpItem}>User interface design</div>
+            <div className={styles.mainHelpItem}>User experience design</div>
+            <div className={styles.mainHelpItem}>Workshops</div>
+            <div className={styles.mainHelpItem}>User testing</div>
+            <div className={styles.mainHelpItem}>Prototypes</div>
+            <div className={styles.mainHelpItem}>Visual design</div>
+          </div>
         </div>
       </div>
       <div className={styles.mainCases}>

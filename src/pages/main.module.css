@@ -12,7 +12,6 @@
 
 .mainHelp {
   display: flex;
-  height: 12rem;
   margin-bottom: 6rem;
 }
 
@@ -20,10 +19,6 @@
   composes: largePara from './pages.module.css';
   width: 55%;
   margin: 0;
-}
-
-.mainHelpItems {
-  width: 40%;
 }
 
 .mainHelpItem {
@@ -35,7 +30,7 @@
 }
 
 .mainCases {
-  margin: 10rem 0 6rem;
+  margin-bottom: 6rem;
 }
 
 .mainCaseCards {
@@ -51,9 +46,27 @@
   }
 }
 
+@media only screen and (max-width: 992px) {
+  .mainHelp {
+    height: unset;
+    flex-direction: column;
+    margin-bottom: 4rem;
+  }
+
+  .mainHelpPara {
+    width: unset;
+    margin-bottom: 4rem;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .mainCases {
     margin: 3rem 0;
+  }
+
+  .mainHelpItem {
+    font-size: .9rem;
+    line-height: 1.5rem;
   }
 }
 
