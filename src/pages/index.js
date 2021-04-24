@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import { filter } from 'lodash';
+import { map, filter } from 'lodash';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import CaseCard from '../components/CaseCard/caseCard';
@@ -31,25 +31,19 @@ const Main = ({ data, ...props }) => (
       heroImage={data.hero?.image?.fluid}
     />
     <div className={pagesStyles.content}>
-      <CenterTitle>
-        Neptune Studios <br /> can help you with:
+      <CenterTitle className={styles.mainHelpTitle}>
+        {data.listAndText.title}
       </CenterTitle>
       <div className={styles.mainHelp}>
         <p className={styles.mainHelpPara}>
-          The goal is to help clients achieve the best solution with a design
-          related problem. Functionality and practicality does not have to mean
-          “dull” or “My nephew could’ve done it!”. On the right side is
-          presented part of the skill set I’ve worked with.
+          {data.listAndText.description.description}
         </p>
         <div style={{ display: 'flex' }}>
           <div className={pagesStyles.divider} />
           <div className={styles.mainHelpItems}>
-            <div className={styles.mainHelpItem}>User interface design</div>
-            <div className={styles.mainHelpItem}>User experience design</div>
-            <div className={styles.mainHelpItem}>Workshops</div>
-            <div className={styles.mainHelpItem}>User testing</div>
-            <div className={styles.mainHelpItem}>Prototypes</div>
-            <div className={styles.mainHelpItem}>Visual design</div>
+            {map(data.listAndText.list, item => (
+              <div className={styles.mainHelpItem}>{item.content}</div>
+            ))}
           </div>
         </div>
       </div>
@@ -82,6 +76,17 @@ export default Main;
 
 export const query = graphql`
   query {
+    listAndText: contentfulListAndText(
+      contentfulid: { eq: "main:listAndText" }
+    ) {
+      title
+      description {
+        description
+      }
+      list {
+        content
+      }
+    }
     hero: contentfulHero(contentfulid: { eq: "main:hero" }) {
       title
       subtitle

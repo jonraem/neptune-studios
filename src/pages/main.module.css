@@ -15,6 +15,10 @@
   margin-bottom: 6rem;
 }
 
+.mainHelpTitle h3 {
+  width: 24rem;
+}
+
 .mainHelpPara {
   composes: largePara from './pages.module.css';
   width: 55%;
@@ -26,7 +30,7 @@
   font-weight: 600;
   line-height: 1.7rem;
   text-transform: uppercase;
-  margin-bottom: .45rem;
+  margin-bottom: 0.45rem;
 }
 
 .mainCases {
@@ -64,8 +68,12 @@
     margin: 3rem 0;
   }
 
+  .mainHelpTitle h3 {
+    width: 16rem;
+  }
+
   .mainHelpItem {
-    font-size: .9rem;
+    font-size: 0.9rem;
     line-height: 1.5rem;
   }
 }
