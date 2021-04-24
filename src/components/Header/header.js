@@ -5,10 +5,7 @@ import { ReactComponent as Hamburger } from '../../assets/svg/hamburger.svg';
 import { ReactComponent as NeptuneStudios } from '../../assets/svg/neptune-studios--white.svg';
 import MenuContext from '../../context/MenuContext';
 import useMedia from '../../hooks/useMedia';
-import {
-  isLinkPathCurrentPath,
-  getActiveStyleForDropdown,
-} from '../../utils/helpers';
+import { isLinkPathCurrentPath } from '../../utils/helpers';
 import buttonStyles from '../Buttons/buttons.module.css';
 import Dropdown from '../Dropdown/dropdown';
 import styles from './header.module.css';
@@ -27,8 +24,6 @@ const Header = props => {
     isLinkPathCurrentPath(pathName, props.currentPath)
       ? styles.activeLink
       : undefined;
-  const getActiveStyleForDropdownWithCurrentPath = pathName =>
-    getActiveStyleForDropdown(pathName, props.currentPath);
 
   return (
     <div className={styles.header}>
@@ -51,10 +46,9 @@ const Header = props => {
             Main
           </Link>
           <Dropdown
+            currentPath={props.currentPath}
             options={menuOptions}
-            getActiveStyleForDropdownWithCurrentPath={
-              getActiveStyleForDropdownWithCurrentPath
-            }
+            getActiveLinkClassName={getActiveLinkClassName}
           >
             <Link
               to="/work/"

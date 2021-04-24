@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { get, sortBy } from 'lodash';
+import { get, sortBy, includes } from 'lodash';
 
 export const getActiveColorFromPath = pathName => {
   switch (pathName) {
@@ -27,16 +27,7 @@ export const getActiveColorFromPath = pathName => {
 };
 
 export const isLinkPathCurrentPath = (pathName, currentPath) =>
-  pathName === '/' ? currentPath === pathName : currentPath.includes(pathName);
-
-export const getActiveStyleForDropdown = (pathName, currentPath) => {
-  if (currentPath.includes(pathName)) {
-    return {
-      color: getActiveColorFromPath(pathName),
-      textDecoration: 'line-through',
-    };
-  } else return {};
-};
+  pathName === '/' ? currentPath === pathName : includes(currentPath, pathName);
 
 export const getSortedCases = (cases, sortOrder) =>
   sortBy(cases, item => sortOrder.indexOf(item.node.contentfulid));
