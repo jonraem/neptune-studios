@@ -1,12 +1,13 @@
 import { Link } from 'gatsby';
+import classnames from 'classnames';
 import React, { useContext } from 'react';
 import { ReactComponent as Hamburger } from '../../assets/svg/hamburger.svg';
 import { ReactComponent as NeptuneStudios } from '../../assets/svg/neptune-studios--white.svg';
 import MenuContext from '../../context/MenuContext';
 import useMedia from '../../hooks/useMedia';
 import {
+  isLinkPathCurrentPath,
   getActiveStyleForDropdown,
-  getActiveStyleForNavigation,
 } from '../../utils/helpers';
 import buttonStyles from '../Buttons/buttons.module.css';
 import Dropdown from '../Dropdown/dropdown';
@@ -22,8 +23,10 @@ const menuOptions = [
 const Header = props => {
   const { setIsOpen } = useContext(MenuContext);
   const isTablet = useMedia('(max-width: 992px)');
-  const getActiveStyleForNavigationWithCurrentPath = pathName =>
-    getActiveStyleForNavigation(pathName, props.currentPath);
+  const getActiveLinkClassName = pathName =>
+    isLinkPathCurrentPath(pathName, props.currentPath)
+      ? styles.activeLink
+      : undefined;
   const getActiveStyleForDropdownWithCurrentPath = pathName =>
     getActiveStyleForDropdown(pathName, props.currentPath);
 
@@ -43,8 +46,7 @@ const Header = props => {
         <div className={styles.links}>
           <Link
             to="/"
-            className={styles.link}
-            style={getActiveStyleForNavigationWithCurrentPath('/')}
+            className={classnames(styles.link, getActiveLinkClassName('/'))}
           >
             Main
           </Link>
@@ -56,23 +58,29 @@ const Header = props => {
           >
             <Link
               to="/work/"
-              className={styles.link}
-              style={getActiveStyleForNavigationWithCurrentPath('/work/')}
+              className={classnames(
+                styles.link,
+                getActiveLinkClassName('/work')
+              )}
             >
               Work
             </Link>
           </Dropdown>
           <Link
             to="/about/"
-            className={styles.link}
-            style={getActiveStyleForNavigationWithCurrentPath('/about/')}
+            className={classnames(
+              styles.link,
+              getActiveLinkClassName('/about')
+            )}
           >
             About
           </Link>
           {/* <Link
-            to="/contact"
-            className={styles.link}
-            style={getActiveStyleForNavigationWithCurrentPath('/contact')}
+            to="/contact/"
+            className={classnames(
+              styles.link,
+              getActiveLinkClassName('/contact')
+            )}
           >
             Contact
           </Link> */}

@@ -26,17 +26,8 @@ export const getActiveColorFromPath = pathName => {
   }
 };
 
-export const getActiveStyleForNavigation = (pathName, currentPath) => {
-  if (pathName === '/') {
-    if (currentPath === pathName) {
-      return { textDecoration: 'line-through' };
-    } else return {};
-  } else {
-    if (currentPath.includes(pathName)) {
-      return { textDecoration: 'line-through' };
-    } else return {};
-  }
-};
+export const isLinkPathCurrentPath = (pathName, currentPath) =>
+  pathName === '/' ? currentPath === pathName : currentPath.includes(pathName);
 
 export const getActiveStyleForDropdown = (pathName, currentPath) => {
   if (currentPath.includes(pathName)) {

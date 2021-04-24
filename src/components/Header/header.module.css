@@ -17,11 +17,50 @@
 }
 
 .link {
+  position: relative;
   font-family: 'Zilla Slab', sans-serif;
   color: #fff;
   text-decoration: none;
   font-size: 1.5rem;
   margin-right: 2rem;
+}
+
+.link:hover:not(.activeLink)::after {
+  content: ' ';
+  position: absolute;
+  top: 50%;
+  left: -5%;
+  width: 110%;
+  height: 2px;
+  background: #fff;
+  animation-name: strike;
+  animation-duration: 0.2s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes strike {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 110%;
+  }
+}
+
+.activeLink {
+  composes: link;
+}
+
+.activeLink::after {
+  content: ' ';
+  position: absolute;
+  top: 50%;
+  left: -5%;
+  width: 110%;
+  height: 2px;
+  background: #fff;
 }
 
 .hamburger {
