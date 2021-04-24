@@ -12,12 +12,40 @@
 }
 
 .socialLink {
+  height: 2.5rem;
+  width: 2.5rem;
   margin-left: 1rem;
+  background: #272626;
+  border: 2px solid #272626;
+  border-radius: 5px;
+  transition: 0.1s all;
+}
+
+.socialLink:active {
+  background: #495376;
+  border: 2px solid #495376;
+}
+
+.socialLink:hover {
+  background: #495376;
+  border: 2px solid #87e1c6;
 }
 
 .socialLink svg {
   width: 2.5rem;
   height: 2.5rem;
+}
+
+.socialLink svg > path {
+  fill: #272626;
+}
+
+.socialLink:active svg > path {
+  fill: #495376;
+}
+
+.socialLink:hover svg > path {
+  fill: #495376;
 }
 
 @media only screen and (max-width: 768px) {
