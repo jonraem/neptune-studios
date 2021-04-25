@@ -41,8 +41,10 @@ const Main = ({ data, ...props }) => (
         <div style={{ display: 'flex' }}>
           <div className={pagesStyles.divider} />
           <div className={styles.mainHelpItems}>
-            {map(data.listAndText.list, item => (
-              <div className={styles.mainHelpItem}>{item.content}</div>
+            {map(data.listAndText.list, (item, index) => (
+              <div key={index} className={styles.mainHelpItem}>
+                {item.content}
+              </div>
             ))}
           </div>
         </div>
