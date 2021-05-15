@@ -119,7 +119,7 @@ const Vare = ({ data, ...props }) => {
             data.fullWidthBackground.image &&
             data.fullWidthBackground.image.fluid
           }
-          height={'100vh'}
+          height={isMobile ? '100vh' : '42rem'}
         />
         {renderImageAndText(
           data.imageAndText.edges.find(
