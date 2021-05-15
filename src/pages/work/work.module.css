@@ -31,10 +31,9 @@
 
 .vareHeroImage {
   composes: image from '../../components/Hero/hero.module.css';
-  top: 34vh;
-  right: -12rem;
-  height: 58vh;
-
+  top: 30vh;
+  right: -5rem;
+  height: 66vh;
 }
 
 .vareFeatures {
@@ -44,9 +43,9 @@
 
 @media only screen and (max-width: 1200px) {
   .vareHeroImage {
-    top: 36vh;
-    right: -8rem;
-    height: 42vh;
+    top: 32vh;
+    right: -5rem;
+    height: 46vh;
   }
 }
 
@@ -60,7 +59,7 @@
 
 .abbHero {
   composes: hero from '../../components/Hero/hero.module.css';
-  background: #21B8BF;
+  background: #21b8bf;
 }
 
 .abbHeroImage {
@@ -94,7 +93,7 @@
 
 .macgregorHero {
   composes: hero from '../../components/Hero/hero.module.css';
-  background: #3D68B0;
+  background: #3d68b0;
 }
 
 .macgregorHeroImage {
@@ -127,7 +126,7 @@
 
 .variousHero {
   composes: hero from '../../components/Hero/hero.module.css';
-  background: #5DBBE3;
+  background: #5dbbe3;
 }
 
 .variousHeroImage {
@@ -142,4 +141,3 @@
     height: 48vh;
   }
 }
-
