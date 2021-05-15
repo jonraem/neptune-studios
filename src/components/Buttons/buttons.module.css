@@ -11,7 +11,7 @@
 
 .progressionButton {
   position: relative;
-  padding: .25rem .5rem;
+  padding: 0.25rem 0.5rem;
   height: 2rem;
   color: #fff;
   background: unset;
@@ -19,6 +19,21 @@
   border: 2px solid #fff;
   font-size: 1.25rem;
   cursor: pointer;
+  transition: all 0.1s;
+}
+
+.progressionButton:active {
+  background: #5dbbe3;
+  border: 2px solid #5dbbe3;
+}
+
+.progressionButton:hover {
+  background: #fff;
+  border: 2px solid #87e1c6;
+}
+
+.progressionButton:hover path {
+  fill: #5dbbe3;
 }
 
 .content {
@@ -45,13 +60,27 @@
 
 .backButton {
   position: absolute;
-  padding: .2rem .75rem;
+  padding: 0.2rem 0.75rem;
   color: #fff;
   background: unset;
   border-radius: 26px;
   border: 2px solid #fff;
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+.backButton:active {
+  background: #5dbbe3;
+  border: 2px solid #5dbbe3;
+}
+
+.backButton:hover {
+  background: #fff;
+  border: 2px solid #87e1c6;
+}
+
+.backButton:hover path {
+  fill: #5dbbe3;
 }
 
 @media only screen and (max-width: 450px) {
