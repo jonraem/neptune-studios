@@ -143,7 +143,7 @@ const MacGregor = ({ data, ...props }) => {
             data.fullWidthBackground.image &&
             data.fullWidthBackground.image.fluid
           }
-          height={'54rem'}
+          height={'100vh'}
         />
         {renderImageAndText(
           data.imageAndText.edges.find(

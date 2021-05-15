@@ -121,7 +121,7 @@ const Various = ({ data, ...props }) => {
             data.fullWidthBackground.image &&
             data.fullWidthBackground.image.fluid
           }
-          height={'50rem'}
+          height={'100vh'}
         />
         <Quote quote={findQuote(data, 'work:various:quotation1')} />
         {!isMobile && (
