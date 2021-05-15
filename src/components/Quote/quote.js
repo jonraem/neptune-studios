@@ -2,14 +2,16 @@ import React from 'react';
 import styles from './quote.module.css';
 
 const QuotationMarks = () => (
-  <div className={styles.quotationMarks}>
-    <div className={styles.quotationMark}>
-      <div className={styles.apostrophe} />
-      <div className={styles.apostrophe} />
-    </div>
-    <div className={styles.quotationMark}>
-      <div className={styles.apostrophe} />
-      <div className={styles.apostrophe} />
+  <div className={styles.quotationMarksContainer}>
+    <div className={styles.quotationMarks}>
+      <div className={styles.quotationMark}>
+        <div className={styles.apostrophe} />
+        <div className={styles.apostrophe} />
+      </div>
+      <div className={styles.quotationMark}>
+        <div className={styles.apostrophe} />
+        <div className={styles.apostrophe} />
+      </div>
     </div>
   </div>
 );
