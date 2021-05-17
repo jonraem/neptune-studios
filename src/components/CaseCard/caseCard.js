@@ -6,7 +6,7 @@ import styles from './caseCard.module.css';
 
 const CaseCard = props => {
   return (
-    <div className={styles.caseCard}>
+    <Link className={styles.caseCard} to={props.linkTo}>
       {props.imagePath && (
         <div className={styles.image}>
           <Img
@@ -20,12 +20,12 @@ const CaseCard = props => {
       <div className={styles.title}>{props.title}</div>
       <div className={styles.subtitle}>{props.subtitle}</div>
       {!!props.linkTo && (
-        <Link className={styles.link} to={props.linkTo}>
+        <div className={styles.link}>
           LEARN MORE
           <ArrowRight />
-        </Link>
+        </div>
       )}
-    </div>
+    </Link>
   );
 };
 
