@@ -25,6 +25,7 @@ const FullWidthBackground = props => {
           marginRight: '-50vw',
           objectFit: 'cover',
         }}
+        critical
       />
     </div>
   );

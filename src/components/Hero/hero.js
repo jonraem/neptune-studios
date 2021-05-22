@@ -25,6 +25,7 @@ const Hero = props => {
             objectPosition: 'center right',
           }}
           fluid={props.heroImage}
+          critical
         />
       )}
     </div>
