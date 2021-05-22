@@ -25,7 +25,7 @@ const Hero = props => {
             objectPosition: 'center right',
           }}
           fluid={props.heroImage}
-          critical
+          loading="eager"
         />
       )}
     </div>
