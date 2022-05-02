@@ -23,6 +23,9 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
+    'gatsby-plugin-image',
+    'gatsby-plugin-svgr',
+    'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -33,7 +36,5 @@ module.exports = {
         icon: 'static/favicon.png',
       },
     },
-    'gatsby-plugin-svgr',
-    'gatsby-plugin-react-helmet',
   ],
 };
