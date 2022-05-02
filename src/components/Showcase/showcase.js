@@ -1,5 +1,6 @@
 import gsap from 'gsap';
 import React, { useCallback, useEffect, useRef } from 'react';
+
 import {
   getYPositionsForFeatureDescriptions,
   initializeScrollTrigger,

@@ -1,6 +1,7 @@
 import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
+
 import { ReactComponent as ArrowRight } from '../../assets/svg/arrow-right--blue.svg';
 import * as styles from './caseCard.module.css';
 

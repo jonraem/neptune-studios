@@ -1,5 +1,6 @@
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
+
 import * as styles from './fullWidth.module.css';
 import FullWidthGrey from './grey';
 

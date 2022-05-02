@@ -1,5 +1,6 @@
 import classnames from 'classnames';
 import React from 'react';
+
 import CenterTitle from '../CenterTitle/centerTitle';
 import RichText from '../RichText/richText';
 import * as styles from './results.module.css';

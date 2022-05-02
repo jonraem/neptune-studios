@@ -1,5 +1,6 @@
 import classnames from 'classnames';
 import React from 'react';
+
 import * as styles from './centerTitle.module.css';
 
 const CenterTitle = props => {

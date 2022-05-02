@@ -1,8 +1,9 @@
 import { graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
-import { map, filter } from 'lodash';
+import { filter, map } from 'lodash';
 import React from 'react';
 import { Helmet } from 'react-helmet';
+
 import CaseCard from '../components/CaseCard/caseCard';
 import CenterTitle from '../components/CenterTitle/centerTitle';
 import Footer from '../components/Footer/footer';

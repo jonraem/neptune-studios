@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import ReactModal from 'react-modal';
+
 import MenuContext from '../../context/MenuContext';
 import Menu from '../Menu/menu';
 

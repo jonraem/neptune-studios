@@ -1,6 +1,7 @@
-import { Link } from 'gatsby';
 import classnames from 'classnames';
+import { Link } from 'gatsby';
 import React, { useContext } from 'react';
+
 import { ReactComponent as Hamburger } from '../../assets/svg/hamburger.svg';
 import { ReactComponent as NeptuneStudios } from '../../assets/svg/neptune-studios--white.svg';
 import MenuContext from '../../context/MenuContext';

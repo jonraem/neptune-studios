@@ -1,5 +1,6 @@
 import { Link } from 'gatsby';
 import React from 'react';
+
 import { ReactComponent as ArrowPrevious } from '../../assets/svg/arrow-left--white.svg';
 import * as styles from './buttons.module.css';
 

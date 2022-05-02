@@ -3,6 +3,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { get } from 'lodash';
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
+
 import Feature from '../../components/Feature/feature';
 import Footer from '../../components/Footer/footer';
 import Header from '../../components/Header/header';

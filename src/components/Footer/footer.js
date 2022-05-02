@@ -1,5 +1,6 @@
-import { graphql, StaticQuery } from 'gatsby';
+import { StaticQuery, graphql } from 'gatsby';
 import React from 'react';
+
 // import { ReactComponent as Behance } from '../../assets/svg/behance.svg';
 import { ReactComponent as LinkedIn } from '../../assets/svg/linkedin.svg';
 import * as styles from './footer.module.css';
@@ -22,9 +23,7 @@ const Footer = props => {
       `}
       render={data => (
         <div className={styles.footer}>
-          <div
-            className={styles.copyright}
-          >{`© ${data.site.siteMetadata.title} ${currentYear}`}</div>
+          <div>{`© ${data.site.siteMetadata.title} ${currentYear}`}</div>
           <div className={styles.social}>
             <a
               href={data.site.siteMetadata.linkedIn}

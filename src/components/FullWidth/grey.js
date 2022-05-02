@@ -1,4 +1,5 @@
 import React from 'react';
+
 import * as styles from './fullWidth.module.css';
 
 /**

@@ -3,6 +3,7 @@ import { getImage } from 'gatsby-plugin-image';
 import { get } from 'lodash';
 import React from 'react';
 import { Helmet } from 'react-helmet';
+
 import { ReactComponent as CurriculumVitae } from '../../assets/svg/curriculum-vitae.svg';
 import Feature from '../../components/Feature/feature';
 import Footer from '../../components/Footer/footer';

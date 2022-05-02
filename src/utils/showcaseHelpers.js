@@ -1,5 +1,6 @@
-import Carousel, { autoplayPlugin } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
+
+import Carousel, { autoplayPlugin } from '@brainhubeu/react-carousel';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 

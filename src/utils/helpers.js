@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { get, sortBy, includes } from 'lodash';
+import { get, includes, sortBy } from 'lodash';
 
 export const getActiveColorFromPath = pathName => {
   switch (pathName) {

@@ -1,5 +1,6 @@
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
+
 import BackButton from '../Buttons/backButton';
 import RichText from '../RichText/richText';
 import * as styles from './hero.module.css';

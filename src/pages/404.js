@@ -1,7 +1,8 @@
-import React from 'react';
 import { Link } from 'gatsby';
-import { ReactComponent as NotFoundTitle } from '../assets/svg/404-title.svg';
+import React from 'react';
+
 import { ReactComponent as NotFoundIllustration } from '../assets/svg/404-illustration.svg';
+import { ReactComponent as NotFoundTitle } from '../assets/svg/404-title.svg';
 import * as pagesStyles from './404.module.css';
 
 const NotFound = () => (

@@ -2,6 +2,7 @@ import { graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
+
 import Footer from '../../components/Footer/footer';
 import FullWidthBackground from '../../components/FullWidth/background';
 import Header from '../../components/Header/header';
