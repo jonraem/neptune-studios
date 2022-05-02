@@ -2,7 +2,7 @@ import React from 'react';
 import useMedia from '../../hooks/useMedia';
 import CenterTitle from '../CenterTitle/centerTitle';
 import FullWidthGrey from '../FullWidth/grey';
-import styles from './timeline.module.css';
+import * as styles from './timeline.module.css';
 
 const Timeline = props => {
   const isMobile = useMedia('(max-width: 480px)');

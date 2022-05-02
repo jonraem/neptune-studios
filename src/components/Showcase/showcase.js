@@ -6,7 +6,7 @@ import {
 } from '../../utils/helpers';
 import ProgressionButton from '../Buttons/progressionButton';
 import DescriptionBox from './descriptionBox';
-import styles from './showcase.module.css';
+import * as styles from './showcase.module.css';
 
 const Showcase = props => {
   const shouldRenderDescriptionBoxes =

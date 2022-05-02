@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import styles from './leadForm.module.css';
+import * as styles from './leadForm.module.css';
 
 const LeadForm = props => {
   const { register, handleSubmit, errors } = useForm();

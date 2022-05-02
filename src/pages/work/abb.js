@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { get } from 'lodash';
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
@@ -13,8 +13,8 @@ import Results from '../../components/Results/results';
 import MobileShowcase from '../../components/Showcase/mobileShowcase';
 import Showcase from '../../components/Showcase/showcase';
 import useMedia from '../../hooks/useMedia';
-import pagesStyles from '../pages.module.css';
-import styles from './work.module.css';
+import * as pagesStyles from '../pages.module.css';
+import * as styles from './work.module.css';
 
 const reversed = ['work:abb:imageAndText2', 'work:abb:imageAndText4'];
 const greyed = ['work:abb:imageAndText1', 'work:abb:imageAndText3'];
@@ -59,7 +59,7 @@ const ABB = ({ data, ...props }) => {
           key={edge.node.contentfulid}
           title={edge.node.title}
           description={edge.node.description}
-          imagePath={edge.node.image && edge.node.image.fluid}
+          imagePath={getImage(edge.node.image)}
           isReversed={!isMobile && reversed.includes(edge.node.contentfulid)}
           hasGreyBackground={greyed.includes(edge.node.contentfulid)}
         />
@@ -82,7 +82,7 @@ const ABB = ({ data, ...props }) => {
         description={data.hero.description}
         heroClassName={styles.abbHeroImage}
         heroAlt="Tablets with ABB application"
-        heroImage={data.hero?.image?.fluid}
+        heroImage={getImage(data.hero?.image)}
         linkBackTo="/work"
       />
       <div className={pagesStyles.content}>
@@ -125,8 +125,8 @@ const ABB = ({ data, ...props }) => {
             handleNextShowcase={handleNextShowcase}
           >
             {!!currentShowcaseImage && (
-              <Img
-                fluid={currentShowcaseImage.fluid}
+              <GatsbyImage
+                image={getImage(currentShowcaseImage)}
                 style={{ width: '100%', height: isDesktop ? '44rem' : '40vh' }}
                 imgStyle={{
                   width: '75%',
@@ -150,8 +150,8 @@ const ABB = ({ data, ...props }) => {
             handleChangeShowcaseIndex={index => setShowcaseIndex(index)}
           >
             {!!currentShowcaseImage && (
-              <Img
-                fluid={currentShowcaseImage.fluid}
+              <GatsbyImage
+                image={getImage(currentShowcaseImage)}
                 style={{ width: '100%' }}
                 imgStyle={{
                   width: '100%',
@@ -184,9 +184,7 @@ export const query = graphql`
         raw
       }
       image {
-        fluid {
-          ...GatsbyContentfulFluid_noBase64
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     tripleFeature: contentfulTripleFeature(
@@ -216,9 +214,7 @@ export const query = graphql`
             raw
           }
           image {
-            fluid {
-              ...GatsbyContentfulFluid_noBase64
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
       }
@@ -231,9 +227,7 @@ export const query = graphql`
           contentfulid
           title
           images {
-            fluid {
-              ...GatsbyContentfulFluid_noBase64
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
             file {
               details {
                 image {

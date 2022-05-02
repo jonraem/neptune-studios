@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { get } from 'lodash';
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
@@ -16,8 +16,8 @@ import Showcase from '../../components/Showcase/showcase';
 import Timeline from '../../components/Timeline/timeline';
 import useMedia from '../../hooks/useMedia';
 import { findQuote } from '../../utils/helpers';
-import pagesStyles from '../pages.module.css';
-import styles from './work.module.css';
+import * as pagesStyles from '../pages.module.css';
+import * as styles from './work.module.css';
 
 const reversed = [
   'work:macgregor:imageAndText2',
@@ -71,7 +71,7 @@ const MacGregor = ({ data, ...props }) => {
           key={edge.node.contentfulid}
           title={edge.node.title}
           description={edge.node.description}
-          imagePath={edge.node.image && edge.node.image.fluid}
+          imagePath={getImage(edge.node.image)}
           maxHeight={500}
           isReversed={!isMobile && reversed.includes(edge.node.contentfulid)}
           hasGreyBackground={greyed.includes(edge.node.contentfulid)}
@@ -98,7 +98,7 @@ const MacGregor = ({ data, ...props }) => {
         description={data.hero.description}
         heroClassName={styles.macgregorHeroImage}
         heroAlt="Phone with MacGregor application"
-        heroImage={data.hero?.image?.fluid}
+        heroImage={getImage(data.hero?.image)}
         linkBackTo="/work"
       />
       <div className={pagesStyles.content}>
@@ -139,10 +139,7 @@ const MacGregor = ({ data, ...props }) => {
           )
         )}
         <FullWidthBackground
-          imagePath={
-            data.fullWidthBackground.image &&
-            data.fullWidthBackground.image.fluid
-          }
+          imagePath={getImage(data.fullWidthBackground.image)}
           height={isMobile ? '100vh' : '42rem'}
         />
         {renderImageAndText(
@@ -164,8 +161,8 @@ const MacGregor = ({ data, ...props }) => {
           >
             {!!currentShowcaseImages.length && (
               <>
-                <Img
-                  fluid={currentShowcaseImages[0].fluid}
+                <GatsbyImage
+                  image={getImage(currentShowcaseImages[0])}
                   style={{ width: '40%', height: isDesktop && '46rem' }}
                   imgStyle={{
                     width: '75%',
@@ -176,8 +173,8 @@ const MacGregor = ({ data, ...props }) => {
                     objectFit: 'contain',
                   }}
                 />
-                <Img
-                  fluid={currentShowcaseImages[1].fluid}
+                <GatsbyImage
+                  image={getImage(currentShowcaseImages[1])}
                   style={{ width: '40%', height: isDesktop && '46rem' }}
                   imgStyle={{
                     width: '75%',
@@ -202,8 +199,8 @@ const MacGregor = ({ data, ...props }) => {
           >
             {!!currentShowcaseImages.length && (
               <>
-                <Img
-                  fluid={currentShowcaseImages[0].fluid}
+                <GatsbyImage
+                  image={getImage(currentShowcaseImages[0])}
                   style={{ width: '45%' }}
                   imgStyle={{
                     width: '90%',
@@ -214,8 +211,8 @@ const MacGregor = ({ data, ...props }) => {
                     objectFit: 'contain',
                   }}
                 />
-                <Img
-                  fluid={currentShowcaseImages[1].fluid}
+                <GatsbyImage
+                  image={getImage(currentShowcaseImages[1])}
                   style={{ width: '45%' }}
                   imgStyle={{
                     width: '90%',
@@ -249,9 +246,7 @@ export const query = graphql`
         raw
       }
       image {
-        fluid {
-          ...GatsbyContentfulFluid_noBase64
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     tripleFeature: contentfulTripleFeature(
@@ -291,9 +286,7 @@ export const query = graphql`
             raw
           }
           image {
-            fluid {
-              ...GatsbyContentfulFluid_noBase64
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
       }
@@ -302,9 +295,7 @@ export const query = graphql`
       contentfulid: { eq: "work:macgregor:fullWidthBackground" }
     ) {
       image {
-        fluid(maxWidth: 3800, quality: 100) {
-          ...GatsbyContentfulFluid_noBase64
-        }
+        gatsbyImageData(layout: CONSTRAINED, width: 3800)
       }
     }
     showcase: allContentfulShowcase(
@@ -315,9 +306,7 @@ export const query = graphql`
           contentfulid
           title
           images {
-            fluid {
-              ...GatsbyContentfulFluid_noBase64
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
             file {
               details {
                 image {

@@ -2,7 +2,7 @@ import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
 // import { ReactComponent as Behance } from '../../assets/svg/behance.svg';
 import { ReactComponent as LinkedIn } from '../../assets/svg/linkedin.svg';
-import styles from './footer.module.css';
+import * as styles from './footer.module.css';
 
 const currentYear = new Date().getFullYear();
 

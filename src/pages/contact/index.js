@@ -1,4 +1,5 @@
 import { graphql } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import CenterTitle from '../../components/CenterTitle/centerTitle';
@@ -6,8 +7,8 @@ import Footer from '../../components/Footer/footer';
 import Header from '../../components/Header/header';
 import Hero from '../../components/Hero/hero';
 import LeadForm from '../../components/LeadForm/leadForm';
-import pagesStyles from '../pages.module.css';
-import styles from './contact.module.css';
+import * as pagesStyles from '../pages.module.css';
+import * as styles from './contact.module.css';
 
 const Contact = ({ data, ...props }) => (
   <div className={pagesStyles.page}>
@@ -24,7 +25,7 @@ const Contact = ({ data, ...props }) => (
       description={data.hero.description}
       heroClassName={styles.contactHeroImage}
       heroAlt="Contact Neptune Studios"
-      heroImage={data.hero?.image?.fluid}
+      heroImage={getImage(data.hero?.image)}
     />
     <div className={pagesStyles.content}>
       <CenterTitle>
@@ -55,9 +56,7 @@ export const query = graphql`
         raw
       }
       image {
-        fluid {
-          ...GatsbyContentfulFluid_noBase64
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
   }

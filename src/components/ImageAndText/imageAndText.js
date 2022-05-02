@@ -1,11 +1,11 @@
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
-import globalStyles from '../../global.module.css';
+import * as globalStyles from '../../global.module.css';
 import useMedia from '../../hooks/useMedia';
 import FullWidthGrey from '../FullWidth/grey';
 import RichText from '../RichText/richText';
-import styles from './imageAndText.module.css';
+import * as styles from './imageAndText.module.css';
 
 const ImageAndText = props => {
   const isMobile = useMedia('(max-width: 480px)');
@@ -30,8 +30,8 @@ const ImageAndText = props => {
       <div className={styles.spacing} />
       <div className={styles.imageSide} style={props.imageSideStyle}>
         {!!props.imagePath && (
-          <Img
-            fluid={props.imagePath}
+          <GatsbyImage
+            image={props.imagePath}
             style={{ maxHeight: props.maxHeight || 800 }}
             imgStyle={{
               maxHeight: props.maxHeight || 800,

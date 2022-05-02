@@ -1,6 +1,6 @@
 import Carousel, { autoplayPlugin } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 export const renderVariousShowcaseImages = (currentShowcase, isDesktop) => {
@@ -17,9 +17,9 @@ export const renderVariousShowcaseImages = (currentShowcase, isDesktop) => {
           }}
         >
           {currentShowcase.node.images.map(image => (
-            <Img
+            <GatsbyImage
               key={image.id}
-              fluid={image.fluid}
+              image={getImage(image)}
               style={{
                 width: isDesktop ? '13rem' : '12.5vh',
                 height: isDesktop ? '13rem' : '12.5vh',
@@ -40,8 +40,8 @@ export const renderVariousShowcaseImages = (currentShowcase, isDesktop) => {
     case 'work:various:showcase2':
       return (
         <>
-          <Img
-            fluid={currentShowcase.node.images[0].fluid}
+          <GatsbyImage
+            image={getImage(currentShowcase.node.images[0])}
             style={{ width: '36%' }}
             imgStyle={{
               width: '95%',
@@ -53,8 +53,8 @@ export const renderVariousShowcaseImages = (currentShowcase, isDesktop) => {
               objectFit: 'contain',
             }}
           />
-          <Img
-            fluid={currentShowcase.node.images[1].fluid}
+          <GatsbyImage
+            image={getImage(currentShowcase.node.images[1])}
             style={{ width: '36%' }}
             imgStyle={{
               width: '95%',
@@ -71,8 +71,8 @@ export const renderVariousShowcaseImages = (currentShowcase, isDesktop) => {
     case 'work:various:showcase3':
       return (
         <>
-          <Img
-            fluid={currentShowcase.node.images[0].fluid}
+          <GatsbyImage
+            image={getImage(currentShowcase.node.images[0])}
             style={{
               width: isDesktop ? '22rem' : '21vh',
               minWidth: isDesktop ? '22rem' : '21vh',
@@ -89,8 +89,8 @@ export const renderVariousShowcaseImages = (currentShowcase, isDesktop) => {
               objectFit: 'cover',
             }}
           />
-          <Img
-            fluid={currentShowcase.node.images[1].fluid}
+          <GatsbyImage
+            image={getImage(currentShowcase.node.images[1])}
             style={{
               width: isDesktop ? '22rem' : '21vh',
               minWidth: isDesktop ? '22rem' : '21vh',
@@ -120,8 +120,8 @@ export const renderVariousShowcaseImages = (currentShowcase, isDesktop) => {
                 height: '100%',
               }}
             >
-              <Img
-                fluid={currentShowcase.node.images[2].fluid}
+              <GatsbyImage
+                image={getImage(currentShowcase.node.images[2])}
                 style={{
                   width: isDesktop ? '16.5rem' : '20vh',
                   height: isDesktop ? '16rem' : '18.2vh',
@@ -138,8 +138,8 @@ export const renderVariousShowcaseImages = (currentShowcase, isDesktop) => {
                   objectFit: 'cover',
                 }}
               />
-              <Img
-                fluid={currentShowcase.node.images[3].fluid}
+              <GatsbyImage
+                image={getImage(currentShowcase.node.images[3])}
                 style={{
                   width: isDesktop ? '16.5rem' : '20vh',
                   height: isDesktop ? '16rem' : '18.2vh',
@@ -180,9 +180,9 @@ export const renderVariousMobileShowcaseImages = currentShowcase => {
           }}
         >
           {currentShowcase.node.images.map(image => (
-            <Img
+            <GatsbyImage
               key={image.id}
-              fluid={image.fluid}
+              image={getImage(image)}
               style={{ width: '6rem', height: '6rem' }}
               imgStyle={{
                 width: '75%',
@@ -209,12 +209,12 @@ export const renderVariousMobileShowcaseImages = currentShowcase => {
               },
             },
           ]}
-          draggabble
+          draggable
         >
           {currentShowcase.node.images.map(image => (
-            <Img
+            <GatsbyImage
               key={image.id}
-              fluid={image.fluid}
+              image={getImage(image)}
               style={{ width: '80%', marginBottom: '2rem' }}
               imgStyle={{
                 width: '100%',
@@ -243,9 +243,9 @@ export const renderVariousMobileShowcaseImages = currentShowcase => {
           draggable
         >
           {currentShowcase.node.images.map(image => (
-            <Img
+            <GatsbyImage
               key={image.id}
-              fluid={image.fluid}
+              image={getImage(image)}
               style={{ width: '90%', marginBottom: '2rem' }}
               imgStyle={{
                 width: '100%',

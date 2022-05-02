@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import React from 'react';
 import CenterTitle from '../CenterTitle/centerTitle';
 import RichText from '../RichText/richText';
-import styles from './results.module.css';
+import * as styles from './results.module.css';
 
 export const VareResults = props => {
   return (

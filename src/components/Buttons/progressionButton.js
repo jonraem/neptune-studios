@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import React from 'react';
 import { ReactComponent as ArrowPrevious } from '../../assets/svg/arrow-left--white.svg';
 import { ReactComponent as ArrowNext } from '../../assets/svg/arrow-right--white.svg';
-import styles from './buttons.module.css';
+import * as styles from './buttons.module.css';
 
 const ProgressionButton = props => {
   return (

@@ -1,16 +1,16 @@
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { ReactComponent as ArrowRight } from '../../assets/svg/arrow-right--blue.svg';
-import styles from './caseCard.module.css';
+import * as styles from './caseCard.module.css';
 
 const CaseCard = props => {
   return (
     <Link className={styles.caseCard} to={props.linkTo}>
       {props.imagePath && (
         <div className={styles.image}>
-          <Img
-            fluid={props.imagePath}
+          <GatsbyImage
+            image={props.imagePath}
             imgStyle={{
               objectFit: 'contain',
             }}

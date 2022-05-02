@@ -1,4 +1,5 @@
 import { graphql } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Footer from '../../components/Footer/footer';
@@ -15,8 +16,8 @@ import {
   renderVariousMobileShowcaseImages,
   renderVariousShowcaseImages,
 } from '../../utils/showcaseHelpers';
-import pagesStyles from '../pages.module.css';
-import styles from './work.module.css';
+import * as pagesStyles from '../pages.module.css';
+import * as styles from './work.module.css';
 
 const reversed = ['work:various:imageAndText1', 'work:various:imageAndText3'];
 
@@ -60,7 +61,7 @@ const Various = ({ data, ...props }) => {
           key={edge.node.contentfulid}
           title={edge.node.title}
           description={edge.node.description}
-          imagePath={edge.node.image && edge.node.image.fluid}
+          imagePath={getImage(edge.node.image)}
           maxHeight={
             edge.node.contentfulid === 'work:various:imageAndText1' ? 300 : 500
           }
@@ -97,7 +98,7 @@ const Various = ({ data, ...props }) => {
         description={data.hero.description}
         heroClassName={styles.variousHeroImage}
         heroAlt="Images of various applications"
-        heroImage={data.hero?.image?.fluid}
+        heroImage={getImage(data.hero?.image)}
         linkBackTo="/work"
       />
       <div className={pagesStyles.content}>
@@ -117,10 +118,7 @@ const Various = ({ data, ...props }) => {
           )
         )}
         <FullWidthBackground
-          imagePath={
-            data.fullWidthBackground.image &&
-            data.fullWidthBackground.image.fluid
-          }
+          imagePath={getImage(data.fullWidthBackground.image)}
           height={isMobile ? '100vh' : '42rem'}
         />
         <Quote quote={findQuote(data, 'work:various:quotation1')} />
@@ -164,9 +162,7 @@ export const query = graphql`
         raw
       }
       image {
-        fluid {
-          ...GatsbyContentfulFluid_noBase64
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     imageAndText: allContentfulImageAndText(
@@ -180,9 +176,7 @@ export const query = graphql`
             raw
           }
           image {
-            fluid {
-              ...GatsbyContentfulFluid_noBase64
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
       }
@@ -191,9 +185,7 @@ export const query = graphql`
       contentfulid: { eq: "work:various:fullWidthBackground" }
     ) {
       image {
-        fluid(maxWidth: 2300, quality: 100) {
-          ...GatsbyContentfulFluid_noBase64
-        }
+        gatsbyImageData(layout: CONSTRAINED, width: 2300)
       }
     }
     showcase: allContentfulShowcase(
@@ -205,9 +197,7 @@ export const query = graphql`
           title
           images {
             id
-            fluid {
-              ...GatsbyContentfulFluid_noBase64
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
             file {
               details {
                 image {

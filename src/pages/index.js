@@ -1,4 +1,5 @@
 import { graphql } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 import { map, filter } from 'lodash';
 import React from 'react';
 import { Helmet } from 'react-helmet';
@@ -8,8 +9,8 @@ import Footer from '../components/Footer/footer';
 import Header from '../components/Header/header';
 import Hero from '../components/Hero/hero';
 import { getSortedCases } from '../utils/helpers';
-import styles from './main.module.css';
-import pagesStyles from './pages.module.css';
+import * as styles from './main.module.css';
+import * as pagesStyles from './pages.module.css';
 
 const sortOrder = ['case:vare', 'case:abb', 'case:macgregor'];
 
@@ -28,7 +29,7 @@ const Main = ({ data, ...props }) => (
       description={data.hero.description}
       heroClassName={styles.mainHeroImage}
       heroAlt="Illustration of a diver"
-      heroImage={data.hero?.image?.fluid}
+      heroImage={getImage(data.hero?.image)}
     />
     <div className={pagesStyles.content}>
       <CenterTitle className={styles.mainHelpTitle}>
@@ -61,10 +62,10 @@ const Main = ({ data, ...props }) => (
           ).map((edge, index) => (
             <CaseCard
               key={`${edge.node.title}:${index}`}
+              imagePath={getImage(edge.node.image)}
               title={edge.node.title}
               subtitle={edge.node.subtitle}
               linkTo={edge.node.URL}
-              imagePath={edge.node.image && edge.node.image.fluid}
             />
           ))}
         </div>
@@ -96,9 +97,7 @@ export const query = graphql`
         raw
       }
       image {
-        fluid {
-          ...GatsbyContentfulFluid_noBase64
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     cases: allContentfulCase {
@@ -109,9 +108,7 @@ export const query = graphql`
           subtitle
           URL
           image {
-            fluid {
-              ...GatsbyContentfulFluid_noBase64
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
       }

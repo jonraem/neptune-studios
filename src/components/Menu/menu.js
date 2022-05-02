@@ -5,7 +5,7 @@ import { ReactComponent as Cross } from '../../assets/svg/cross.svg';
 import { ReactComponent as LinkedIn } from '../../assets/svg/linkedin--white.svg';
 import MenuContext from '../../context/MenuContext';
 import { getActiveColorFromPath } from '../../utils/helpers';
-import styles from './menu.module.css';
+import * as styles from './menu.module.css';
 
 const Menu = props => {
   const { setIsOpen } = useContext(MenuContext);

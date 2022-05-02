@@ -1,4 +1,5 @@
 import { graphql } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import Footer from '../../components/Footer/footer';
@@ -7,8 +8,8 @@ import Hero from '../../components/Hero/hero';
 import ImageAndText from '../../components/ImageAndText/imageAndText';
 import useMedia from '../../hooks/useMedia';
 import { getSortedCases } from '../../utils/helpers';
-import pagesStyles from '../pages.module.css';
-import styles from './work.module.css';
+import * as pagesStyles from '../pages.module.css';
+import * as styles from './work.module.css';
 
 const reversed = ['case:vare', 'case:macgregor'];
 const sortOrder = ['case:vare', 'case:abb', 'case:macgregor', 'case:various'];
@@ -31,7 +32,7 @@ const Work = ({ data, ...props }) => {
         description={data.hero.description}
         heroClassName={styles.workHeroImage}
         heroAlt="Phone with Väppi application"
-        heroImage={data.hero?.image?.fluid}
+        heroImage={getImage(data.hero?.image)}
       />
       <div className={pagesStyles.content}>
         <div className={styles.workCases}>
@@ -42,7 +43,7 @@ const Work = ({ data, ...props }) => {
                 title={edge.node.title}
                 description={edge.node.description.description}
                 linkTo={edge.node.URL}
-                imagePath={edge.node.image && edge.node.image.fluid}
+                imagePath={getImage(edge.node.image)}
                 imageSideStyle={
                   edge.node.contentfulid === 'case:various'
                     ? {
@@ -79,9 +80,7 @@ export const query = graphql`
         raw
       }
       image {
-        fluid {
-          ...GatsbyContentfulFluid_noBase64
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     allContentfulCase {
@@ -94,9 +93,7 @@ export const query = graphql`
           }
           URL
           image {
-            fluid {
-              ...GatsbyContentfulFluid_noBase64
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
       }

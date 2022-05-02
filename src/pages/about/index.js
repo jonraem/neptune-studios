@@ -1,4 +1,5 @@
 import { graphql } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 import { get } from 'lodash';
 import React from 'react';
 import { Helmet } from 'react-helmet';
@@ -8,8 +9,8 @@ import Footer from '../../components/Footer/footer';
 import FullWidthGrey from '../../components/FullWidth/grey';
 import Header from '../../components/Header/header';
 import Hero from '../../components/Hero/hero';
-import pagesStyles from '../pages.module.css';
-import styles from './about.module.css';
+import * as pagesStyles from '../pages.module.css';
+import * as styles from './about.module.css';
 
 const About = ({ data, ...props }) => (
   <div className={pagesStyles.page}>
@@ -26,7 +27,7 @@ const About = ({ data, ...props }) => (
       description={data.hero.description}
       heroClassName={styles.aboutHeroImage}
       heroAlt="Pyry Nousiainen"
-      heroImage={data.hero?.image?.fluid}
+      heroImage={getImage(data.hero?.image)}
     />
     <div className={pagesStyles.content}>
       <div className={styles.aboutFeatures}>
@@ -64,9 +65,7 @@ export const query = graphql`
         raw
       }
       image {
-        fluid {
-          ...GatsbyContentfulFluid_noBase64
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     tripleFeature: contentfulTripleFeature(

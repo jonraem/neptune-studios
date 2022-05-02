@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import { Link } from 'gatsby';
 import React from 'react';
 import { isLinkPathCurrentPath } from '../../utils/helpers';
-import styles from './dropdown.module.css';
+import * as styles from './dropdown.module.css';
 
 const getOptionClassNameBasedOnPath = pathName => {
   switch (pathName) {

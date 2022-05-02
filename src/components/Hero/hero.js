@@ -1,8 +1,8 @@
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 import BackButton from '../Buttons/backButton';
 import RichText from '../RichText/richText';
-import styles from './hero.module.css';
+import * as styles from './hero.module.css';
 
 const Hero = props => {
   return (
@@ -16,15 +16,15 @@ const Hero = props => {
         <RichText className={styles.description} rawText={props.description} />
       </div>
       {!!props.heroImage && (
-        <Img
+        <GatsbyImage
           className={props.heroClassName}
+          image={props.heroImage}
           alt={props.heroAlt}
           style={{ position: 'absolute' }}
           imgStyle={{
             objectFit: 'contain',
             objectPosition: 'center right',
           }}
-          fluid={props.heroImage}
           loading="eager"
         />
       )}

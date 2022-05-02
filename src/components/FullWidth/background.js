@@ -1,14 +1,14 @@
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
-import styles from './fullWidth.module.css';
+import * as styles from './fullWidth.module.css';
 import FullWidthGrey from './grey';
 
 const FullWidthBackground = props => {
   return (
     <div className={styles.fullWidthBackground}>
       <FullWidthGrey />
-      <Img
-        fluid={props.imagePath}
+      <GatsbyImage
+        image={props.imagePath}
         style={{
           position: 'relative',
           height: props.height || '40rem',

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './quote.module.css';
+import * as styles from './quote.module.css';
 
 const QuotationMarks = () => (
   <div className={styles.quotationMarksContainer}>

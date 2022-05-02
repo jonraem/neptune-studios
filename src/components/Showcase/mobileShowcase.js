@@ -1,7 +1,7 @@
 import { times } from 'lodash';
 import React from 'react';
 import { v4 as uuid } from 'uuid';
-import styles from './showcase.module.css';
+import * as styles from './showcase.module.css';
 
 const MobileShowcase = props => {
   if (props.children) {

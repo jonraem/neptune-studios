@@ -1,6 +1,6 @@
 import classnames from 'classnames';
 import React from 'react';
-import styles from './showcase.module.css';
+import * as styles from './showcase.module.css';
 
 const DescriptionBox = props => {
   return (

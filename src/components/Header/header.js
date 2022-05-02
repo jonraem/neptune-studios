@@ -6,9 +6,9 @@ import { ReactComponent as NeptuneStudios } from '../../assets/svg/neptune-studi
 import MenuContext from '../../context/MenuContext';
 import useMedia from '../../hooks/useMedia';
 import { isLinkPathCurrentPath } from '../../utils/helpers';
-import buttonStyles from '../Buttons/buttons.module.css';
+import * as buttonStyles from '../Buttons/buttons.module.css';
 import Dropdown from '../Dropdown/dropdown';
-import styles from './header.module.css';
+import * as styles from './header.module.css';
 
 const menuOptions = [
   { value: '/work/vare/', label: 'Case Väre' },

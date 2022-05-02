@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { get } from 'lodash';
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
@@ -15,8 +15,8 @@ import MobileShowcase from '../../components/Showcase/mobileShowcase';
 import Showcase from '../../components/Showcase/showcase';
 import Timeline from '../../components/Timeline/timeline';
 import useMedia from '../../hooks/useMedia';
-import pagesStyles from '../pages.module.css';
-import styles from './work.module.css';
+import * as pagesStyles from '../pages.module.css';
+import * as styles from './work.module.css';
 
 const reversed = ['work:vare:imageAndText2', 'work:vare:imageAndText4'];
 
@@ -58,7 +58,7 @@ const Vare = ({ data, ...props }) => {
           key={edge.node.contentfulid}
           title={edge.node.title}
           description={edge.node.description}
-          imagePath={edge.node.image && edge.node.image.fluid}
+          imagePath={getImage(edge.node.image)}
           maxHeight={
             edge.node.contentfulid === 'work:vare:imageAndText2'
               ? 350
@@ -85,7 +85,7 @@ const Vare = ({ data, ...props }) => {
         description={data.hero.description}
         heroClassName={styles.vareHeroImage}
         heroAlt="Phone with Väppi application"
-        heroImage={data.hero?.image?.fluid}
+        heroImage={getImage(data.hero?.image)}
         linkBackTo="/work"
       />
       <div className={pagesStyles.content}>
@@ -115,10 +115,7 @@ const Vare = ({ data, ...props }) => {
           )
         )}
         <FullWidthBackground
-          imagePath={
-            data.fullWidthBackground.image &&
-            data.fullWidthBackground.image.fluid
-          }
+          imagePath={getImage(data.fullWidthBackground.image)}
           height={isMobile ? '100vh' : '42rem'}
         />
         {renderImageAndText(
@@ -140,8 +137,8 @@ const Vare = ({ data, ...props }) => {
             handleNextShowcase={handleNextShowcase}
           >
             {!!currentShowcaseImage && (
-              <Img
-                fluid={currentShowcaseImage.fluid}
+              <GatsbyImage
+                image={getImage(currentShowcaseImage)}
                 style={{ width: '100%' }}
                 imgStyle={{
                   width: '28rem',
@@ -164,8 +161,8 @@ const Vare = ({ data, ...props }) => {
             handleChangeShowcaseIndex={index => setShowcaseIndex(index)}
           >
             {!!currentShowcaseImage && (
-              <Img
-                fluid={currentShowcaseImage.fluid}
+              <GatsbyImage
+                image={getImage(currentShowcaseImage)}
                 style={{ width: '100%' }}
                 imgStyle={{
                   width: '19rem',
@@ -198,9 +195,7 @@ export const query = graphql`
         raw
       }
       image {
-        fluid {
-          ...GatsbyContentfulFluid_noBase64
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     tripleFeature: contentfulTripleFeature(
@@ -238,9 +233,7 @@ export const query = graphql`
             raw
           }
           image {
-            fluid {
-              ...GatsbyContentfulFluid_noBase64
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
       }
@@ -249,9 +242,7 @@ export const query = graphql`
       contentfulid: { eq: "work:vare:fullWidthBackground" }
     ) {
       image {
-        fluid(maxWidth: 2800, quality: 100) {
-          ...GatsbyContentfulFluid_noBase64
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     showcase: allContentfulShowcase(
@@ -266,9 +257,7 @@ export const query = graphql`
             description
           }
           images {
-            fluid {
-              ...GatsbyContentfulFluid_noBase64
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
             file {
               details {
                 image {
