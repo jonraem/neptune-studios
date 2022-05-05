@@ -4,25 +4,27 @@ import { useForm } from 'react-hook-form';
 import * as styles from './leadForm.module.css';
 
 const LeadForm = props => {
-  const { register, handleSubmit, errors } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   const onSubmit = data => console.log(data);
 
   return (
     <form className={styles.leadForm} onSubmit={handleSubmit(onSubmit)}>
       <input
         className={errors.name ? styles.errorInput : styles.input}
-        name="name"
         placeholder="Name (Required)"
-        ref={register({ required: true })}
+        {...register('name', { required: true })}
       />
       {errors.name && (
         <span className={styles.inputError}>Please, enter your name.</span>
       )}
       <input
         className={errors.email ? styles.errorInput : styles.input}
-        name="email"
         placeholder="Email (Required)"
-        ref={register({ required: true })}
+        {...register('email', { required: true })}
       />
       {errors.email && (
         <span className={styles.inputError}>
@@ -32,16 +34,14 @@ const LeadForm = props => {
       )}
       <input
         className={styles.input}
-        name="subject"
         placeholder="Subject"
-        ref={register}
+        {...register('subject')}
       />
       <textarea
         className={styles.input}
-        name="subject"
         placeholder="Your inquiry"
+        {...register('inquiry')}
         rows="6"
-        ref={register}
       />
       <button className={styles.submit} type="submit">
         Send message
