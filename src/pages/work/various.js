@@ -126,7 +126,7 @@ const Various = ({ data, ...props }) => {
         {!isMobile && (
           <Showcase
             bgColor="#5DBBE3"
-            height={isDesktop ? '54rem' : '62vh'}
+            height={isDesktop ? '54rem' : '74vh'}
             currentShowcase={currentShowcase}
             handlePreviousShowcase={handlePreviousShowcase}
             handleNextShowcase={handleNextShowcase}

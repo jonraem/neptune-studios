@@ -9,7 +9,7 @@ export const renderVariousShowcaseImages = (currentShowcase, isDesktop) => {
       return (
         <div
           style={{
-            width: '75%',
+            width: '80%',
             display: 'flex',
             flexWrap: 'wrap',
             justifyContent: 'center',
