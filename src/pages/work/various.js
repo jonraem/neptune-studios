@@ -79,8 +79,8 @@ const Various = ({ data, ...props }) => {
   };
 
   const renderMobileShowcaseImages = () => {
-    if (!!currentShowcase.node.images && !!currentShowcase.node.images.length) {
-      return renderVariousMobileShowcaseImages(currentShowcase);
+    if (!!data.showcase.edges && !!data.showcase.edges.length) {
+      return renderVariousMobileShowcaseImages(data.showcase.edges);
     }
   };
 

@@ -16,7 +16,6 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "@brainhubeu/react-carousel": "^2.0.4",
     "@contentful/rich-text-types": "^15.12.1",
     "@svgr/webpack": "^6.2.1",
     "classnames": "^2.3.1",
@@ -29,6 +28,7 @@
     "gatsby-plugin-svgr": "^3.0.0-beta.0",
     "gatsby-source-contentful": "^7.11.0",
     "gsap": "^3.10.4",
+    "nuka-carousel": "^5.4.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-helmet": "^6.1.0",

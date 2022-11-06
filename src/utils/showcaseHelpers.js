@@ -1,7 +1,6 @@
-import '@brainhubeu/react-carousel/lib/style.css';
-
-import Carousel, { autoplayPlugin } from '@brainhubeu/react-carousel';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { sortBy } from 'lodash';
+import Carousel from 'nuka-carousel';
 import React from 'react';
 
 export const renderVariousShowcaseImages = (currentShowcase, isDesktop) => {
@@ -166,101 +165,121 @@ export const renderVariousShowcaseImages = (currentShowcase, isDesktop) => {
   }
 };
 
-export const renderVariousMobileShowcaseImages = currentShowcase => {
-  switch (currentShowcase.node.contentfulid) {
-    case 'work:various:showcase1':
-      return (
-        <div
-          style={{
-            width: '100%',
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-            margin: 'auto',
-            marginBottom: '1rem',
-          }}
-        >
-          {currentShowcase.node.images.map(image => (
-            <GatsbyImage
-              key={image.id}
-              image={getImage(image)}
-              style={{ width: '6rem', height: '6rem' }}
-              imgStyle={{
-                width: '75%',
-                height: 'unset',
-                left: 0,
-                right: 0,
-                margin: '0 auto',
-                objectFit: 'contain',
-                boxShadow: '0px 2px 6px 2px rgba(0, 0, 0, 0.16)',
-              }}
-            />
-          ))}
-        </div>
-      );
-    case 'work:various:showcase2':
-      return (
-        <Carousel
-          plugins={[
-            'infinite',
-            {
-              resolve: autoplayPlugin,
-              options: {
-                interval: 2000,
-              },
-            },
-          ]}
-          draggable
-        >
-          {currentShowcase.node.images.map(image => (
-            <GatsbyImage
-              key={image.id}
-              image={getImage(image)}
-              style={{ width: '80%', marginBottom: '2rem' }}
-              imgStyle={{
-                width: '100%',
-                left: 0,
-                right: 0,
-                margin: '0 auto',
-                objectFit: 'contain',
-              }}
-            />
-          ))}
-        </Carousel>
-      );
-    case 'work:various:showcase3':
-      return (
-        <Carousel
-          plugins={[
-            'infinite',
-            {
-              resolve: autoplayPlugin,
-              options: {
-                interval: 2000,
-              },
-            },
-          ]}
-          animationSpeed={500}
-          draggable
-        >
-          {currentShowcase.node.images.map(image => (
-            <GatsbyImage
-              key={image.id}
-              image={getImage(image)}
-              style={{ width: '90%', marginBottom: '2rem' }}
-              imgStyle={{
-                width: '100%',
-                left: 0,
-                right: 0,
-                margin: '0 auto',
-                objectFit: 'contain',
-                boxShadow: '0px 2px 6px 2px rgba(0, 0, 0, 0.16)',
-              }}
-            />
-          ))}
-        </Carousel>
-      );
-    default:
-      return <div style={{ color: '#fff' }}>No content</div>;
-  }
+export const renderVariousMobileShowcaseImages = showcases => {
+  const getImagesFromShowcase = showcaseNode => {
+    switch (showcaseNode.contentfulid) {
+      case 'work:various:showcase1':
+        return (
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+              margin: 'auto',
+              marginBottom: '1rem',
+            }}
+          >
+            {showcaseNode.images.map(image => (
+              <GatsbyImage
+                key={image.id}
+                image={getImage(image)}
+                style={{ width: '10rem', height: '10rem' }}
+                imgStyle={{
+                  width: '75%',
+                  height: 'unset',
+                  left: 0,
+                  right: 0,
+                  margin: '0 auto',
+                  objectFit: 'contain',
+                  boxShadow: '0px 2px 6px 2px rgba(0, 0, 0, 0.16)',
+                }}
+              />
+            ))}
+          </div>
+        );
+      case 'work:various:showcase2':
+        return (
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
+          >
+            {showcaseNode.images.map(image => (
+              <GatsbyImage
+                key={image.id}
+                image={getImage(image)}
+                style={{ width: '80%', marginBottom: '4rem' }}
+                imgStyle={{
+                  width: '100%',
+                  left: 0,
+                  right: 0,
+                  margin: '0 auto',
+                  objectFit: 'contain',
+                }}
+              />
+            ))}
+          </div>
+        );
+      case 'work:various:showcase3':
+        return (
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              flexWrap: 'wrap',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+            }}
+          >
+            {showcaseNode.images.map(image => (
+              <GatsbyImage
+                key={image.id}
+                image={getImage(image)}
+                style={{ width: '10.5rem', marginBottom: '2rem' }}
+                imgStyle={{
+                  width: '100%',
+                  left: 0,
+                  right: 0,
+                  margin: '0 auto',
+                  objectFit: 'contain',
+                  boxShadow: '0px 2px 6px 2px rgba(0, 0, 0, 0.16)',
+                }}
+              />
+            ))}
+          </div>
+        );
+      default:
+        return (
+          <div
+            style={{
+              color: '#fff',
+              display: 'flex',
+              fontSize: '2em',
+              justifyContent: 'center',
+              marginTop: '8em',
+            }}
+          >
+            No content.
+          </div>
+        );
+    }
+  };
+
+  return (
+    <Carousel
+      renderCenterLeftControls={() => undefined}
+      renderCenterRightControls={() => undefined}
+      dragging
+    >
+      {sortBy(showcases, ({ node: { contentfulid } }) => contentfulid).map(
+        showcase => (
+          <div key={showcase.node.contentfulid}>
+            {getImagesFromShowcase(showcase.node)}
+          </div>
+        )
+      )}
+    </Carousel>
+  );
 };
