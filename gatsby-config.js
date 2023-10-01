@@ -24,6 +24,24 @@ module.exports = {
       },
     },
     'gatsby-plugin-image',
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`auto`, `webp`, `png`, `jpg`],
+          placeholder: `none`,
+          breakpoints: [480, 992, 1025],
+          backgroundColor: `transparent`,
+          tracedSVGOptions: {},
+          blurredOptions: {},
+          jpgOptions: {},
+          pngOptions: {},
+          webpOptions: {},
+          avifOptions: {},
+        },
+      },
+    },
+    `gatsby-transformer-sharp`,
     'gatsby-plugin-svgr',
     'gatsby-plugin-react-helmet',
     {
